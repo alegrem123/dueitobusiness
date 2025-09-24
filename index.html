@@ -790,6 +790,67 @@ window.addEventListener('scroll', handleScrollAnimation);
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(handleScrollAnimation, 100);
 });
+// ========== FADE UP ON SCROLL ==========
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    );
+}
+
+function handleScrollAnimation() {
+    // Elementi da animare
+    const elementsToAnimate = document.querySelectorAll('.section h2, .section-intro, .section .two-col, .section .cards, .section .sectors-grid, .section .galleria-container, .section .contact-form-centered');
+    
+    elementsToAnimate.forEach(element => {
+        if (isElementPartiallyInViewport(element)) {
+            element.classList.add('visible');
+        }
+    });
+    
+    // Anima le singole card
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        if (isElementPartiallyInViewport(card)) {
+            card.classList.add('visible');
+        }
+    });
+    
+    // Anima le sector cards
+    const sectorCards = document.querySelectorAll('.sector-card');
+    sectorCards.forEach(card => {
+        if (isElementPartiallyInViewport(card)) {
+            card.classList.add('visible');
+        }
+    });
+    
+    // Anima le immagini della galleria
+    const gallerySlides = document.querySelectorAll('.galleria-slide');
+    gallerySlides.forEach(slide => {
+        if (isElementPartiallyInViewport(slide)) {
+            slide.classList.add('visible');
+        }
+    });
+}
+
+// Event listener per lo scroll
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Esegui una volta al caricamento per gli elementi già visibili
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(handleScrollAnimation, 100);
+});
 </script>
 </body>
 </html>
