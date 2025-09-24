@@ -2360,3 +2360,15 @@ html {
         right: 15px;
     }
 }
+/* Mobile - Centra tutto il contenuto dell'hero */
+@media (max-width: 768px) {
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        align-items: center;
+    }
+}
