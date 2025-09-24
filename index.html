@@ -519,7 +519,16 @@ const translations = {
         'footer-consultation': 'Consulenza su appuntamento',
         'footer-copyright': '© 2025 Due i to Business | P.IVA 12345678901',
         'footer-privacy': 'Privacy Policy',
-        'footer-cookie': 'Cookie Policy'
+        'footer-cookie': 'Cookie Policy',
+         'error-name-required': 'Il nome è obbligatorio',
+        'error-name-invalid': 'Il nome deve contenere solo lettere (2-30 caratteri)',
+        'error-surname-required': 'Il cognome è obbligatorio',
+        'error-surname-invalid': 'Il cognome deve contenere solo lettere (2-30 caratteri)',
+        'error-phone-required': 'Il numero di telefono è obbligatorio',
+        'error-phone-invalid': 'Inserisci un numero di telefono valido',
+        'error-email-required': 'L\'email è obbligatoria',
+        'error-email-invalid': 'Inserisci un indirizzo email valido',
+        'error-sector-required': 'Seleziona un settore'
     },
     en: {
         'hero-title': 'Strategic Consulting for Organic Growth',
@@ -585,46 +594,57 @@ const translations = {
         'footer-consultation': 'Consultation by appointment',
         'footer-copyright': '© 2025 Due i to Business | VAT 12345678901',
         'footer-privacy': 'Privacy Policy',
-        'footer-cookie': 'Cookie Policy'
+        'footer-cookie': 'Cookie Policy',
+        'error-name-required': 'Name is required',
+        'error-name-invalid': 'Name must contain only letters (2-30 characters)',
+        'error-surname-required': 'Surname is required',
+        'error-surname-invalid': 'Surname must contain only letters (2-30 characters)',
+        'error-phone-required': 'Phone number is required',
+        'error-phone-invalid': 'Please enter a valid phone number',
+        'error-email-required': 'Email is required',
+        'error-email-invalid': 'Please enter a valid email address',
+        'error-sector-required': 'Please select a sector'
     }
 };
     
     function changeLanguage(lang) {
-        const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
-        
-        document.documentElement.lang = lang;
-        
-        // Aggiorna bottoni desktop
-        document.querySelectorAll('.language-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        const activeDesktopBtn = document.querySelector(`.desktop-only [data-lang="${lang}"]`);
-        if (activeDesktopBtn) {
-            activeDesktopBtn.classList.add('active');
+    currentLanguage = lang; // Aggiorna la lingua corrente
+    
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
         }
-        
-        // Aggiorna selettore mobile
-        const mobileTrigger = document.querySelector('.language-trigger');
-        const mobileFlag = mobileTrigger.querySelector('.flag-icon');
-        const mobileOptions = document.querySelectorAll('.language-option');
-        
-        const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
-        mobileFlag.src = flagSrc;
-        mobileTrigger.setAttribute('data-lang', lang);
-        
-        mobileOptions.forEach(option => {
-            option.classList.remove('active');
-            if (option.getAttribute('data-lang') === lang) {
-                option.classList.add('active');
-            }
-        });
+    });
+    
+    document.documentElement.lang = lang;
+    
+    // Aggiorna bottoni desktop
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const activeDesktopBtn = document.querySelector(`.desktop-only [data-lang="${lang}"]`);
+    if (activeDesktopBtn) {
+        activeDesktopBtn.classList.add('active');
     }
+    
+    // Aggiorna selettore mobile
+    const mobileTrigger = document.querySelector('.language-trigger');
+    const mobileFlag = mobileTrigger.querySelector('.flag-icon');
+    const mobileOptions = document.querySelectorAll('.language-option');
+    
+    const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
+    mobileFlag.src = flagSrc;
+    mobileTrigger.setAttribute('data-lang', lang);
+    
+    mobileOptions.forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('data-lang') === lang) {
+            option.classList.add('active');
+        }
+    });
+}
     
     // Event listeners lingua desktop
     document.querySelectorAll('.language-btn').forEach(btn => {
@@ -714,72 +734,72 @@ const translations = {
     }
 
     function validateField(fieldName) {
-        const field = formFields[fieldName];
-        const value = field.value.trim();
-        let isValid = true;
-        let errorMessage = '';
-        
-        switch(fieldName) {
-            case 'nome':
-                if (!value) {
-                    errorMessage = 'Il nome è obbligatorio';
-                    isValid = false;
-                } else if (!validateName(value)) {
-                    errorMessage = 'Il nome deve contenere solo lettere (2-30 caratteri)';
-                    isValid = false;
-                }
-                break;
-                
-            case 'cognome':
-                if (!value) {
-                    errorMessage = 'Il cognome è obbligatorio';
-                    isValid = false;
-                } else if (!validateName(value)) {
-                    errorMessage = 'Il cognome deve contenere solo lettere (2-30 caratteri)';
-                    isValid = false;
-                }
-                break;
-                
-            case 'telefono':
-                if (!value) {
-                    errorMessage = 'Il numero di telefono è obbligatorio';
-                    isValid = false;
-                } else if (!validatePhone(value)) {
-                    errorMessage = 'Inserisci un numero di telefono valido';
-                    isValid = false;
-                }
-                break;
-                
-            case 'email':
-                if (!value) {
-                    errorMessage = 'L\'email è obbligatoria';
-                    isValid = false;
-                } else if (!validateEmail(value)) {
-                    errorMessage = 'Inserisci un indirizzo email valido';
-                    isValid = false;
-                }
-                break;
-                
-            case 'settore':
-                if (!value) {
-                    errorMessage = 'Seleziona un settore';
-                    isValid = false;
-                }
-                break;
-                
-            case 'messaggio':
-                
-                break;
-        }
-        
-        if (!isValid) {
-            showFieldError(field, errorMessage);
-        } else {
-            clearFieldError(field);
-        }
-        
-        return isValid;
+    const field = formFields[fieldName];
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    switch(fieldName) {
+        case 'nome':
+            if (!value) {
+                errorMessage = translations[currentLanguage]['error-name-required'];
+                isValid = false;
+            } else if (!validateName(value)) {
+                errorMessage = translations[currentLanguage]['error-name-invalid'];
+                isValid = false;
+            }
+            break;
+            
+        case 'cognome':
+            if (!value) {
+                errorMessage = translations[currentLanguage]['error-surname-required'];
+                isValid = false;
+            } else if (!validateName(value)) {
+                errorMessage = translations[currentLanguage]['error-surname-invalid'];
+                isValid = false;
+            }
+            break;
+            
+        case 'telefono':
+            if (!value) {
+                errorMessage = translations[currentLanguage]['error-phone-required'];
+                isValid = false;
+            } else if (!validatePhone(value)) {
+                errorMessage = translations[currentLanguage]['error-phone-invalid'];
+                isValid = false;
+            }
+            break;
+            
+        case 'email':
+            if (!value) {
+                errorMessage = translations[currentLanguage]['error-email-required'];
+                isValid = false;
+            } else if (!validateEmail(value)) {
+                errorMessage = translations[currentLanguage]['error-email-invalid'];
+                isValid = false;
+            }
+            break;
+            
+        case 'settore':
+            if (!value) {
+                errorMessage = translations[currentLanguage]['error-sector-required'];
+                isValid = false;
+            }
+            break;
+            
+        case 'messaggio':
+            // Nessuna validazione per il messaggio
+            break;
     }
+    
+    if (!isValid) {
+        showFieldError(field, errorMessage);
+    } else {
+        clearFieldError(field);
+    }
+    
+    return isValid;
+}
 
     function Form() {
         let isFormValid = true;
@@ -807,7 +827,7 @@ Object.keys(formFields).forEach(fieldName => {
         clearFieldError(field);
     });
 });
-// Gestione invio form
+//  invio form
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         // Validazione completa
