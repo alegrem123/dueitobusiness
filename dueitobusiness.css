@@ -1,71 +1,25 @@
-:root{
-  --bg:#f7f6f4;
-  --fg:#1a1a1a;
-  --muted:#6b6b6b;
-  --accent:#c7a462;
-  --card:#ffffff;
-  --maxw:1100px;
-  --radius:12px;
-  --shadow:0 6px 24px rgba(0,0,0,.08);
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--fg);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.6;
-}
-/* Fix specifico per iOS */
-html, body {
-    overflow-x: hidden;
-    min-width: 320px;
-    position: relative;
+/* Aggiungi all'inizio del CSS */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Previeni il pinch-to-zoom su iOS */
-body {
-    touch-action: pan-x pan-y;
-    -webkit-overflow-scrolling: touch;
+/* Per browser che non supportano scroll-behavior */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
-
-/* Assicura che il container non superi mai la larghezza del viewport */
-.container {
-    overflow-x: hidden;
-    min-width: 320px;
-    max-width: 100vw;
-    position: relative;
-}
-
-/* Fix per tutti gli elementi che potrebbero causare overflow */
 * {
-    max-width: 100%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Specifico per la galleria che potrebbe causare problemi */
-.galleria-container {
-    max-width: 100vw;
-    overflow-x: hidden;
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Su mobile, riduci ulteriormente i padding */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 12px;
-        max-width: 100vw;
-    }
-    
-    .hero-content {
-        padding: 0 12px;
-        max-width: 100vw;
-    }
-    
-    .section {
-        padding: 40px 12px;
-    }
-}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
 /* Banner superiore - Solo desktop */
 .top-banner {
     background: white;
@@ -2406,44 +2360,5 @@ html {
     
     .galleria-next {
         right: 15px;
-    }
-}
-/* Mobile - Centra tutto il contenuto dell'hero */
-@media (max-width: 768px) {
-    .hero-content {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-        align-items: center;
-    }
-}
-/* Fix per il menu mobile su iOS */
-@media (max-width: 768px) {
-    .nav-list {
-        position: fixed; /* Cambia da absolute a fixed */
-        top: 70px; /* Altezza del header */
-        left: 0;
-        right: 0;
-        background: rgba(30, 58, 95, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999; /* Assicura che sia sopra tutto */
-        height: calc(100vh - 70px); /* Altezza completa meno header */
-        overflow-y: auto; /* Scroll se necessario */
-    }
-    
-    .nav-list.show {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
     }
 }
