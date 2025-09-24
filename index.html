@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section</title>
@@ -252,81 +253,101 @@
 </section>
 
         <!-- Settori -->
-        <section class="section alt" id="settori">
-            <div class="container">
-                <h2>Settori di competenza</h2>
-                <p class="section-intro">Esperienza consolidata in settori strategici per la crescita aziendale.</p>
-                
-                <div class="product-list">
-                    <ul>
-                        <li>Food & Beverages</li>
-                        <li>Sparkling Wines</li>
-                        <li>Industrial Machinery & Equipment</li>
-                        <li>Automation Manufacturer</li>
-                        <li>Logistics Integrations</li>
-                        <li>Technical Commercial Broking</li>
-                    </ul>
-                </div>
+
+<section id="settori" class="section">
+    <div class="container">
+        <h2>Settori di competenza</h2>
+       <p style="text-align: center;">La nostra esperienza si estende attraverso diversi settori industriali, offrendo soluzioni personalizzate e competenze specializzate per ogni ambito di business. Dalla produzione alimentare alla logistica avanzata, supportiamo le aziende nella crescita, nell'ottimizzazione dei processi e nell'implementazione di strategie innovative che generano risultati concreti e misurabili.</p>
+        
+        <div class="sectors-grid">
+            <div class="sector-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Food & Beverages</h3>
             </div>
-        </section>
+            
+            <div class="sector-card">
+                <i class="fas fa-wine-glass"></i>
+                <h3>Sparkling Wines</h3>
+            </div>
+            
+            <div class="sector-card">
+                <i class="fas fa-tools"></i>
+                <h3>Industrial Machinery & Equipment</h3>
+            </div>
+            
+            <div class="sector-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Automation Manufacturer</h3>
+            </div>
+            
+            <div class="sector-card">
+                <i class="fas fa-truck"></i>
+                <h3>Logistics Integrations</h3>
+            </div>
+            
+            <div class="sector-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Technical Commercial Broking</h3>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- Contatti -->
-        <section class="section" id="contatti">
-            <div class="container">
-                <h2>Contatti</h2>
-                <p class="section-intro">Contattaci per una consulenza personalizzata.</p>
+        <!-- Contatti -->
+<!-- Contatti -->
+<section class="section" id="contatti">
+    <div class="container">
+        <h2>Contattaci per una consulenza personalizzata.</h2>
+  
+        
+        <div class="contact-form-centered">
+            <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
                 
-                <div class="contact">
-                    <div class="contact-form">
-                        <form class="form">
-                            <div class="form-grid">
-                                <div class="field">
-                                    <label for="nome">Nome</label>
-                                    <input type="text" id="nome" name="nome" required>
-                                </div>
-                                <div class="field">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="field">
-                                    <label for="telefono">Telefono</label>
-                                    <input type="tel" id="telefono" name="telefono">
-                                </div>
-                                <div class="field">
-                                    <label for="azienda">Azienda</label>
-                                    <input type="text" id="azienda" name="azienda">
-                                </div>
-                                <div class="field span-2">
-                                    <label for="messaggio">Messaggio</label>
-                                    <textarea id="messaggio" name="messaggio" required></textarea>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Invia Richiesta</button>
-                            </div>
-                        </form>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
-                    
-                    <div class="contact-aside">
-                        <div class="contact-block">
-                            <h3>Telefono</h3>
-                            <p><a href="tel:+393486469156">+39 348 6469156</a></p>
-                        </div>
-                        <div class="contact-block">
-                            <h3>Email</h3>
-                            <p><a href="mailto:dueitobusiness@gmail.com">dueitobusiness@gmail.com</a></p>
-                        </div>
-                        <div class="contact-block">
-                            <h3>Orari</h3>
-                            <p>Lun – Ven: 9:00 – 18:00</p>
-                        </div>
-                        <div class="contact-block">
-                            <h3>Consulenza</h3>
-                            <p>Su appuntamento</p>
-                        </div>
+                    <div class="field">
+                        <label for="cognome">Cognome</label>
+                        <input type="text" id="cognome" name="cognome" required>
+                    </div>
+                    <div class="field">
+                        <label for="telefono">Numero di telefono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="field span-2">
+                        <label for="settore">Settore</label>
+                        <select id="settore" name="settore" required>
+                            <option value="">Seleziona un settore</option>
+                            <option value="food-beverages">Food & Beverages</option>
+                            <option value="sparkling-wines">Sparkling Wines</option>
+                            <option value="industrial-machinery">Industrial Machinery & Equipment</option>
+                            <option value="automation-manufacturer">Automation Manufacturer</option>
+                            <option value="logistics-integrations">Logistics Integrations</option>
+                            <option value="technical-commercial-broking">Technical Commercial Broking</option>
+                        </select>
+                    </div>
+                    <div class="field span-2">
+                        <label for="messaggio">Messaggio</label>
+                        <textarea id="messaggio" name="messaggio" required placeholder="Descrivi le tue esigenze..."></textarea>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Invia Richiesta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
     </main>
 
     <!-- Footer -->
