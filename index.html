@@ -1,47 +1,744 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dueitobusiness - Stato Progetto</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7fa;
-      color: #333;
-      margin: 0;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
-    h1 {
-      color: #0056b3;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1.25rem;
-      color: #555;
-      max-width: 400px;
-    }
-    .status {
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background-color: #e0f0ff;
-      border: 2px solid #007bff;
-      border-radius: 8px;
-      font-weight: 600;
-      color: #004085;
-      box-shadow: 0 4px 12px rgba(0,123,255,0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <link rel="stylesheet" href="dueitobusiness.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Dueitobusiness</h1>
-  <p>Sito condiviso per vedere gli aggiornamenti del progetto in tempo reale. </p>
-  <div class="status">🟢 Progetto in sviluppo</div>
+    <!-- Header con Menu -->
+    <header class="site-header">
+        <div class="container">
+            <div class="nav">
+                <a href="#home" class="brand">
+                    <div class="logo-icon">D</div>
+                    <span>DUE I TO BUSINESS</span>
+                </a>
+                
+                <nav class="nav-list">
+                    <a href="#home">home</a>
+                    <span class="separator">•</span>
+                    <a href="#chi-siamo">chi siamo</a>
+                    <span class="separator">•</span>
+                    <a href="#servizi">servizi</a>
+                    <span class="separator">•</span>
+                    <a href="#metodologia">metodologia</a>
+                    <span class="separator">•</span>
+                    <a href="#settori">settori</a>
+                    <span class="separator">•</span>
+                    <a href="#contatti">contatti</a>
+                </nav>
+                
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner superiore - Solo desktop -->
+    <div class="top-banner">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+393486469156" class="phone-link">+39 348 6469156</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:dueitobusiness@gmail.com" class="email-link">dueitobusiness@gmail.com</a>
+            </div>
+        </div>
+        
+        <!-- Selettore lingua desktop -->
+        <div class="language-switcher desktop-only">
+            <button class="language-btn active" data-lang="it">
+                <img src="https://flagcdn.com/w20/it.png" alt="Italiano" class="flag-icon">
+                <span>IT</span>
+            </button>
+            <button class="language-btn" data-lang="en">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                <span>EN</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Layer di sfondo per crossfade -->
+        <div class="hero-bg is-visible" aria-hidden="true"></div>
+        <div class="hero-bg next" aria-hidden="true"></div>
+        
+        <!-- Selettore lingua mobile -->
+        <div class="mobile-language-switcher">
+            <div class="language-dropdown">
+                <button class="language-trigger" data-lang="it">
+                    <img src="https://flagcdn.com/w20/it.png" alt="Italiano" class="flag-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-options">
+                    <button class="language-option" data-lang="it">
+                        <img src="https://flagcdn.com/w20/it.png" alt="Italiano" class="flag-icon">
+                        <span>Italiano</span>
+                    </button>
+                    <button class="language-option" data-lang="en">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon">
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-translate="hero-title">Consulenza Strategica per la Crescita Organica</h1>
+                <p class="hero-description" data-translate="hero-description">Quick-wins operativi che diventano competenze permanenti per PMI di eccellenza</p>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" data-translate="btn-appointment">Richiedi Consulenza</button>
+                <button class="btn btn-secondary" data-translate="btn-services">I Nostri Servizi</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+      <section class="section" id="galleria">
+    <div class="container">
+      <h2>lorem isElementPartiallyInViewport</h2>
+        <div class="galleria-container">
+            <button class="galleria-btn galleria-prev" aria-label="Immagine precedente">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="galleria-wrapper">
+                <div class="galleria-track">
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Business Meeting">
+                    </div>
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Strategic Planning">
+                    </div>
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Team Collaboration">
+                    </div>
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Industrial Process">
+                    </div>
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Office Strategy">
+                    </div>
+                    <div class="galleria-slide">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Business Growth">
+                    </div>
+                </div>
+            </div>
+            <button class="galleria-btn galleria-next" aria-label="Immagine successiva">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Dots per desktop (4 dots per 3 immagini visibili) -->
+        <div class="galleria-dots-desktop">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+        
+        <!-- Dots per mobile (6 dots per 1 immagine alla volta) -->
+        <div class="galleria-dots-mobile">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+        </div>
+    </div>
+</section>
+        <!-- Chi Siamo -->
+        <section class="section" id="chi-siamo">
+            <div class="container">
+                <div class="two-col">
+                    <div class="text">
+                        <h2>Chi siamo</h2>
+                        <p class="quote">È il progresso a trasformare l'azienda in un processo straordinario, ma sono la sua storia e le sue radici a sancirne l'unicità.</p>
+                        <p>Nata nel 2019, Due i to Business si dedica alla consulenza strategica per PMI di eccellenza, specializzandosi in soluzioni operative di alta qualità attraverso metodologie consolidate.</p>
+                    </div>
+                    <div class="media">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Team di consulenza" class="rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Servizi -->
+        <section class="section alt" id="servizi">
+            <div class="container">
+                <h2>I nostri servizi</h2>
+                <p class="section-intro">Soluzioni strategiche personalizzate per ottimizzare processi e sviluppare competenze manageriali.</p>
+                
+                <div class="cards">
+                    <div class="card">
+                        <h3>Check Up Operativo</h3>
+                        <p>Sviluppo del ruolo di COO e ottimizzazione dei processi operativi.</p>
+                    </div>
+                    <div class="card">
+                        <h3>HR Support & Mentoring</h3>
+                        <p>Supporto alle risorse umane e sviluppo della cultura aziendale.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Review Strategica</h3>
+                        <p>Analisi e revisione di piani strategici e industriali.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Partnership Logistica</h3>
+                        <p>Supporto specializzato per operazioni logistiche integrate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodologia -->
+        <section class="section" id="metodologia">
+            <div class="container">
+                <div class="two-col reverse">
+                    <div class="text">
+                        <h2>La nostra metodologia</h2>
+                        <p class="quote">Clinical Organisation Development (CODp) - Metodologia distintiva personalizzata per le PMI.</p>
+                        
+                        <h3>Valori fondamentali</h3>
+                        <ul class="bullets">
+                            <li>Definizione di criteri e indicatori misurabili</li>
+                            <li>Promozione delle competenze manageriali</li>
+                            <li>Focus su concretezza vs opinioni</li>
+                            <li>Programmazione strategica con review permanente</li>
+                        </ul>
+                    </div>
+                    <div class="media">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Metodologia CODp" class="rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settori -->
+        <section class="section alt" id="settori">
+            <div class="container">
+                <h2>Settori di competenza</h2>
+                <p class="section-intro">Esperienza consolidata in settori strategici per la crescita aziendale.</p>
+                
+                <div class="product-list">
+                    <ul>
+                        <li>Food & Beverages</li>
+                        <li>Sparkling Wines</li>
+                        <li>Industrial Machinery & Equipment</li>
+                        <li>Automation Manufacturer</li>
+                        <li>Logistics Integrations</li>
+                        <li>Technical Commercial Broking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Contatti -->
+        <section class="section" id="contatti">
+            <div class="container">
+                <h2>Contatti</h2>
+                <p class="section-intro">Contattaci per una consulenza personalizzata.</p>
+                
+                <div class="contact">
+                    <div class="contact-form">
+                        <form class="form">
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="field">
+                                    <label for="telefono">Telefono</label>
+                                    <input type="tel" id="telefono" name="telefono">
+                                </div>
+                                <div class="field">
+                                    <label for="azienda">Azienda</label>
+                                    <input type="text" id="azienda" name="azienda">
+                                </div>
+                                <div class="field span-2">
+                                    <label for="messaggio">Messaggio</label>
+                                    <textarea id="messaggio" name="messaggio" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Invia Richiesta</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-aside">
+                        <div class="contact-block">
+                            <h3>Telefono</h3>
+                            <p><a href="tel:+393486469156">+39 348 6469156</a></p>
+                        </div>
+                        <div class="contact-block">
+                            <h3>Email</h3>
+                            <p><a href="mailto:dueitobusiness@gmail.com">dueitobusiness@gmail.com</a></p>
+                        </div>
+                        <div class="contact-block">
+                            <h3>Orari</h3>
+                            <p>Lun – Ven: 9:00 – 18:00</p>
+                        </div>
+                        <div class="contact-block">
+                            <h3>Consulenza</h3>
+                            <p>Su appuntamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h3>Due i to Business</h3>
+                    <p style="color: #a8c8e8;">Consulenza strategica per la crescita organica delle PMI.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Servizi</h3>
+                    <ul class="footer-list">
+                        <li><a href="#servizi">Check Up Operativo</a></li>
+                        <li><a href="#servizi">HR Support</a></li>
+                        <li><a href="#servizi">Review Strategica</a></li>
+                        <li><a href="#servizi">Partnership Logistica</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contatti</h3>
+                    <ul class="footer-list" style="color: #a8c8e8;">
+                        <li>+39 348 6469156</li>
+                        <li>dueitobusiness@gmail.com</li>
+                        <li>Consulenza su appuntamento</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p style="color: #a8c8e8;">&copy; 2025 Due i to Business | P.IVA 12345678901</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#cookie">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // ========== MENU MOBILE ==========
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav-list');
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    }
+
+    // ========== CHIUSURA AUTOMATICA MENU MOBILE ==========
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Chiudi il menu mobile quando si clicca su un link
+            if (nav.classList.contains('show')) {
+                nav.classList.remove('show');
+            }
+        });
+    });
+
+    // ========== SCROLL BEHAVIOR ==========
+    const topBanner = document.querySelector('.top-banner');
+    const siteHeader = document.querySelector('.site-header');
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            // Nascondi banner e rendi header fisso
+            topBanner.style.transform = 'translateY(-100%)';
+            siteHeader.classList.add('fixed');
+        } else {
+            // Mostra banner e rimuovi header fisso
+            topBanner.style.transform = 'translateY(0)';
+            siteHeader.classList.remove('fixed');
+        }
+    });
+
+    // ========== SMOOTH SCROLLING PER LINK INTERNI ==========
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Se è un link interno (inizia con #)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Calcola la posizione considerando l'header fisso
+                    const headerHeight = siteHeader.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    // Smooth scroll
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Chiudi il menu mobile se è aperto
+                    if (nav && nav.classList.contains('show')) {
+                        nav.classList.remove('show');
+                    }
+                }
+            }
+        });
+    });
+
+    // ========== TRADUZIONI ==========
+    const translations = {
+        it: {
+            'hero-title': 'Consulenza Strategica per la Crescita Organica',
+            'hero-subtitle': 'Benvenuti',
+            'hero-description': 'Sviluppiamo competenze manageriali e operativi quick-wins per PMI di eccellenza',
+            'btn-appointment': 'Richiedi Consulenza',
+            'btn-services': 'I Nostri Servizi'
+        },
+        en: {
+            'hero-title': 'Strategic Consulting for Organic Growth',
+            'hero-subtitle': 'Welcome',
+            'hero-description': 'We develop managerial skills and operational quick-wins for excellence SMEs',
+            'btn-appointment': 'Request Consultation',
+            'btn-services': 'Our Services'
+        }
+    };
+    
+    function changeLanguage(lang) {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        document.documentElement.lang = lang;
+        
+        // Aggiorna bottoni desktop
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        const activeDesktopBtn = document.querySelector(`.desktop-only [data-lang="${lang}"]`);
+        if (activeDesktopBtn) {
+            activeDesktopBtn.classList.add('active');
+        }
+        
+        // Aggiorna selettore mobile
+        const mobileTrigger = document.querySelector('.language-trigger');
+        const mobileFlag = mobileTrigger.querySelector('.flag-icon');
+        const mobileOptions = document.querySelectorAll('.language-option');
+        
+        const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
+        mobileFlag.src = flagSrc;
+        mobileTrigger.setAttribute('data-lang', lang);
+        
+        mobileOptions.forEach(option => {
+            option.classList.remove('active');
+            if (option.getAttribute('data-lang') === lang) {
+                option.classList.add('active');
+            }
+        });
+    }
+    
+    // Event listeners lingua desktop
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+    
+    // Event listeners lingua mobile
+    const mobileDropdown = document.querySelector('.language-dropdown');
+    const mobileTrigger = document.querySelector('.language-trigger');
+    const mobileOptions = document.querySelectorAll('.language-option');
+    
+    mobileTrigger.addEventListener('click', function() {
+        mobileDropdown.classList.toggle('active');
+    });
+    
+    mobileOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+            mobileDropdown.classList.remove('active');
+        });
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!mobileDropdown.contains(e.target)) {
+            mobileDropdown.classList.remove('active');
+        }
+    });
+    
+    // ========== HERO SLIDER ==========
+    const heroA = document.querySelector('.hero-bg');
+    const heroB = document.querySelector('.hero-bg.next');
+    
+    const heroSlides = [
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+    ];
+    
+    // Preload immagini
+    heroSlides.forEach(src => { 
+        const img = new Image(); 
+        img.src = src; 
+    });
+    
+    let idx = 0;
+    let showingA = true;
+    
+    function setBg(el, url) { 
+        if (el) el.style.backgroundImage = `url("${url}")`; 
+    }
+    
+    function initHero() {
+        if (!heroA || !heroB) return;
+        setBg(heroA, heroSlides[0]);
+        setBg(heroB, heroSlides[1]);
+        heroA.classList.add('is-visible');
+    }
+    
+    function crossfadeHero() {
+        if (!heroA || !heroB) return;
+        const nextIdx = (idx + 1) % heroSlides.length;
+        
+        const toShow = showingA ? heroB : heroA;
+        const toHide = showingA ? heroA : heroB;
+        
+        setBg(toShow, heroSlides[nextIdx]);
+        toShow.classList.add('is-visible');
+        toHide.classList.remove('is-visible');
+        
+        showingA = !showingA;
+        idx = nextIdx;
+    }
+    
+    // Inizializza e avvia slider
+    initHero();
+    setInterval(crossfadeHero, 4000);
+    
+    // ========== BOTTONI HERO ==========
+    const appointmentBtn = document.querySelector('.btn-primary');
+    const servicesBtn = document.querySelector('.btn-secondary');
+    
+    if (appointmentBtn) {
+        appointmentBtn.addEventListener('click', function() {
+            // Scroll alla sezione contatti
+            const contattiSection = document.getElementById('contatti');
+            if (contattiSection) {
+                const headerHeight = siteHeader.offsetHeight;
+                const targetPosition = contattiSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    
+    if (servicesBtn) {
+        servicesBtn.addEventListener('click', function() {
+            // Scroll alla sezione servizi
+            const serviziSection = document.getElementById('servizi');
+            if (serviziSection) {
+                const headerHeight = siteHeader.offsetHeight;
+                const targetPosition = serviziSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    
+    // Click hero per cambio imagine manuale
+    const heroSection = document.querySelector('.hero');
+    heroSection.addEventListener('click', function(e) {
+        if (!e.target.classList.contains('btn') && !e.target.closest('.mobile-language-switcher')) {
+            crossfadeHero();
+        }
+    });
+}); 
+// ========== GALLERIA SLIDER ==========
+const galleriaTrack = document.querySelector('.galleria-track');
+const galleriaSlides = document.querySelectorAll('.galleria-slide');
+const galleriaPrev = document.querySelector('.galleria-prev');
+const galleriaNext = document.querySelector('.galleria-next');
+const dotsDesktop = document.querySelectorAll('.galleria-dots-desktop .dot');
+const dotsMobile = document.querySelectorAll('.galleria-dots-mobile .dot');
+
+let currentSlide = 0;
+const totalSlides = galleriaSlides.length;
+
+function updateGalleria() {
+    const isMobile = window.innerWidth <= 768;
+    const slideWidth = isMobile ? 100 : 33.333;
+    
+    // Assicura che la trasformazione sia precisa
+    galleriaTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    
+    // Aggiorna dots desktop
+    dotsDesktop.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+    
+    // Aggiorna dots mobile
+    dotsMobile.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function nextSlide() {
+    const isMobile = window.innerWidth <= 768;
+    const maxSlide = isMobile ? totalSlides - 1 : 3;
+    
+    currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
+    updateGalleria();
+}
+
+function prevSlide() {
+    const isMobile = window.innerWidth <= 768;
+    const maxSlide = isMobile ? totalSlides - 1 : 3;
+    
+    currentSlide = currentSlide <= 0 ? maxSlide : currentSlide - 1;
+    updateGalleria();
+}
+
+function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    updateGalleria();
+}
+
+// Event listeners
+if (galleriaNext) {
+    galleriaNext.addEventListener('click', nextSlide);
+}
+
+if (galleriaPrev) {
+    galleriaPrev.addEventListener('click', prevSlide);
+}
+
+// Dots navigation desktop
+dotsDesktop.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToSlide(index));
+});
+
+// Dots navigation mobile
+dotsMobile.forEach((dot, index) => {
+    dot.addEventListener('click', () => goToSlide(index));
+});
+
+// Auto-play (opzionale)
+let autoPlayInterval;
+function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 5000);
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// Pausa auto-play al hover
+const galleriaContainer = document.querySelector('.galleria-container');
+if (galleriaContainer) {
+    galleriaContainer.addEventListener('mouseenter', stopAutoPlay);
+    galleriaContainer.addEventListener('mouseleave', startAutoPlay);
+}
+
+// Inizializza
+updateGalleria();
+startAutoPlay();
+
+// Responsive update
+window.addEventListener('resize', () => {
+    updateGalleria();
+});
+// ========== FADE UP ON SCROLL ==========
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    );
+}
+
+function handleScrollAnimation() {
+    // Elementi da animare
+    const elementsToAnimate = document.querySelectorAll('.section h2, .section-intro, .section .two-col, .section .cards, .section .product-list, .section .galleria-container, .section .contact');
+    
+    elementsToAnimate.forEach(element => {
+        if (isElementPartiallyInViewport(element)) {
+            element.classList.add('visible');
+        }
+    });
+    
+    // Anima le singole card
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        if (isElementPartiallyInViewport(card)) {
+            card.classList.add('visible');
+        }
+    });
+    
+    // Anima le immagini della galleria
+    const gallerySlides = document.querySelectorAll('.galleria-slide');
+    gallerySlides.forEach(slide => {
+        if (isElementPartiallyInViewport(slide)) {
+            slide.classList.add('visible');
+        }
+    });
+}
+
+// Event listener per lo scroll
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Esegui una volta al caricamento per gli elementi già visibili
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(handleScrollAnimation, 100);
+});
+</script>
 </body>
 </html>
