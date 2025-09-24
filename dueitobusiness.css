@@ -2420,3 +2420,30 @@ html {
         align-items: center;
     }
 }
+/* Fix per il menu mobile su iOS */
+@media (max-width: 768px) {
+    .nav-list {
+        position: fixed; /* Cambia da absolute a fixed */
+        top: 70px; /* Altezza del header */
+        left: 0;
+        right: 0;
+        background: rgba(30, 58, 95, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999; /* Assicura che sia sopra tutto */
+        height: calc(100vh - 70px); /* Altezza completa meno header */
+        overflow-y: auto; /* Scroll se necessario */
+    }
+    
+    .nav-list.show {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
