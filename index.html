@@ -292,8 +292,6 @@
         </div>
     </div>
 </section>
-        <!-- Contatti -->
-        <!-- Contatti -->
 <!-- Contatti -->
 <section class="section" id="contatti">
     <div class="container">
@@ -301,8 +299,8 @@
   
         
         <div class="contact-form-centered">
-            <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact" />
+            <form class="form" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact"/>
                 <p style="display: none;">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </p>
@@ -409,22 +407,26 @@
     });
 
     // ========== SCROLL BEHAVIOR ==========
-    const topBanner = document.querySelector('.top-banner');
-    const siteHeader = document.querySelector('.site-header');
+// ========== SCROLL BEHAVIOR ==========
+const topBanner = document.querySelector('.top-banner');
+const siteHeader = document.querySelector('.site-header');
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            // Nascondi banner e rendi header fisso
+    // Solo su desktop (larghezza > 768px)
+    if (window.innerWidth > 768) {
+        if (scrollTop > 50) {
+            // Nascondi banner completamente
             topBanner.style.transform = 'translateY(-100%)';
             siteHeader.classList.add('fixed');
         } else {
-            // Mostra banner e rimuovi header fisso
+            // Mostra banner
             topBanner.style.transform = 'translateY(0)';
             siteHeader.classList.remove('fixed');
         }
-    });
+    }
+});
 
     // ========== SMOOTH SCROLLING PER LINK INTERNI ==========
     const internalLinks = document.querySelectorAll('a[href^="#"]');
