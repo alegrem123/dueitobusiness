@@ -1522,22 +1522,4 @@ img {
     .container {
         max-width: 1600px; /* Per schermi 4K */
     }
-}/* Migliora l'hero su schermi grandi */
-@media (min-width: 1400px) {
-    .hero h1 {
-        font-size: 4rem; /* Aumenta da 3.5rem a 4rem */
-    }
-    
-    .hero-description {
-        font-size: 1.4rem; /* Aumenta da 1.2rem a 1.4rem */
-    }
-    
-    .hero-buttons {
-        gap: 30px; /* Aumenta lo spazio tra i bottoni */
-    }
-    
-    .btn {
-        padding: 18px 35px; /* Aumenta il padding dei bottoni */
-        font-size: 18px; /* Aumenta la dimensione del font */
-    }
 }
