@@ -1353,3 +1353,79 @@ img {
 .footer-links a[target="_blank"]:hover:after {
     opacity: 1;
 }
+/* Privacy Consent Checkbox */
+.privacy-consent {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.privacy-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+.privacy-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.privacy-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.privacy-checkbox input[type="checkbox"]:checked + .checkmark:after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.privacy-checkbox:hover .checkmark {
+    border-color: var(--color-secondary);
+}
+
+.privacy-text {
+    flex: 1;
+}
+
+.privacy-text a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin: 0 4px;
+}
+
+.privacy-text a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Stile per checkbox non selezionata */
+.privacy-checkbox input[type="checkbox"]:invalid + .checkmark {
+    border-color: #e53e3e;
+}
+
+.privacy-checkbox input[type="checkbox"]:invalid ~ .privacy-text {
+    color: #e53e3e;
+}

@@ -150,7 +150,11 @@ const translations = {
         'error-phone-invalid': 'Inserisci un numero di telefono valido',
         'error-email-required': 'L\'email è obbligatoria',
         'error-email-invalid': 'Inserisci un indirizzo email valido',
-        'error-sector-required': 'Seleziona un settore'
+        'error-sector-required': 'Seleziona un settore',
+        'privacy-consent-start': 'Con l\'invio del form dichiaro di aver letto la',
+        'privacy-policy-link': 'Privacy Policy',
+        'privacy-consent-end': 'e autorizzo il trattamento dei miei dati personali per rispondere alla mia richiesta.',
+        'error-privacy-required': 'È necessario accettare la Privacy Policy per inviare il form'
     },
     en: {
         'hero-title': 'Strategic Consulting for Organic Growth',
@@ -227,7 +231,11 @@ const translations = {
         'error-phone-invalid': 'Please enter a valid phone number',
         'error-email-required': 'Email is required',
         'error-email-invalid': 'Please enter a valid email address',
-        'error-sector-required': 'Please select a sector'
+        'error-sector-required': 'Please select a sector',
+        'privacy-consent-start': 'By submitting this form, I declare that I have read the',
+        'privacy-policy-link': 'Privacy Policy',
+        'privacy-consent-end': 'and authorize the processing of my personal data to respond to my request.',
+        'error-privacy-required': 'You must accept the Privacy Policy to submit the form'
     }
 };
     
@@ -475,24 +483,7 @@ if (contactForm) {
         // Il form verrà inviato automaticamente a thanks.html
     });
 }
-    // Validazione per il campo telefono (formattazione automatica)
-    if (formFields.telefono) {
-        formFields.telefono.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, ''); // Rimuovi caratteri non numerici
-             // Formatta il numero italiano
-            if (value.length > 0) {
-                if (value.startsWith('39')) {
-                    value = '+' + value;
-                } else if (value.startsWith('3')) {
-                    value = '+39' + value;
-                } else if (value.length >= 10) {
-                    value = '+39' + value;
-                }
-            }
-            
-            e.target.value = value;
-        });
-    }
+
     
     // ========== HERO SLIDER ==========
     const heroA = document.querySelector('.hero-bg');
