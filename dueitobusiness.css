@@ -215,7 +215,7 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 100 !important;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: lowercase;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
@@ -728,11 +728,13 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
+    font-size: 0.9rem;
 }
 
 .footer-col h3 {
     margin: 0 0 1rem;
     font-size: 1.2rem;
+    font-weight: 250;
     color: white;
 }
 
@@ -740,6 +742,7 @@ img {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 0.9rem;
 }
 
 .footer-list li {
@@ -762,6 +765,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.9rem;
 }
 
 .footer-links {
@@ -1336,4 +1340,16 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Link esterni nel footer */
+.footer-links a[target="_blank"]:after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-left: 4px;
+}
+
+.footer-links a[target="_blank"]:hover:after {
+    opacity: 1;
 }
