@@ -148,7 +148,7 @@ body {
     right: 0;
     z-index: 1000;
     background: rgba(44, 90, 160, 0.15); /* Riduci l'opacità del background */
-    backdrop-filter: blur(25px) saturate(180%); /* Aumenta il blur e saturazione */
+    backdrop-filter: blur(5px) saturate(180%); /* Aumenta il blur e saturazione */
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -165,7 +165,7 @@ body {
     right: 0;
     z-index: 1001;
     background: rgba(30, 58, 95, 0.1); /* Ancora più trasparente */
-    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    backdrop-filter: blur(10px) saturate(200%) brightness(1.1);
     -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
@@ -197,7 +197,8 @@ body {
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 1px;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
+    padding-left: 10px;
 }
 
 .logo-icon {
@@ -224,7 +225,7 @@ body {
 }
 
 .nav-list a {
-    color: white;
+    color: gray;
     text-decoration: none;
     font-weight: 100 !important;
     font-size: 15px;
@@ -238,7 +239,7 @@ body {
 }
 
 .separator {
-    color: white;
+    color: gray;
     font-size: 12px;
     opacity: 0.7;
 }
