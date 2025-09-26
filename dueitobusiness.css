@@ -1186,15 +1186,30 @@ img {
     .galleria-header h2 {
         text-align: center;
     }
-    
+    .contact-form-centered {
+        max-width: calc(100% - 20px); /* Riduci la max-width */
+        margin: 0 10px; /* Aggiungi margini laterali */
+    }
     .contact-form-centered .form-grid {
         grid-template-columns: 1fr;
+        gap: 1rem; /* Riduci il gap */
     }
     
     .contact-form-centered .form {
-        padding: 2rem;
+        padding: 1.5rem; /* Riduci il padding da 2rem */
+        width: 100%;
+        box-sizing: border-box;
     }
-    
+    .contact-form-centered .field {
+        width: 100%;
+    }
+    .contact-form-centered .field input,
+    .contact-form-centered .field textarea,
+    .contact-form-centered .field select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
     .footer-columns {
         grid-template-columns: 1fr;
     }
