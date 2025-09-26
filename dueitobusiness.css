@@ -549,6 +549,7 @@ img {
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .card:hover {
@@ -578,6 +579,8 @@ img {
     margin-right: auto;
 }
 
+
+/*sector card con container visible
 .sector-card {
     background: white;
     padding: 2rem;
@@ -586,8 +589,17 @@ img {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 1px solid #f0f0f0;
-}
+}*/
 
+/*sector card senza container*/
+.sector-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+}
 .sector-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -1524,4 +1536,18 @@ img {
     .container {
         max-width: 1600px; /* Per schermi 4K */
     }
+}
+/* Card servizi cliccabili */
+.service-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:active {
+    transform: translateY(-5px);
 }
