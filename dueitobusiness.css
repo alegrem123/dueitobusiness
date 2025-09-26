@@ -143,26 +143,36 @@ body {
 /* Header */
 .site-header {
     position: fixed;
-    top: 42px; /* Ridotto da 50px a 42px per eliminare lo spazio */
+    top: 42px;
     left: 0;
     right: 0;
     z-index: 1000;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(44, 90, 160, 0.15); /* Riduci l'opacità del background */
+    backdrop-filter: blur(25px) saturate(180%); /* Aumenta il blur e saturazione */
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .site-header.fixed {
     position: fixed;
-    top: 0; /* Quando il banner scompare, navbar va in alto */
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1001;
-    box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+    background: rgba(30, 58, 95, 0.1); /* Ancora più trasparente */
+    backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 }
-
 .container {
     width: 100%;
     max-width: 1200px;
