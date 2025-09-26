@@ -775,3 +775,33 @@ window.addEventListener('scroll', handleScrollAnimation);
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(handleScrollAnimation, 100);
 });
+function highlightActiveSection() {
+    const sections = document.querySelectorAll('.section, .hero');
+    const navLinks = document.querySelectorAll('.nav-list a');
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const scrollPosition = window.scrollY;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + currentSection) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightActiveSection);
+
+document.addEventListener('DOMContentLoaded', highlightActiveSection);

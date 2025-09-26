@@ -231,13 +231,13 @@ body {
 
 
 .nav-list a {
-    color: rgb(149, 143, 143); /* Testo scuro per navbar bianca */
+    color: rgb(149, 143, 143);
     text-decoration: none;
     font-weight: 300 !important;
     font-size: 15px;
     text-transform: lowercase;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .nav-list a:hover {
@@ -300,7 +300,6 @@ body {
 }
 
 .hero-content {
-    position: relative;
     z-index: 2;
     max-width: 1200px; /* Stessa max-width del container */
     width: 100%;
@@ -1522,4 +1521,12 @@ img {
     .contact-form-centered .form-grid {
         gap: 2.5rem;
     }
+}
+.nav-list a.active {
+    color: #1e3a5f !important;
+    font-weight: 500 !important;
+}
+
+.nav-list a.active:hover {
+    color: #1e3a5f !important; /* Mantieni lo stesso colore anche in hover */
 }
