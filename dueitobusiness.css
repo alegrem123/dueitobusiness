@@ -233,7 +233,7 @@ body {
 .nav-list a {
     color: rgb(149, 143, 143);
     text-decoration: none;
-    font-weight: 300 !important;
+    font-weight: 200 !important;
     font-size: 15px;
     text-transform: lowercase;
     letter-spacing: 0.5px;
