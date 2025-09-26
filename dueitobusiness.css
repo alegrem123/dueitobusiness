@@ -1485,3 +1485,39 @@ img {
 .service-card:active {
     transform: translateY(-5px);
 }
+
+@media (min-width: 1400px) {
+    .contact-form-centered {
+        max-width: 800px; /* Aumenta da 600px a 800px */
+    }
+    
+    .contact-form-centered .form {
+        padding: 3rem; /* Aumenta il padding */
+    }
+    
+    .contact-form-centered .form-grid {
+        gap: 2rem; /* Aumenta lo spazio tra i campi */
+    }
+    
+    .contact-form-centered .field input,
+    .contact-form-centered .field textarea,
+    .contact-form-centered .field select {
+        padding: 16px 20px; /* Aumenta il padding dei campi */
+        font-size: 18px; /* Aumenta la dimensione del font */
+    }
+}
+
+/* Per schermi molto grandi (4K) */
+@media (min-width: 1920px) {
+    .contact-form-centered {
+        max-width: 900px;
+    }
+    
+    .contact-form-centered .form {
+        padding: 4rem;
+    }
+    
+    .contact-form-centered .form-grid {
+        gap: 2.5rem;
+    }
+}
