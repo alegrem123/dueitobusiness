@@ -309,6 +309,7 @@ body {
     gap: 30px;
 }
 .hero-text {
+    max-width: 600px;
     font-weight: 300px;
 }
 
@@ -1029,7 +1030,7 @@ img {
     }
     
     .hero {
-        margin-top: 70px;
+        margin-top: 45px;
         height: 100vh;
     }
     
