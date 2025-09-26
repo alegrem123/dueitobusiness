@@ -666,6 +666,8 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+    width: 100%; /* Aggiungi questa riga */
+    box-sizing: border-box; /* Aggiungi questa riga */
 }
 
 .contact-form-centered .field {
