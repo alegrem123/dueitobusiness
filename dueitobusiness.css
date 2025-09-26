@@ -180,7 +180,7 @@ body {
     padding: 10px 20px;
     width: 100%;
     color: white;
-    height: 40px;
+    height: 45px;
 }
 
 /* Logo a sinistra */
@@ -659,6 +659,7 @@ img {
     border-radius: var(--radius);
     box-shadow: var(--shadow-lg);
     border: 1px solid #e2e8f0;
+    overflow: hidden; /* Aggiungi questa riga */
 }
 
 .contact-form-centered .form-grid {
