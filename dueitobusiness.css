@@ -178,7 +178,7 @@ body {
     
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1px 20px;
     width: 100%;
     color: white;
     height: 45px;
@@ -203,7 +203,7 @@ body {
 /* Menu a destra */
 .nav-list {
     position: absolute;
-    right: 10px; /* Stesso padding del container */
+    right: 26px; /* Stesso padding del container */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -246,7 +246,7 @@ body {
 }
 
 .separator {
-    color: #1e3a5f; /* Separatori scuri */
+    color: rgb(149, 143, 143);
     font-size: 12px;
     opacity: 0.7;
 }
@@ -1046,8 +1046,7 @@ img {
     .hero h1 {
         font-size: 2.5rem;
         text-align: center;
-        font-family: 'Aptos', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 1.5rem;
+        font-weight: 100 !important; /* Correggi questo */
     }
     
     .hero-description {
@@ -1249,8 +1248,7 @@ img {
     
     .hero h1 {
         font-size: 2rem;
-        font-family: 'Aptos', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 1.5rem;
+        font-weight: 100 !important; /* Correggi questo */
     }
     
     .hero-description {
