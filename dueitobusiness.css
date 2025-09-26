@@ -301,7 +301,6 @@ body {
 
 .hero-content {
     z-index: 2;
-    max-width: 1200px; /* Stessa max-width del container */
     width: 100%;
     align-items: flex-start; /* Aggiungi questa riga per allineare tutto a sinistra */
     padding: 0 40px; /* Stesso padding del container */
