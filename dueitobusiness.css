@@ -233,8 +233,8 @@ body {
 .nav-list a {
     color: rgb(149, 143, 143);
     text-decoration: none;
-    font-weight: 200 !important;
-    font-size: 15px;
+    font-weight: 100 !important;
+    font-size: 17px;
     text-transform: lowercase;
     letter-spacing: 0.5px;
     transition: all 0.4s ease;
@@ -1145,8 +1145,9 @@ img {
     }
     
     .galleria-container {
-        width: auto;
-        margin-left: 0;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        border-radius: 0;
     }
     
     .galleria-slide {
@@ -1159,7 +1160,7 @@ img {
         width: 100%;
         object-fit: cover;
         object-position: center;
-        border-radius: var(--radius);
+        border-radius: 0;
     }
     
     .galleria-prev {

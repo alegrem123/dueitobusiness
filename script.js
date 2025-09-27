@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'footer-services': 'Servizi',
             'footer-contacts': 'Contatti',
             'footer-consultation': 'Consulenza su appuntamento',
-            'footer-copyright': '© 2025 DUE I TO BUSINESS S.R.L.S. | P.IVA 12345678901',
+            'footer-copyright': '© 2025 DUE I TO BUSINESS S.R.L.S. | P.IVA 10792930967',
             'footer-privacy': 'Privacy Policy',
             'footer-cookie': 'Cookie Policy',
             'error-name-required': 'Il nome è obbligatorio',
