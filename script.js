@@ -805,3 +805,52 @@ function highlightActiveSection() {
 window.addEventListener('scroll', highlightActiveSection);
 
 document.addEventListener('DOMContentLoaded', highlightActiveSection);
+// ========== GALLERIA FULLSCREEN ==========
+const fullscreenButtons = document.querySelectorAll('.galleria-fullscreen');
+const galleriaImages = document.querySelectorAll('.galleria-slide img');
+
+fullscreenButtons.forEach((button, index) => {
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openFullscreen(galleriaImages[index].src);
+    });
+});
+
+function openFullscreen(imageSrc) {
+    // Crea modal fullscreen
+    const modal = document.createElement('div');
+    modal.className = 'fullscreen-modal';
+    modal.innerHTML = `
+        <div class="fullscreen-content">
+            <button class="fullscreen-close" aria-label="Chiudi">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="${imageSrc}" alt="Immagine ingrandita" class="fullscreen-image">
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Chiudi modal
+    const closeBtn = modal.querySelector('.fullscreen-close');
+    closeBtn.addEventListener('click', closeFullscreen);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeFullscreen();
+        }
+    });
+    
+    // Chiudi con ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeFullscreen();
+        }
+    });
+    
+    function closeFullscreen() {
+        document.body.removeChild(modal);
+        document.body.style.overflow = '';
+    }
+}
