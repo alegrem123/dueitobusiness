@@ -1186,6 +1186,7 @@ img {
     
     .galleria-header {
         text-align: center;
+        padding-left: 0;
     }
     
     .galleria-header h2 {
