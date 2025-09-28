@@ -102,6 +102,11 @@ body {
     color: #1e3a5f;
     text-decoration: underline;
 }
+.phone-footer, .email-footer {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 
 /* Selettore lingua desktop */
 .language-switcher {
