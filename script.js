@@ -12,33 +12,41 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll('.nav-list a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            // Chiudi il menu mobile quando si clicca su un link
             if (nav.classList.contains('show')) {
                 nav.classList.remove('show');
             }
         });
     });
 
-    // ========== SCROLL BEHAVIOR ==========
-    const topBanner = document.querySelector('.top-banner');
-    const siteHeader = document.querySelector('.site-header');
+// ========== SCROLL BEHAVIOR ==========
+const topBanner = document.querySelector('.top-banner');
+const siteHeader = document.querySelector('.site-header');
 
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Solo su desktop (larghezza > 768px)
-        if (window.innerWidth > 768) {
-            if (scrollTop > 50) {
-                // Nascondi banner completamente
-                topBanner.style.transform = 'translateY(-100%)';
-                siteHeader.classList.add('fixed');
-            } else {
-                // Mostra banner
-                topBanner.style.transform = 'translateY(0)';
-                siteHeader.classList.remove('fixed');
-            }
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Solo su desktop (larghezza > 768px)
+    if (window.innerWidth > 768) {
+        // Gestione del banner
+        if (scrollTop > 50) {
+            topBanner.style.transform = 'translateY(-100%)';
+            siteHeader.classList.add('fixed');
+        } else {
+            topBanner.style.transform = 'translateY(0)';
+            siteHeader.classList.remove('fixed');
         }
-    });
+        
+        // Gestione trasparenza navbar (SOLO DESKTOP)
+        if (scrollTop > 10) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+    } else {
+        // Su mobile, navbar sempre opaca
+        siteHeader.classList.add('scrolled');
+    }
+});
 
     // ========== SMOOTH SCROLLING PER LINK INTERNI ==========
     const internalLinks = document.querySelectorAll('a[href^="#"]');
@@ -46,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Se è un link interno (inizia con #)
             if (href.startsWith('#')) {
                 e.preventDefault();
                 
@@ -54,17 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
-                    // Calcola la posizione considerando l'header fisso
                     const headerHeight = siteHeader.offsetHeight;
                     const targetPosition = targetElement.offsetTop - headerHeight;
                     
-                    // Smooth scroll
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
                     
-                    // Chiudi il menu mobile se è aperto
                     if (nav && nav.classList.contains('show')) {
                         nav.classList.remove('show');
                     }
@@ -111,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // ========== TRADUZIONI ==========
+    let currentLanguage = 'it'; // ← MANCA QUESTA RIGA!
     const translations = {
         it: {
             'hero-title': 'Consulenza Strategica per la Crescita Organica',
@@ -574,7 +579,7 @@ document.addEventListener("DOMContentLoaded", function() {
     initHero();
     setInterval(crossfadeHero, 4000);
     
-    // ========== BOTTONI HERO ==========
+ // ========== BOTTONI HERO ==========
     const appointmentBtn = document.querySelector('.btn-primary');
     const servicesBtn = document.querySelector('.btn-secondary');
     
@@ -611,13 +616,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     // Click hero per cambio imagine manuale
-    const heroSection = document.querySelector('.hero');
+     const heroSection = document.querySelector('.hero');
     heroSection.addEventListener('click', function(e) {
         if (!e.target.classList.contains('btn') && !e.target.closest('.mobile-language-switcher')) {
             crossfadeHero();
         }
     });
-}); 
+});
 
 // ========== GALLERIA SLIDER ==========
 const galleriaTrack = document.querySelector('.galleria-track');
@@ -805,52 +810,4 @@ function highlightActiveSection() {
 window.addEventListener('scroll', highlightActiveSection);
 
 document.addEventListener('DOMContentLoaded', highlightActiveSection);
-// ========== GALLERIA FULLSCREEN ==========
-const fullscreenButtons = document.querySelectorAll('.galleria-fullscreen');
-const galleriaImages = document.querySelectorAll('.galleria-slide img');
 
-fullscreenButtons.forEach((button, index) => {
-    button.addEventListener('click', function(e) {
-        e.stopPropagation();
-        openFullscreen(galleriaImages[index].src);
-    });
-});
-
-function openFullscreen(imageSrc) {
-    // Crea modal fullscreen
-    const modal = document.createElement('div');
-    modal.className = 'fullscreen-modal';
-    modal.innerHTML = `
-        <div class="fullscreen-content">
-            <button class="fullscreen-close" aria-label="Chiudi">
-                <i class="fas fa-times"></i>
-            </button>
-            <img src="${imageSrc}" alt="Immagine ingrandita" class="fullscreen-image">
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden';
-    
-    // Chiudi modal
-    const closeBtn = modal.querySelector('.fullscreen-close');
-    closeBtn.addEventListener('click', closeFullscreen);
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeFullscreen();
-        }
-    });
-    
-    // Chiudi con ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeFullscreen();
-        }
-    });
-    
-    function closeFullscreen() {
-        document.body.removeChild(modal);
-        document.body.style.overflow = '';
-    }
-}
