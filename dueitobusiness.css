@@ -992,6 +992,12 @@ img {
     color: white;
     text-align: center;
 }
+.section-break-gray{
+    padding: 80px 0;
+    background: gray;
+    color: white;
+    text-align: center;
+}
 
 .break-content {
     max-width: 600px;
@@ -1415,7 +1421,7 @@ img {
     }
 }
 .logo-image {
-    height: 50px;
+    height: 30px;
     width: auto;
     object-fit: contain;
     background: transparent;
@@ -1637,4 +1643,566 @@ img {
     .site-header:not(.scrolled) .separator {
         color: rgb(149, 143, 143) !important;
     }
+}
+.btn-accent {
+    background: #ffa500;
+    color: #ffffff;
+    border: 2px solid #ffa500;
+}
+
+.btn-accent:hover {
+    background: #ff8c00;
+    border-color: #ff8c00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+.hero-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.hero-list li {
+    color: #d1e7f7;
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.hero-list li:before {
+    content: "•";
+    color: #d1e7f7;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+@media (max-width: 768px) {
+    .hero-list li:before {
+        display: none;
+    }
+}
+
+
+/* Stili per la lista nella sezione break */
+.break-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.break-item {
+    color: white;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+/* Puntino tondo con animazione di disegno */
+.break-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #d1e7f7;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Animazione quando l'elemento è visibile */
+.break-item.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.break-item.animate:before {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* Delay progressivo per ogni elemento */
+.break-item:nth-child(1).animate:before { transition-delay: 0.2s; }
+.break-item:nth-child(2).animate:before { transition-delay: 0.4s; }
+.break-item:nth-child(3).animate:before { transition-delay: 0.6s; }
+.break-item:nth-child(4).animate:before { transition-delay: 0.8s; }
+
+.break-item:nth-child(1).animate { transition-delay: 0.1s; }
+.break-item:nth-child(2).animate { transition-delay: 0.3s; }
+.break-item:nth-child(3).animate { transition-delay: 0.5s; }
+.break-item:nth-child(4).animate { transition-delay: 0.7s; }
+
+/* Approfondimenti Servizi */
+.services-details {
+    margin-top: 4rem;
+}
+
+.service-detail {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+/* Override specifico per Strategic Review */
+/* Override specifico per Strategic Review */
+#strategic-review.service-detail {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%) !important;
+    border: 1px solid #bbdefb !important;
+}
+.service-detail-content h3 {
+    color: #1e3a5f;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.service-detail-content h4 {
+    color: #2c5aa0;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.service-detail-grid {
+    display: block; /* Cambia da grid a block per centrare */
+    margin-top: 2rem;
+    max-width: 800px; /* Limita la larghezza */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-detail-text h5 {
+    color: #1e3a5f;
+    font-size: 1.1rem;
+    margin: 1.5rem 0 1rem;
+    font-weight: 600;
+}
+
+.service-detail-text ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Solo la lista a sinistra */
+    max-width: 600px;
+    margin: 0 auto; /* Centra la lista */
+}
+
+.service-detail-text li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4a5568;
+}
+
+.service-detail-text li:before {
+    content: "•";
+    color: #2c5aa0;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .service-detail {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .service-detail-content h3 {
+        font-size: 1.5rem;
+    }
+}
+/* Lista con freccettine personalizzate */
+.service-detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.service-detail-list li {
+    padding: 0.8rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Freccettina personalizzata */
+.service-detail-list li:before {
+    content: "→";
+    color: #2c5aa0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect per le freccettine */
+.service-detail-list li:hover:before {
+    color: #1e3a5f;
+    transform: translateX(5px);
+}
+
+/* Alternativa con freccettina più elaborata */
+.service-detail-list.arrow-style li:before {
+    content: "▶";
+    color: #2c5aa0;
+    font-size: 0.9rem;
+    top: 0.9rem;
+}
+
+/* Alternativa con checkmark stilizzato */
+.service-detail-list.check-style li:before {
+    content: "✓";
+    color: #2c5aa0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    top: 0.8rem;
+    background: rgba(44, 90, 160, 0.1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -2px;
+}
+
+/* Strategic Review Layout - AGGIORNAMENTO */
+.strategic-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.strategic-section {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.strategic-section h5 {
+    color: #1e3a5f;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.strategic-section .service-detail-list {
+    text-align: center; /* Centra le frasi */
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.strategic-section .service-detail-list li {
+    padding: 0.5rem 0;
+    color: #4a5568;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Impedisce di andare a capo */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Aggiunge ... se il testo è troppo lungo */
+    text-align: center; /* Centra il testo */
+}
+
+/* Rimuovi le frecce per questa sezione */
+.strategic-section .service-detail-list li:before {
+    display: none;
+}
+
+/* Bottone "Scopri di più" */
+.strategic-section .discover-btn {
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1.5rem 0 0.5rem 0;
+    display: inline-block;
+}
+
+.strategic-section .discover-btn:hover {
+    background: #1e3a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
+}
+
+/* Responsive per Strategic Review */
+@media (max-width: 768px) {
+    .strategic-sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .strategic-section {
+        padding: 1.5rem;
+    }
+    
+    .strategic-section .service-detail-list li {
+        white-space: normal; /* Su mobile permette di andare a capo */
+    }
+}
+/* Approfondimenti Strategic Review - VERSIONE CORRETTA */
+#strategic-review-a,
+#strategic-review-b,
+#strategic-review-c {
+    background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+    border: 1px solid #e0e0e0;
+    margin-top: 2rem;
+}
+
+#strategic-review-a .service-detail-content h3,
+#strategic-review-b .service-detail-content h3,
+#strategic-review-c .service-detail-content h3 {
+    color: #1e3a5f;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+#strategic-review-a .service-detail-content h4,
+#strategic-review-b .service-detail-content h4,
+#strategic-review-c .service-detail-content h4 {
+    color: #2c5aa0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+/* Stili per le immagini negli approfondimenti */
+/* Stili per le immagini negli approfondimenti - VERSIONE SMART */
+.detail-image {
+    margin: 2.5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.detail-image img {
+    width: 100%;
+    max-width: 700px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
+}
+
+.detail-image img:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    border-color: #2c5aa0;
+}
+
+/* Overlay effect per le immagini */
+.detail-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 660px;
+    height: 350px;
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.1) 0%, rgba(30, 58, 95, 0.1) 100%);
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.detail-image:hover::before {
+    opacity: 1;
+}
+
+/* Stili per il testo degli approfondimenti - VERSIONE FRIENDLY */
+.service-detail-text p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #4a5568;
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.service-detail-text p:first-of-type {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.service-detail-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Effetto di evidenziazione per il primo paragrafo */
+.service-detail-text p:first-of-type::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c5aa0;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+/* Responsive migliorato */
+@media (max-width: 768px) {
+    .detail-image img {
+        height: 250px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    .detail-image::before {
+        height: 250px;
+        border-radius: 12px;
+    }
+    
+    .service-detail-text p {
+        font-size: 1.05rem;
+        text-align: left;
+        line-height: 1.8;
+    }
+    
+    .service-detail-text p:first-of-type {
+        font-size: 1.1rem;
+    }
+    
+    .service-detail-text p:first-of-type::first-letter {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animazione di entrata per le immagini */
+.detail-image {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.detail-image:nth-child(1) { animation-delay: 0.2s; }
+.detail-image:nth-child(2) { animation-delay: 0.4s; }
+.detail-image:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Stili specifici per Partnership Logistica */
+#partnership-logistica .service-detail-content h4 {
+    color: #2c5aa0;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Evidenziazione per i concetti chiave */
+#partnership-logistica .service-detail-text p {
+    position: relative;
+}
+
+#partnership-logistica .service-detail-text p:first-of-type::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c5aa0;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+/* Stile per le immagini specifiche della logistica */
+#partnership-logistica .detail-image img {
+    border: 3px solid #2c5aa0;
+    box-shadow: 0 12px 40px rgba(44, 90, 160, 0.2);
+}
+
+#partnership-logistica .detail-image img:hover {
+    border-color: #1e3a5f;
+    box-shadow: 0 20px 60px rgba(44, 90, 160, 0.3);
+}
+/* Card dei servizi con colori di sfondo */
+.card.service-card:nth-child(1) {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border: 1px solid #bbdefb;
+}
+
+.card.service-card:nth-child(2) {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+    border: 1px solid #c8e6c9;
+}
+
+.card.service-card:nth-child(3) {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%) !important;
+    border: 1px solid #bbdefb !important;
+}
+
+.card.service-card:nth-child(4) {
+    background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+    border: 1px solid #ffcc02;
+}
+
+/* Approfondimenti con stesso colore di sfondo */
+#checkup-operativo {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border: 1px solid #bbdefb;
+}
+
+#sviluppo-organizzativo {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+    border: 1px solid #c8e6c9;
+}
+
+/* Strategic Review principale */
+#strategic-review {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%) !important;
+    border: 1px solid #bbdefb !important;
+}
+
+#partnership-logistica {
+    background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+    border: 1px solid #ffcc02;
+}
+
+
+/* IIC UAE CONNECTOR */
+#iic-uae-connector {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff176 100%);
+    border: 1px solid #ffd54f;
 }

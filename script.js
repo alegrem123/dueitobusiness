@@ -77,42 +77,47 @@ window.addEventListener('scroll', function() {
         });
     });
 
-    // ========== CARD SERVIZI CLICCABILI ==========
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('click', function() {
-            console.log('Card cliccata!'); // Debug
+    /// ========== CARD SERVIZI CLICCABILI ==========
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const serviceType = this.getAttribute('data-service');
+        let targetId;
+        
+        // Determina quale sezione di approfondimento aprire
+        switch(serviceType) {
+            case 'Check Up Operativo':
+                targetId = 'checkup-operativo';
+                break;
+            case 'HR Support & Mentoring':
+                targetId = 'sviluppo-organizzativo';
+                break;
+            case 'Review Strategica':
+                targetId = 'strategic-review';
+                break;
+            case 'Partnership Logistica':
+                targetId = 'partnership-logistica';
+                break;
+            default:
+                targetId = 'contatti'; // Fallback al form se non trova il servizio
+        }
+        
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
+            const targetPosition = targetSection.offsetTop - headerHeight;
             
-            // Scroll alla sezione contatti
-            const contattiSection = document.getElementById('contatti');
-            console.log('Sezione contatti trovata:', contattiSection); // Debug
-            
-            if (contattiSection) {
-                const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
-                const targetPosition = contattiSection.offsetTop - headerHeight;
-                
-                console.log('Scrolling a posizione:', targetPosition); // Debug
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Opzionale: evidenzia il campo settore dopo lo scroll
-                setTimeout(() => {
-                    const settoreField = document.getElementById('settore');
-                    if (settoreField) {
-                        settoreField.focus();
-                        settoreField.style.borderColor = '#2c5aa0';
-                        settoreField.style.boxShadow = '0 0 0 3px rgba(44, 90, 160, 0.1)';
-                    }
-                }, 1000);
-            } else {
-                console.error('Sezione contatti non trovata!');
-            }
-        });
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            console.error('Sezione non trovata:', targetId);
+        }
     });
+});
 
     // ========== TRADUZIONI ==========
     let currentLanguage = 'it'; // ← MANCA QUESTA RIGA!
@@ -531,13 +536,12 @@ window.addEventListener('scroll', function() {
     const heroB = document.querySelector('.hero-bg.next');
     
     const heroSlides = [
-        'https://images.unsplash.com/photo-1638262052640-82e94d64664a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29uc3VsdGF0aW9ufGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1726533765829-67f0313ab064?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         'https://images.unsplash.com/photo-1713857600361-146f62e4d90e?q=80&w=2040&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         'https://images.unsplash.com/photo-1686061592689-312bbfb5c055?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNhbGVzJTIwbW9uaXRvcmluZ3xlbnwwfHwwfHx8MA%3D%3D',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
-        'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80',
+        'https://images.unsplash.com/photo-1600466888907-013366be7093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ];
     
     // Preload immagini
@@ -811,3 +815,121 @@ window.addEventListener('scroll', highlightActiveSection);
 
 document.addEventListener('DOMContentLoaded', highlightActiveSection);
 
+// Animazione lista break al scroll
+function animateBreakList() {
+    const breakSection = document.querySelector('.section-break-gray');
+    const breakItems = document.querySelectorAll('.break-item');
+    
+    if (!breakSection || !breakItems.length) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Aggiungi la classe animate a tutti gli elementi
+                breakItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, index * 200); // Delay di 200ms tra ogni elemento
+                });
+                
+                // Disconnetti l'observer dopo la prima animazione
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.3, // Trigger quando il 30% della sezione è visibile
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    observer.observe(breakSection);
+}
+
+// Inizializza l'animazione quando il DOM è caricato
+document.addEventListener('DOMContentLoaded', animateBreakList);
+
+// ========== BOTTONI "SCOPRI DI PIÙ" - COLLEGAMENTI SPECIFICI ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const discoverBtns = document.querySelectorAll('.discover-btn');
+    
+    const targetSections = [
+        'strategic-review-a',  // Sezione A -> Approfondimento A
+        'strategic-review-b',  // Sezione B -> Approfondimento B  
+        'strategic-review-c'   // Sezione C -> Approfondimento C
+    ];
+    
+    discoverBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+            const targetSection = targetSections[index];
+            const targetElement = document.getElementById(targetSection);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.site-header') ? 
+                    document.querySelector('.site-header').offsetHeight + 42 : 100;
+                
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+// ========== BOTTONI "SCOPRI DI PIÙ" - COLLEGAMENTI SPECIFICI ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const discoverBtns = document.querySelectorAll('.discover-btn');
+    
+    const targetSections = [
+        'strategic-review-a',  // Sezione A -> Approfondimento A
+        'strategic-review-b',  // Sezione B -> Approfondimento B  
+        'strategic-review-c'   // Sezione C -> Approfondimento C
+    ];
+    
+    discoverBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+            const targetSection = targetSections[index];
+            const targetElement = document.getElementById(targetSection);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.site-header') ? 
+                    document.querySelector('.site-header').offsetHeight + 42 : 100;
+                
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// ========== BOTTONE IIC UAE CONNECTOR ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleziona il bottone giallo dell'hero
+    const uaeBtn = document.querySelector('.btn-accent');
+    
+    if (uaeBtn) {
+        uaeBtn.addEventListener('click', function() {
+            const targetElement = document.getElementById('iic-uae-connector');
+            
+            if (targetElement) {
+                // Calcola la posizione considerando l'header fisso
+                const headerHeight = document.querySelector('.site-header') ? 
+                    document.querySelector('.site-header').offsetHeight + 42 : 100;
+                
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                // Scroll smooth alla sezione
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('Sezione IIC UAE CONNECTOR non trovata');
+            }
+        });
+    }
+});
