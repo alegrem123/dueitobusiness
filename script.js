@@ -18,16 +18,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-// ========== SCROLL BEHAVIOR ==========
+// ========== SCROLL BEHAVIOR CON SFOCATURA PROGRESSIVA ==========
 const topBanner = document.querySelector('.top-banner');
 const siteHeader = document.querySelector('.site-header');
+const heroSection1 = document.querySelector('.hero');
+const heroBg = document.querySelector('.hero-bg.is-visible');
 
 window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     // Solo su desktop (larghezza > 768px)
     if (window.innerWidth > 768) {
-        // Gestione del banner
+        // Calcola l'altezza dell'hero (escludendo la navbar)
+        const heroHeight = heroSection1 ? heroSection1.offsetHeight - siteHeader.offsetHeight : 0;
+        
+        // Gestione del banner superiore
         if (scrollTop > 50) {
             topBanner.style.transform = 'translateY(-100%)';
             siteHeader.classList.add('fixed');
@@ -36,15 +41,69 @@ window.addEventListener('scroll', function() {
             siteHeader.classList.remove('fixed');
         }
         
-        // Gestione trasparenza navbar (SOLO DESKTOP)
-        if (scrollTop > 10) {
+        // Gestione trasparenza navbar: trasparente solo dentro l'hero
+        if (scrollTop > heroHeight) {
             siteHeader.classList.add('scrolled');
         } else {
             siteHeader.classList.remove('scrolled');
         }
+        
+        // Gestione sfocatura progressiva dell'hero
+const heroSection = document.querySelector('.hero');
+const heroContent = document.querySelector('.hero-content');
+
+if (heroBg && scrollTop <= heroHeight) {
+    // Calcola quanto siamo scesi nell'hero (0 = inizio, 1 = fine)
+    const scrollProgress = Math.min(scrollTop / heroHeight, 1);
+    
+    // Applica sfocatura progressiva (da 0px a 8px di blur)
+    const blurAmount = scrollProgress * 8;
+    // Applica oscuramento progressivo per migliorare la leggibilità
+    const brightnessAmount = 1 - (scrollProgress * 0.2);
+    
+    heroBg.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
+    
+    // Sfocatura progressiva del contenuto
+if (scrollProgress > 0.01) { // Inizia a sfocare dopo il 10% dello scroll
+    const contentBlur = (scrollProgress - 0.1) * 5; // Da 0 a 4.5px di blur
+    const contentOpacity = 1 - (scrollProgress - 0.1) * 0.6; // Da 1 a 0.46 di opacità
+        
+        if (heroContent) {
+            heroContent.style.filter = `blur(${contentBlur}px)`;
+            heroContent.style.opacity = contentOpacity;
+        }
+    } else {
+        // Rimuovi la sfocatura del contenuto
+    if (heroContent) {
+        heroContent.style.filter = 'none';
+        heroContent.style.opacity = '1';
+    }
+    }
+    
+} else if (heroBg && scrollTop > heroHeight) {
+    // Massimo sfocatura quando si esce completamente dall'hero
+    heroBg.style.filter = 'blur(8px) brightness(0.8)';
+    
+    // Sfocatura massima del contenuto
+    if (heroContent) {
+        heroContent.style.filter = 'blur(4px)';
+        heroContent.style.opacity = '0.6';
+    }
+} else {
+    // Reset quando si torna in cima
+    if (heroContent) {
+        heroContent.style.filter = 'none';
+        heroContent.style.opacity = '1';
+    }
+}
+        
     } else {
         // Su mobile, navbar sempre opaca
         siteHeader.classList.add('scrolled');
+        // Su mobile, rimuovi la sfocatura per performance
+        if (heroBg) {
+            heroBg.style.filter = 'none';
+        }
     }
 });
 

@@ -2363,3 +2363,205 @@ img {
     }
     
 }
+/* Navbar trasparente quando non ha la classe scrolled */
+.site-header:not(.scrolled) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+}
+
+/* Colori del testo quando trasparente */
+.site-header:not(.scrolled) .nav-list a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.site-header:not(.scrolled) .nav-list a:hover {
+    color: white !important;
+}
+
+.site-header:not(.scrolled) .separator {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.site-header:not(.scrolled) .brand {
+    color: white !important;
+}
+
+.site-header:not(.scrolled) .nav-toggle {
+    color: white !important;
+}
+
+/* Navbar opaca quando scrolled */
+.site-header.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Colori del testo quando opaco */
+.site-header.scrolled .nav-list a {
+    color: rgb(149, 143, 143) !important;
+}
+
+.site-header.scrolled .brand {
+    color: #1e3a5f !important;
+}
+
+.site-header.scrolled .nav-toggle {
+    color: #1e3a5f !important;
+}
+
+/* Navbar fissa (quando il banner superiore scompare) */
+.site-header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+}
+
+/* Forza la navbar opaca su mobile */
+@media (max-width: 768px) {
+    .site-header {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .site-header .nav-toggle {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header .brand {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header .nav-list a {
+        color: rgb(149, 143, 143) !important;
+    }
+    
+    .site-header .separator {
+        color: rgb(149, 143, 143) !important;
+    }
+}
+/* Transizione fluida per l'effetto di sfocatura */
+.hero-bg {
+    transition: filter 0.3s ease-out;
+}
+
+/* Assicurati che l'overlay sia sempre visibile */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 58, 95, 0.3); /* Riduci l'opacità iniziale */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Migliora la leggibilità del testo nell'hero durante lo scroll */
+.hero-content {
+    z-index: 2;
+    position: relative;
+}
+
+/* Opzionale: aggiungi un leggero effetto di parallax al contenuto */
+.hero-content {
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+/* Su mobile, navbar sempre opaca - FORZA TUTTO */
+@media (max-width: 768px) {
+    .site-header {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .site-header .nav-toggle {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header .brand {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header .nav-list a {
+        color: rgb(149, 143, 143) !important;
+    }
+    
+    .site-header .separator {
+        color: rgb(149, 143, 143) !important;
+    }
+    
+    /* Forza anche quando non ha la classe scrolled */
+    .site-header:not(.scrolled) .nav-toggle {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header:not(.scrolled) .brand {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header:not(.scrolled) .nav-list a {
+        color: rgb(149, 143, 143) !important;
+    }
+    
+    .site-header:not(.scrolled) .separator {
+        color: rgb(149, 143, 143) !important;
+    }
+    
+    /* Menu mobile quando è aperto */
+    .nav-list.show {
+        background: rgba(255, 255, 255, 0.98) !important;
+    }
+    
+    .nav-list.show a {
+        color: rgb(149, 143, 143) !important;
+    }
+}
+/* Sfocatura progressiva per tutto il contenuto dell'hero */
+.hero-content {
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+.hero-text {
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+.hero-buttons {
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+.hero-list {
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+.hero-description {
+    transition: filter 0.3s ease-out;
+    will-change: filter;
+}
+
+/* Classe per applicare la sfocatura */
+.hero-blurred .hero-content,
+.hero-blurred .hero-text,
+.hero-blurred .hero-buttons,
+.hero-blurred .hero-list,
+.hero-blurred .hero-description {
+    filter: blur(3px);
+    opacity: 0.7;
+}
