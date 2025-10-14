@@ -1844,17 +1844,17 @@ img {
     line-height: 1.6;
     font-size: 1rem;
 }
-
 /* Freccettina personalizzata */
 .service-detail-list li:before {
     content: "→";
     color: #2c5aa0;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 900;
+    font-size: 1.4rem;
     position: absolute;
     left: 0;
-    top: 0.8rem;
+    top: 0.9rem;
     transition: all 0.3s ease;
+    line-height: 1;
 }
 
 /* Hover effect per le freccettine */
