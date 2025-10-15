@@ -1894,6 +1894,7 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    align-items: stretch; /* Aggiungi questa riga */
 }
 
 .strategic-section {
@@ -1904,8 +1905,9 @@ img {
     border: 1px solid #e0e0e0;
     text-align: center;
     backdrop-filter: blur(10px);
+    display: flex; /* Aggiungi questa riga */
+    flex-direction: column; /* Aggiungi questa riga */
 }
-
 .strategic-section h5 {
     color: #1e3a5f;
     font-size: 2rem;
@@ -1948,8 +1950,9 @@ img {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 1.5rem 0 0.5rem 0;
+    margin: auto 0 0.5rem 0; /* Cambia margin */
     display: inline-block;
+    align-self: center; /* Aggiungi questa riga */
 }
 
 .strategic-section .discover-btn:hover {
