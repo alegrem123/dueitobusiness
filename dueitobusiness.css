@@ -699,9 +699,9 @@ img {
 .sectors-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-    max-width: 1000px;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -726,7 +726,7 @@ img {
 }
 .sector-card {
     background: transparent;
-    padding: 2rem;
+    padding: 0.5rem;
     border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
@@ -740,7 +740,7 @@ img {
 
 
 .sector-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-text);
     margin: 0;
@@ -2215,8 +2215,8 @@ img {
 #settori .container h2 {
     background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
     color: white;
-    padding: 2rem 0;
-    margin: 0 -40px 3rem -40px; /* Estende oltre il container */
+    padding: 0.7rem 0;
+    margin: 0 -40px 0.5rem -40px; /* Estende oltre il container */
     border-radius: 20px 20px 20px 20px;
     text-align: center;
     font-weight: 300;

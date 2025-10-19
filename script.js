@@ -183,6 +183,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 case 'Partnership Logistica':
                     targetId = 'partnership-logistica';
                     break;
+                case 'IIC UAE Connector':
+                    targetId = 'iic-uae-connector';
+                    break;  
                 default:
                     targetId = 'contatti'; // Fallback al form se non trova il servizio
             }
