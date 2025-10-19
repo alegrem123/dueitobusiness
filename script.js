@@ -1241,3 +1241,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Funzione per andare a una slide specifica del carousel
+function goToCarouselSlide(slideIndex) {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    
+    if (carouselTrack && carouselDots.length > 0) {
+        // Aggiorna la posizione del carousel
+        const translateX = -slideIndex * 25; // 25% per ogni slide
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Aggiorna i dots
+        carouselDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === slideIndex);
+        });
+        
+        // Scroll alla sezione del carousel
+        const carouselSection = document.querySelector('.principles-carousel-section');
+        if (carouselSection) {
+            const headerHeight = document.querySelector('.site-header') ? 
+                document.querySelector('.site-header').offsetHeight + 42 : 100;
+            
+            const targetPosition = carouselSection.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
