@@ -2976,7 +2976,7 @@ img {
     color: #4a5568;
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -3270,4 +3270,66 @@ img {
     background: rgba(255, 255, 255, 0.8); /* Bianco più opaco in hover */
     transform: scale(1.2);
     border-color: white;
+    
+}
+
+.hero-logo-bottom-right {
+    position: absolute;
+    bottom: 0px;
+    right: 40px;
+    z-index: 3;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.hero-secondary-logo {
+    height: 300px; /* Più grande come richiesto */
+    width: auto;
+    max-width: 500x; /* Larghezza massima */
+    object-fit: contain;
+    background: transparent;
+    mix-blend-mode: multiply;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    filter: brightness(1.1) contrast(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    border-radius: 12px;
+}
+
+.hero-logo-bottom-right:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.hero-logo-bottom-right:hover .hero-secondary-logo {
+    filter: brightness(1.2) contrast(1.2) drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+/* Responsive per mobile - SOLO per mobile */
+@media (max-width: 1000px) {
+    .hero-logo-bottom-right {
+        position: static; /* Cambia da absolute a static SOLO su mobile */
+        bottom: auto;
+        right: auto;
+        margin-top: 2px; /* Spazio sopra il logo */
+        text-align: center; /* Centra il logo */
+    }
+    
+    .hero-secondary-logo {
+        height: 150px; /* Altezza come i bottoni SOLO su mobile */
+        width: 100%; /* Larghezza come i bottoni SOLO su mobile */
+        max-width: 300px; /* Stessa max-width dei bottoni SOLO su mobile */
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo-bottom-right {
+        margin-top: 15px;
+    }
+    
+    .hero-secondary-logo {
+        height: 130px; /* Leggermente più piccolo su schermi piccoli */
+        max-width: 280px;
+    }
 }
