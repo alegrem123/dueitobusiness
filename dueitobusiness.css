@@ -199,10 +199,26 @@ body {
 .site-header:not(.scrolled) .nav-toggle {
     color: white !important;
 }
-/* Su mobile, sempre scuro */
-@media (max-width: 768px) {
-    .site-header .nav-toggle {
-        color: #1e3a5f !important;
+@media (max-width: 956px) {
+    .nav-toggle {
+        display: block !important;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #1e3a5f;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 12px;
+        z-index: 1002;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle:hover {
+        color: #2c5aa0;
+        transform: translateY(-50%) scale(1.05);
     }
 }
 
@@ -305,7 +321,7 @@ body {
     background: none;
     border: none;
     color: #1e3a5f; /* Icona scura per navbar bianca */
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
     padding: 8px;
 }
@@ -1172,34 +1188,6 @@ img {
         display: block;
     }
     
-    .nav-toggle {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.nav-list {
-    display: none;
-}
-
-.nav-list.show {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(15px);
-    flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
-    
     
     
     .nav-list .separator {
@@ -1666,9 +1654,7 @@ img {
         color: #1e3a5f !important;
     }
     
-    .site-header .nav-list a {
-        color: rgb(149, 143, 143) !important;
-    }
+
     
     .site-header .separator {
         color: rgb(149, 143, 143) !important;
@@ -1683,9 +1669,7 @@ img {
         color: #1e3a5f !important;
     }
     
-    .site-header:not(.scrolled) .nav-list a {
-        color: rgb(149, 143, 143) !important;
-    }
+
     
     .site-header:not(.scrolled) .separator {
         color: rgb(149, 143, 143) !important;
@@ -2153,9 +2137,6 @@ img {
         font-size: 1.1rem;
     }
     
-    .service-detail-text p:first-of-type::first-letter {
-        font-size: 2.5rem;
-    }
 }
 
 /* Animazione di entrata per le immagini */
@@ -2189,15 +2170,6 @@ img {
     position: relative;
 }
 
-#partnership-logistica .service-detail-text p:first-of-type::first-letter {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2c5aa0;
-    float: left;
-    line-height: 1;
-    margin-right: 8px;
-    margin-top: 4px;
-}
 
 /* Stile per le immagini specifiche della logistica */
 #partnership-logistica .detail-image img {
@@ -2624,4 +2596,674 @@ img {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+}
+/* Menu Dropdown - VERSIONE ELEGANTE */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: inherit; /* Eredita il colore dal menu principale */
+}
+
+.dropdown-trigger i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+    color: inherit; /* Eredita il colore */
+}
+
+.nav-dropdown:hover .dropdown-trigger i {
+    transform: rotate(180deg);
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8) !important; 
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.08) 0%, rgba(44, 90, 160, 0.08) 100%);
+    color: #1e3a5f;
+    padding-left: 30px;
+    transform: translateX(5px);
+}
+
+
+/* Stili per navbar trasparente */
+.site-header:not(.scrolled) .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-header:not(.scrolled) .dropdown-menu a {
+    color: #4a5568;
+}
+
+.site-header:not(.scrolled) .dropdown-menu a:hover {
+    color: #1e3a5f;
+}
+
+/* Stili per navbar opaca */
+.site-header.scrolled .dropdown-menu {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Mostra solo menu desktop su desktop */
+@media (min-width: 957px) {
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/* Mostra solo menu mobile su mobile */
+@media (max-width: 956px) {
+    .desktop-menu {
+        display: none;
+    }
+    .nav{
+        position: relative;
+    }
+    
+    /* Menu Mobile Semplificato */
+    .mobile-menu {
+        display: none;
+        position: absolute; /* Cambia da fixed a absolute */
+        top: 100%; /* Si apre sotto la navbar */
+        right: 0;
+        width: 280px; /* Larghezza fissa */
+        max-height: 400px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 0;
+        z-index: 1001;
+        overflow-y: auto;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.show {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .mobile-menu a {
+        padding: 18px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+        font-weight: 400;
+        color: #4a5568;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+        background: rgba(30, 58, 95, 0.05);
+        color: #1e3a5f;
+        padding-left: 30px;
+    }
+}
+/* ========== FIX PER RANGE 756px-956px ========== */
+@media (min-width: 757px) and (max-width: 956px) {
+    /* Aggiungi position relative al contenitore nav */
+    .nav {
+        position: relative;
+    }
+    
+    /* Nascondi menu desktop in questo range */
+    .desktop-menu {
+        display: none !important;
+    }
+    
+    /* Mostra menu mobile in questo range */
+    .mobile-menu {
+        display: none;
+        position: absolute; /* Cambia da fixed a absolute */
+        top: 100%; /* Si apre sotto la navbar */
+        right: 0;
+        width: 280px; /* Larghezza fissa */
+        max-height: 400px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 0;
+        z-index: 1001;
+        overflow-y: auto;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.show {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .mobile-menu a {
+        padding: 18px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+        font-weight: 400;
+        color: #4a5568;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+        background: rgba(30, 58, 95, 0.05);
+        color: #1e3a5f;
+        padding-left: 30px;
+    }
+    
+    /* Forza navbar opaca in questo range */
+    .site-header {
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .site-header .nav-toggle {
+        color: #1e3a5f !important;
+    }
+    
+    .site-header .brand {
+        color: #1e3a5f !important;
+    }
+}
+/* ========== PRINCIPI DENTRO IIC UAE ========== */
+.principles-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 3px solid rgba(49, 29, 4, 0.2);
+}
+
+.principles-section h4 {
+    color: #1e3a5f;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.principles-subtitle {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.principle-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 1.8rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 140, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.principle-card:hover::before {
+    transform: scaleX(1);
+}
+
+.principle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(255, 140, 0, 0.15);
+    border-color: rgba(255, 140, 0, 0.3);
+}
+
+.principle-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+}
+
+.principle-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.principle-card:hover .principle-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+}
+
+.principle-card h5 {
+    color: #1e3a5f;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.principle-card p {
+    color: #4a5568;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    
+    .principle-card {
+        padding: 1.5rem;
+    }
+    
+    .principle-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .principle-icon i {
+        font-size: 1.3rem;
+    }
+    
+    .principle-card h5 {
+        font-size: 1.1rem;
+    }
+    
+    .principle-card p {
+        font-size: 0.9rem;
+    }
+}
+/* ========== CAROUSEL APPROFONDIMENTI PRINCIPI ========== */
+.principles-carousel-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 3px solid rgba(49, 29, 4, 0.2);
+}
+
+.principles-carousel-section h4 {
+    color: #1e3a5f;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.principles-deep-subtitle {
+    text-align: center;
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.principles-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px; /* Aggiungi questo */
+    overflow: visible; /* Cambia da hidden a visible */
+    border-radius: 20px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 400%; /* 4 slides */
+}
+
+.carousel-slide {
+    width: 25%; /* 100% / 4 slides */
+    flex-shrink: 0;
+    padding: 0 10px;
+}
+
+.carousel-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 140, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(255, 140, 0, 0.2);
+    border-color: rgba(255, 140, 0, 0.3);
+}
+
+.carousel-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.carousel-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.carousel-card:hover .carousel-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+}
+
+.carousel-card h5 {
+    color: #1e3a5f;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.carousel-content p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.carousel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.carousel-list li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #4a5568;
+    line-height: 1.5;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.carousel-list li:last-child {
+    border-bottom: none;
+}
+
+.carousel-list li:before {
+    content: "✓";
+    color: #ff8c00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    background: rgba(255, 140, 0, 0.1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(255, 140, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ff8c00;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #ff8c00;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 12px 35px rgba(255, 140, 0, 0.3);
+}
+
+.carousel-prev {
+    left: -10px; /* Posiziona dentro il container */
+}
+
+.carousel-next {
+    right: -10px; /* Posiziona dentro il container */
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 140, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #ff8c00;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+}
+
+.carousel-dot:hover {
+    background: #ff8c00;
+    transform: scale(1.2);
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .principles-carousel-container {
+        max-width: 100%;
+        margin: 0 20px;
+        padding: 0 20px; /* Riduci drasticamente il padding */
+    }
+    
+    .carousel-card {
+        padding: 2rem;
+    }
+    
+    .carousel-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .carousel-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-card h5 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1rem;
+    }
+    
+    .carousel-list li {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .carousel-slide {
+        padding: 0 5px; /* Riduci lo spazio tra le card su mobile */
+    }
+    
+    .carousel-prev {
+        left: 0px; /* Posiziona le frecce ai bordi del container */
+    }
+    
+    .carousel-next {
+        right: 0px; /* Posiziona le frecce ai bordi del container */
+    }
+}
+@media (max-width: 480px) {
+    .principles-carousel-container {
+        margin: 0 10px;
+        padding: 0 10px; /* Ancora meno padding su schermi piccoli */
+    }
+    
+    .carousel-slide {
+        padding: 0 2px; /* Spazio minimo tra le card */
+    }
+    
+    .carousel-btn {
+        width: 35px; /* Frecce più piccole */
+        height: 35px;
+        font-size: 12px;
+    }
+}
+/* Nascondi i simboli degli elenchi su mobile */
+@media (max-width: 768px) {
+    .carousel-list li:before {
+        display: none; /* Nasconde completamente i simboli */
+    }
+    
+    .carousel-list li {
+        padding-left: 0; /* Rimuove anche il padding sinistro */
+    }
+}
+/* Puntini di navigazione per il carousel IIC UAE */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+}
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4); /* Bianco semi-trasparente */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.6); /* Bordo bianco */
+}
+
+.carousel-dot.active {
+    background: white; /* Bianco pieno quando attivo */
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    border-color: white;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.8); /* Bianco più opaco in hover */
+    transform: scale(1.2);
+    border-color: white;
 }

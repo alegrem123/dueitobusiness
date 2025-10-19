@@ -40,18 +40,58 @@
                 <a href="#home" class="brand">
    <img src="assets/logoRea.png" alt="DUE I TO BUSINESS" class="logo-image">
 </a>
-                
-                <nav class="nav-list">
+<!-- Menu Desktop -->
+<nav class="nav-list desktop-menu">
     <a href="#home" data-translate="nav-home">home</a>
     <span class="separator">•</span>
-    <a href="#chi-siamo" data-translate="nav-about">chi siamo</a>
+    
+    <!-- Chi Siamo Dropdown -->
+    <div class="nav-dropdown">
+        <a href="#chi-siamo" class="dropdown-trigger" data-translate="nav-about">chi siamo <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+            <a href="#galleria" data-translate="nav-ownership">Ownership di un modello progettuale</a>
+            <a href="#chi-siamo" data-translate="nav-experience">L'esperienza del FARE</a>
+        </div>
+    </div>
+    
     <span class="separator">•</span>
-    <a href="#metodologia" data-translate="nav-methodology">metodologia</a>
+    
+    <!-- Metodologia Dropdown -->
+    <div class="nav-dropdown">
+        <a href="#metodologia" class="dropdown-trigger" data-translate="nav-methodology">metodologia <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+            <a href="#metodologia" data-translate="nav-approach">Approccio metodologico consolidato</a>
+            <a href="#metodologia" data-translate="nav-indicators">Indicatori e misurazione</a>
+        </div>
+    </div>
+    
     <span class="separator">•</span>
-    <a href="#servizi" data-translate="nav-services">servizi</a>
+    
+    <!-- Servizi Dropdown -->
+    <div class="nav-dropdown">
+        <a href="#servizi" class="dropdown-trigger" data-translate="nav-services">servizi <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+            <a href="#checkup-operativo" data-translate="service-1-title">Check Up Operativo</a>
+            <a href="#sviluppo-organizzativo" data-translate="service-2-title">Sviluppo Organizzativo</a>
+            <a href="#strategic-review" data-translate="service-3-title">Strategic Review</a>
+            <a href="#partnership-logistica" data-translate="service-4-title">Partnership Logistica</a>
+            <a href="#iic-uae-connector" data-translate="service-5-title">IIC UAE Advisor</a>
+        </div>
+    </div>
+    
     <span class="separator">•</span>
     <a href="#settori" data-translate="nav-sectors">settori</a>
     <span class="separator">•</span>
+    <a href="#contatti" data-translate="nav-contacts">contattaci</a>
+</nav>
+
+<!-- Menu Mobile Semplificato -->
+<nav class="mobile-menu">
+    <a href="#home" data-translate="nav-home">home</a>
+    <a href="#chi-siamo" data-translate="nav-about">chi siamo</a>
+    <a href="#metodologia" data-translate="nav-methodology">metodologia</a>
+    <a href="#servizi" data-translate="nav-services">servizi</a>
+    <a href="#settori" data-translate="nav-sectors">settori</a>
     <a href="#contatti" data-translate="nav-contacts">contattaci</a>
 </nav>
                 
@@ -139,10 +179,10 @@
      <section class="section" id="galleria">
     <div class="container">
         <div class="galleria-header">
-            <h2 data-translate="gallery-title">Ownership con un modello progettuale</h2>
+            <h2 data-translate="gallery-title">Ownership di un modello progettuale</h2>
             <p class="galleria-subtitle" data-translate="gallery-subtitle">Progetti in diversi mercati ed aree merceologiche che sviluppano competenze e creano valore
 duraturo per i nostri clienti. Interim Management specializzato nel ruolo di COO per aziende di
-eccellenza e forte commitment al cambiamento. Importanza dell'utilizzo di librerie standards.</p>
+eccellenza e forte commitment al cambiamento. Importanza dell'utilizzo di librerie e tools di monitoraggio standards.</p>
         </div>
         <div class="galleria-container">
             <button class="galleria-btn galleria-prev" aria-label="Immagine precedente">
@@ -300,7 +340,7 @@ adeguata metodologia di mantenimento e sviluppo della crescita organica.</p><br>
             <p data-translate="service-4-desc">GUIDA E SUPPORTO AD OPERAZIONI DI LOGISTICA INTEGRATA</p>
         </div>
         
-        <div class="card service-card" data-service="IIC UAE Connector" onclick="scrollToService('iic-uae-connector')">
+        <div class="card service-card" data-service="IIC UAE Connector" onclick="scrollToService('iic-uae-cnector')">
             <h3 data-translate="service-5-title">IIC UAE CONNECTOR</h3>
             <p data-translate="service-5-desc">Punto di riferimento per le aziende italiane di eccellenza<br><br>Interfaccia permanente con team Camera Commercio in UAE</p>
         </div>
@@ -458,24 +498,166 @@ adeguata metodologia di mantenimento e sviluppo della crescita organica.</p><br>
 </div>
 </section>
 <!-- IIC UAE CONNECTOR -->
-
+<!-- IIC UAE CONNECTOR -->
 <div class="service-detail" id="iic-uae-connector">
     <div class="service-detail-content">
         <h3 data-translate="iic-uae-title"><b>I</b>talian <b>C</b>ertified <b>A</b>dvisor <b>IIC UAE</b></h3>
         <div class="service-detail-grid">
             <div class="service-detail-text">
-                <p data-translate="iic-uae-services">All’interno del progetto Italian Certified Advisor IIC UAE 2025 – 2026; lo studio è stato selezionato come partnercertificato della Camera di Commercio Italiana negli Emirati Arabi Uniti ( UAE ).Specificatamente l’ing Daniel Marchisio è stato certificato ICA 547 per la provincia di Milano.<br><br>«In un momento storico segnato da una crescente cooperazione tra Italia ed EAU, rafforzata da importanti accordi bilaterali, le prospettive per le aziende e professionisti in questo territorio sono ampie, concrete e in forte espansione»<br><br>
+                <p data-translate="iic-uae-services">All'interno del progetto Italian Certified Advisor IIC UAE 2025 – 2026; lo studio è stato selezionato come partner certificato della Camera di Commercio Italiana negli Emirati Arabi Uniti ( UAE ). Specificatamente l'ing Daniel Marchisio è stato certificato ICA 547 per la provincia di Milano.<br><br>«In un momento storico segnato da una crescente cooperazione tra Italia ed EAU, rafforzata da importanti accordi bilaterali, le prospettive per le aziende e professionisti in questo territorio sono ampie, concrete e in forte espansione»<br><br>
 «Gli Emirati rappresentano oggi una delle economie più dinamiche e interconnesse a livello globale, con una domanda crescente di competenze qualificate nei settori legale, fiscale, societario e della consulenza strategica»<br><br>
-Lo studio è onorato di partecipare all’iniziativa che valorizza l’eccellenza italiana nel settore professionale e consulenziale.</p>
-                
+Lo studio è onorato di partecipare all'iniziativa che valorizza l'eccellenza italiana nel settore professionale e consulenziale.</p>
                 <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn btn-primary" onclick="document.getElementById('contatti').scrollIntoView({behavior: 'smooth'})" style="padding: 15px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 50px;" data-translate="btn-appointment">
+                    <button class="btn btn-primary" onclick="document.getElementById('principi').scrollIntoView({behavior: 'smooth'})" style="padding: 15px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 50px;" data-translate="btn-appointment">
                      Scopri di più    
                     </button>
                 </div>
             </div>
         </div>
+        
+        <!-- I NOSTRI PRINCIPI - Parte integrante di IIC UAE -->
+        <div class="principles-section" id="principi">
+            <h4 data-translate="principles-title">I nostri principi</h4>
+            <p class="principles-subtitle" data-translate="principles-subtitle">I valori fondamentali che guidano il nostro approccio alla consulenza strategica e allo sviluppo aziendale.</p>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h5 data-translate="principle-1-title">SCOUTING BIUNIVOCO</h5>
+                    <p data-translate="principle-1-desc">FROM PORTALE CAMERA<br>FROM DUEITO WEB<br>FROM UAE OPPORTUNITA</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h5 data-translate="principle-2-title">INFO</h5>
+                    <p data-translate="principle-2-desc">GENERALE<br>IL PROGETTO DEL CLIENTE</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h5 data-translate="principle-3-title">FORMATIVO</h5>
+                    <p data-translate="principle-3-desc">SPECIFICO<br>PROGETTO DEL CLIENTE</p>
+                </div>
+                
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h5 data-translate="principle-4-title">AFFIANCAMENTO</h5>
+                    <p data-translate="principle-4-desc">SPECIFICO<br>GUIDA E SUPPORTO AL PROGETTO DEL CLIENTE</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- APPROFONDIMENTI PRINCIPI - CAROUSEL -->
+<div class="principles-carousel-section">
+    <h4 data-translate="principles-deep-title">Approfondimenti sui nostri principi</h4>
+    <p class="principles-deep-subtitle" data-translate="principles-deep-subtitle">Scopri nel dettaglio come applichiamo i nostri principi nella pratica quotidiana</p>
+    
+    <div class="principles-carousel-container">
+        <button class="carousel-btn carousel-prev" aria-label="Principio precedente">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <!-- Card 1: Scouting Biunivoco -->
+                <div class="carousel-slide active">
+                    <div class="carousel-card">
+                        <div class="carousel-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h5 data-translate="deep-principle-1-title">SCOUTING BIUNIVOCO</h5>
+                        <div class="carousel-content">
+                            <p data-translate="deep-principle-1-desc">Il nostro approccio di scouting bidirezionale garantisce una ricerca mirata e personalizzata delle opportunità di business.</p>
+                            <ul class="carousel-list">
+                                <li data-translate="deep-principle-1-1">Analisi approfondita del portale Camera di Commercio</li>
+                                <li data-translate="deep-principle-1-2">Ricerca attiva attraverso il nostro network web</li>
+                                <li data-translate="deep-principle-1-3">Identificazione di opportunità specifiche negli UAE</li>
+                                <li data-translate="deep-principle-1-4">Matching automatico tra domanda e offerta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Info -->
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <div class="carousel-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h5 data-translate="deep-principle-2-title">INFO</h5>
+                        <div class="carousel-content">
+                            <p data-translate="deep-principle-2-desc">Forniamo informazioni dettagliate e personalizzate per ogni progetto cliente, garantendo trasparenza e chiarezza.</p>
+                            <ul class="carousel-list">
+                                <li data-translate="deep-principle-2-1">Informazioni generali sul mercato di riferimento</li>
+                                <li data-translate="deep-principle-2-2">Analisi specifica del progetto del cliente</li>
+                                <li data-translate="deep-principle-2-3">Report dettagliati sui competitor</li>
+                                <li data-translate="deep-principle-2-4">Valutazione delle opportunità di crescita</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Formativo -->
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <div class="carousel-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5 data-translate="deep-principle-3-title">FORMATIVO</h5>
+                        <div class="carousel-content">
+                            <p data-translate="deep-principle-3-desc">Offriamo formazione specifica e personalizzata per ogni progetto, sviluppando le competenze necessarie al successo.</p>
+                            <ul class="carousel-list">
+                                <li data-translate="deep-principle-3-1">Formazione specifica per il progetto del cliente</li>
+                                <li data-translate="deep-principle-3-2">Workshop personalizzati sui mercati UAE</li>
+                                <li data-translate="deep-principle-3-3">Training sulle normative locali</li>
+                                <li data-translate="deep-principle-3-4">Sviluppo competenze interculturali</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Affiancamento -->
+                <div class="carousel-slide">
+                    <div class="carousel-card">
+                        <div class="carousel-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h5 data-translate="deep-principle-4-title">AFFIANCAMENTO</h5>
+                        <div class="carousel-content">
+                            <p data-translate="deep-principle-4-desc">Supporto continuo e personalizzato per guidare il cliente attraverso ogni fase del progetto negli Emirati Arabi.</p>
+                            <ul class="carousel-list">
+                                <li data-translate="deep-principle-4-1">Guida e supporto specifico al progetto del cliente</li>
+                                <li data-translate="deep-principle-4-2">Assistenza nella fase di implementazione</li>
+                                <li data-translate="deep-principle-4-3">Monitoraggio continuo dei risultati</li>
+                                <li data-translate="deep-principle-4-4">Supporto post-lancio e ottimizzazione</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-btn carousel-next" aria-label="Principio successivo">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <!-- Puntini di navigazione -->
+<div class="carousel-dots">
+    <span class="carousel-dot active" data-slide="0"></span>
+    <span class="carousel-dot" data-slide="1"></span>
+    <span class="carousel-dot" data-slide="2"></span>
+    <span class="carousel-dot" data-slide="3"></span>
+</div>
+</div>
 </div>
 
      

@@ -1,111 +1,134 @@
 document.addEventListener("DOMContentLoaded", function() {
     // ========== MENU MOBILE ==========
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.nav-list');
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('show');
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (navToggle && mobileMenu) {
+        navToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileMenu.classList.toggle('show');
+            document.body.classList.toggle('menu-open');
         });
     }
 
-    // ========== CHIUSURA AUTOMATICA MENU MOBILE ==========
-    const navLinks = document.querySelectorAll('.nav-list a');
-    navLinks.forEach(link => {
+    // Chiusura automatica menu mobile
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+    mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (nav.classList.contains('show')) {
-                nav.classList.remove('show');
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+                document.body.classList.remove('menu-open');
             }
         });
     });
 
-// ========== SCROLL BEHAVIOR CON SFOCATURA PROGRESSIVA ==========
-const topBanner = document.querySelector('.top-banner');
-const siteHeader = document.querySelector('.site-header');
-const heroSection1 = document.querySelector('.hero');
-const heroBg = document.querySelector('.hero-bg.is-visible');
+    // Chiusura click outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && mobileMenu.classList.contains('show') && 
+            !mobileMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            mobileMenu.classList.remove('show');
+            document.body.classList.remove('menu-open');
+        }
+    });
 
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Solo su desktop (larghezza > 768px)
-    if (window.innerWidth > 768) {
-        // Calcola l'altezza dell'hero (escludendo la navbar)
-        const heroHeight = heroSection1 ? heroSection1.offsetHeight - siteHeader.offsetHeight : 0;
-        
-        // Gestione del banner superiore
-        if (scrollTop > 50) {
-            topBanner.style.transform = 'translateY(-100%)';
-            siteHeader.classList.add('fixed');
-        } else {
-            topBanner.style.transform = 'translateY(0)';
-            siteHeader.classList.remove('fixed');
+    // Resize handler
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 956 && mobileMenu) {
+            mobileMenu.classList.remove('show');
+            document.body.classList.remove('menu-open');
         }
-        
-        // Gestione trasparenza navbar: trasparente solo dentro l'hero
-        if (scrollTop > heroHeight) {
-            siteHeader.classList.add('scrolled');
-        } else {
-            siteHeader.classList.remove('scrolled');
-        }
-        
-        // Gestione sfocatura progressiva dell'hero
-const heroSection = document.querySelector('.hero');
-const heroContent = document.querySelector('.hero-content');
+    });
 
-if (heroBg && scrollTop <= heroHeight) {
-    // Calcola quanto siamo scesi nell'hero (0 = inizio, 1 = fine)
-    const scrollProgress = Math.min(scrollTop / heroHeight, 1);
-    
-    // Applica sfocatura progressiva (da 0px a 8px di blur)
-    const blurAmount = scrollProgress * 8;
-    // Applica oscuramento progressivo per migliorare la leggibilità
-    const brightnessAmount = 1 - (scrollProgress * 0.2);
-    
-    heroBg.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
-    
-    // Sfocatura progressiva del contenuto
-if (scrollProgress > 0.01) { // Inizia a sfocare dopo il 10% dello scroll
-    const contentBlur = (scrollProgress - 0.1) * 5; // Da 0 a 4.5px di blur
-    const contentOpacity = 1 - (scrollProgress - 0.1) * 0.6; // Da 1 a 0.46 di opacità
+    // ========== SCROLL BEHAVIOR CON SFOCATURA PROGRESSIVA ==========
+    const topBanner = document.querySelector('.top-banner');
+    const siteHeader = document.querySelector('.site-header');
+    const heroSection1 = document.querySelector('.hero');
+    const heroBg = document.querySelector('.hero-bg.is-visible');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (heroContent) {
-            heroContent.style.filter = `blur(${contentBlur}px)`;
-            heroContent.style.opacity = contentOpacity;
+        // Solo su desktop (larghezza > 768px)
+        if (window.innerWidth > 768) {
+            // Calcola l'altezza dell'hero (escludendo la navbar)
+            const heroHeight = heroSection1 ? heroSection1.offsetHeight - siteHeader.offsetHeight : 0;
+            
+            // Gestione del banner superiore
+            if (scrollTop > 50) {
+                if (topBanner) topBanner.style.transform = 'translateY(-100%)';
+                if (siteHeader) siteHeader.classList.add('fixed');
+            } else {
+                if (topBanner) topBanner.style.transform = 'translateY(0)';
+                if (siteHeader) siteHeader.classList.remove('fixed');
+            }
+            
+            // Gestione trasparenza navbar: trasparente solo dentro l'hero
+            if (scrollTop > heroHeight) {
+                if (siteHeader) siteHeader.classList.add('scrolled');
+            } else {
+                if (siteHeader) siteHeader.classList.remove('scrolled');
+            }
+            
+            // Gestione sfocatura progressiva dell'hero
+            const heroSection = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+
+            if (heroBg && scrollTop <= heroHeight) {
+                // Calcola quanto siamo scesi nell'hero (0 = inizio, 1 = fine)
+                const scrollProgress = Math.min(scrollTop / heroHeight, 1);
+                
+                // Applica sfocatura progressiva (da 0px a 8px di blur)
+                const blurAmount = scrollProgress * 8;
+                // Applica oscuramento progressivo per migliorare la leggibilità
+                const brightnessAmount = 1 - (scrollProgress * 0.2);
+                
+                heroBg.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
+                
+                // Sfocatura progressiva del contenuto
+                if (scrollProgress > 0.01) { // Inizia a sfocare dopo l'1% dello scroll
+                    const contentBlur = (scrollProgress - 0.1) * 5; // Da 0 a 4.5px di blur
+                    const contentOpacity = 1 - (scrollProgress - 0.1) * 0.6; // Da 1 a 0.46 di opacità
+                    
+                    if (heroContent) {
+                        heroContent.style.filter = `blur(${contentBlur}px)`;
+                        heroContent.style.opacity = contentOpacity;
+                    }
+                } else {
+                    // Rimuovi la sfocatura del contenuto
+                    if (heroContent) {
+                        heroContent.style.filter = 'none';
+                        heroContent.style.opacity = '1';
+                    }
+                }
+                
+            } else if (heroBg && scrollTop > heroHeight) {
+                // Massimo sfocatura quando si esce completamente dall'hero
+                heroBg.style.filter = 'blur(8px) brightness(0.8)';
+                
+                // Sfocatura massima del contenuto
+                if (heroContent) {
+                    heroContent.style.filter = 'blur(4px)';
+                    heroContent.style.opacity = '0.6';
+                }
+            } else {
+                // Reset quando si torna in cima
+                if (heroContent) {
+                    heroContent.style.filter = 'none';
+                    heroContent.style.opacity = '1';
+                }
+            }
+            
+        } else {
+            // Su mobile, navbar sempre opaca
+            if (siteHeader) siteHeader.classList.add('scrolled');
+            // Su mobile, rimuovi la sfocatura per performance
+            if (heroBg) {
+                heroBg.style.filter = 'none';
+            }
         }
-    } else {
-        // Rimuovi la sfocatura del contenuto
-    if (heroContent) {
-        heroContent.style.filter = 'none';
-        heroContent.style.opacity = '1';
-    }
-    }
-    
-} else if (heroBg && scrollTop > heroHeight) {
-    // Massimo sfocatura quando si esce completamente dall'hero
-    heroBg.style.filter = 'blur(8px) brightness(0.8)';
-    
-    // Sfocatura massima del contenuto
-    if (heroContent) {
-        heroContent.style.filter = 'blur(4px)';
-        heroContent.style.opacity = '0.6';
-    }
-} else {
-    // Reset quando si torna in cima
-    if (heroContent) {
-        heroContent.style.filter = 'none';
-        heroContent.style.opacity = '1';
-    }
-}
-        
-    } else {
-        // Su mobile, navbar sempre opaca
-        siteHeader.classList.add('scrolled');
-        // Su mobile, rimuovi la sfocatura per performance
-        if (heroBg) {
-            heroBg.style.filter = 'none';
-        }
-    }
-});
+    });
 
     // ========== SMOOTH SCROLLING PER LINK INTERNI ==========
     const internalLinks = document.querySelectorAll('a[href^="#"]');
@@ -120,7 +143,7 @@ if (scrollProgress > 0.01) { // Inizia a sfocare dopo il 10% dello scroll
                 const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
-                    const headerHeight = siteHeader.offsetHeight;
+                    const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
                     const targetPosition = targetElement.offsetTop - headerHeight;
                     
                     window.scrollTo({
@@ -128,55 +151,57 @@ if (scrollProgress > 0.01) { // Inizia a sfocare dopo il 10% dello scroll
                         behavior: 'smooth'
                     });
                     
-                    if (nav && nav.classList.contains('show')) {
-                        nav.classList.remove('show');
+                    // Chiudi menu mobile se aperto
+                    if (mobileMenu && mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                        document.body.classList.remove('menu-open');
                     }
                 }
             }
         });
     });
 
-    /// ========== CARD SERVIZI CLICCABILI ==========
-const serviceCards = document.querySelectorAll('.service-card');
+    // ========== CARD SERVIZI CLICCABILI ==========
+    const serviceCards = document.querySelectorAll('.service-card');
 
-serviceCards.forEach(card => {
-    card.addEventListener('click', function() {
-        const serviceType = this.getAttribute('data-service');
-        let targetId;
-        
-        // Determina quale sezione di approfondimento aprire
-        switch(serviceType) {
-            case 'Check Up Operativo':
-                targetId = 'checkup-operativo';
-                break;
-            case 'HR Support & Mentoring':
-                targetId = 'sviluppo-organizzativo';
-                break;
-            case 'Review Strategica':
-                targetId = 'strategic-review';
-                break;
-            case 'Partnership Logistica':
-                targetId = 'partnership-logistica';
-                break;
-            default:
-                targetId = 'contatti'; // Fallback al form se non trova il servizio
-        }
-        
-        const targetSection = document.getElementById(targetId);
-        
-        if (targetSection) {
-            const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
-            const targetPosition = targetSection.offsetTop - headerHeight;
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const serviceType = this.getAttribute('data-service');
+            let targetId;
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        } else {
-            console.error('Sezione non trovata:', targetId);
-        }
+            // Determina quale sezione di approfondimento aprire
+            switch(serviceType) {
+                case 'Check Up Operativo':
+                    targetId = 'checkup-operativo';
+                    break;
+                case 'HR Support & Mentoring':
+                    targetId = 'sviluppo-organizzativo';
+                    break;
+                case 'Review Strategica':
+                    targetId = 'strategic-review';
+                    break;
+                case 'Partnership Logistica':
+                    targetId = 'partnership-logistica';
+                    break;
+                default:
+                    targetId = 'contatti'; // Fallback al form se non trova il servizio
+            }
+            
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('Sezione non trovata:', targetId);
+            }
+        });
     });
-});
 
     // ========== TRADUZIONI ==========
     let currentLanguage = 'it';
@@ -341,7 +366,11 @@ serviceCards.forEach(card => {
             'privacy-consent-start': 'Con l\'invio del form dichiaro di aver letto la',
             'privacy-policy-link': 'Privacy Policy',
             'privacy-consent-end': 'e autorizzo il trattamento dei miei dati personali per rispondere alla mia richiesta.',
-            'error-privacy-required': 'È necessario accettare la Privacy Policy per inviare il form'
+            'error-privacy-required': 'È necessario accettare la Privacy Policy per inviare il form',
+            'nav-ownership': 'ownership',
+            'nav-experience': 'L\'esperienza del FARE',
+            'nav-approach': 'approccio',
+            'nav-indicators': 'approccio e i suoi indicatori',
         },
         en: {
             'hero-title': 'THE STRATEGIC BASIS FOR BUSINESS GROWTH',
@@ -503,12 +532,16 @@ serviceCards.forEach(card => {
             'privacy-consent-start': 'By submitting this form, I declare that I have read the',
             'privacy-policy-link': 'Privacy Policy',
             'privacy-consent-end': 'and authorize the processing of my personal data to respond to my request.',
-            'error-privacy-required': 'You must accept the Privacy Policy to submit the form'
+            'error-privacy-required': 'You must accept the Privacy Policy to submit the form',
+            'nav-ownership': 'ownership',
+            'nav-experience': 'The experience of DOING',
+            'nav-approach': 'approach',
+            'nav-indicators': 'approach and its indicators',
         }
     };
     
     function changeLanguage(lang) {
-        currentLanguage = lang; // Aggiorna la lingua corrente
+        currentLanguage = lang;
         
         const elements = document.querySelectorAll('[data-translate]');
         elements.forEach(element => {
@@ -531,12 +564,14 @@ serviceCards.forEach(card => {
         
         // Aggiorna selettore mobile
         const mobileTrigger = document.querySelector('.language-trigger');
-        const mobileFlag = mobileTrigger.querySelector('.flag-icon');
+        const mobileFlag = mobileTrigger ? mobileTrigger.querySelector('.flag-icon') : null;
         const mobileOptions = document.querySelectorAll('.language-option');
         
-        const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
-        mobileFlag.src = flagSrc;
-        mobileTrigger.setAttribute('data-lang', lang);
+        if (mobileFlag) {
+            const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
+            mobileFlag.src = flagSrc;
+            mobileTrigger.setAttribute('data-lang', lang);
+        }
         
         mobileOptions.forEach(option => {
             option.classList.remove('active');
@@ -559,20 +594,22 @@ serviceCards.forEach(card => {
     const mobileTrigger = document.querySelector('.language-trigger');
     const mobileOptions = document.querySelectorAll('.language-option');
     
-    mobileTrigger.addEventListener('click', function() {
-        mobileDropdown.classList.toggle('active');
-    });
+    if (mobileTrigger) {
+        mobileTrigger.addEventListener('click', function() {
+            if (mobileDropdown) mobileDropdown.classList.toggle('active');
+        });
+    }
     
     mobileOptions.forEach(option => {
         option.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
             changeLanguage(lang);
-            mobileDropdown.classList.remove('active');
+            if (mobileDropdown) mobileDropdown.classList.remove('active');
         });
     });
     
     document.addEventListener('click', function(e) {
-        if (!mobileDropdown.contains(e.target)) {
+        if (mobileDropdown && !mobileDropdown.contains(e.target)) {
             mobileDropdown.classList.remove('active');
         }
     });
@@ -588,27 +625,12 @@ serviceCards.forEach(card => {
         messaggio: document.getElementById('messaggio')
     };
 
-    // Funzioni di validazione
-    function validateName(name) {
-        return /^[a-zA-Zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ\s]{2,30}$/.test(name.trim());
-    }
-
-    function validatePhone(phone) {
-        return /^[\+]?[0-9\s\-\(\)]{10,15}$/.test(phone.trim());
-    }
-
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    }
-
     function showFieldError(field, message) {
-        // Rimuovi errori precedenti
         const existingError = field.parentNode.querySelector('.field-error');
         if (existingError) {
             existingError.remove();
         }
         
-        // Aggiungi nuovo errore
         const errorDiv = document.createElement('div');
         errorDiv.className = 'field-error';
         errorDiv.textContent = message;
@@ -617,7 +639,6 @@ serviceCards.forEach(card => {
         errorDiv.style.marginTop = '5px';
         field.parentNode.appendChild(errorDiv);
         
-        // Evidenzia il campo
         field.style.borderColor = '#e53e3e';
         field.style.boxShadow = '0 0 0 3px rgba(229, 62, 62, 0.1)';
     }
@@ -632,14 +653,14 @@ serviceCards.forEach(card => {
         field.style.boxShadow = 'none';
     }
 
-    // funzione per sanitizzare l'input
     function sanitizeInput(input) {
         return input.trim().replace(/[<>]/g, '');
     }
 
-    // AggiornO la validazione dei campi 
     function validateField(fieldName) {
         const field = formFields[fieldName];
+        if (!field) return true;
+        
         const value = sanitizeInput(field.value);
         let isValid = true;
         let errorMessage = '';
@@ -684,7 +705,6 @@ serviceCards.forEach(card => {
                 break;
                 
             case 'messaggio':
-                // Limita la lunghezza del messaggio
                 if (value.length > 1000) {
                     errorMessage = 'Il messaggio non può superare i 1000 caratteri';
                     isValid = false;
@@ -716,25 +736,22 @@ serviceCards.forEach(card => {
     // Event listeners per validazione in tempo reale
     Object.keys(formFields).forEach(fieldName => {
         const field = formFields[fieldName];
+        if (!field) return;
         
-        // Validazione solo quando l'utente esce dal campo (blur)
         field.addEventListener('blur', () => {
             validateField(fieldName);
         });
         
-        // Rimuovi errori quando l'utente inizia a digitare
         field.addEventListener('input', () => {
             clearFieldError(field);
         });
     });
 
-    // invio form
+    // Invio form
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Validazione completa
             if (!validateForm()) {
-                e.preventDefault(); // Blocca solo se ci sono errori
-                // Scroll al primo campo con errore
+                e.preventDefault();
                 const firstError = document.querySelector('.field-error');
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -742,13 +759,12 @@ serviceCards.forEach(card => {
                 return;
             }
             
-            // Se la validazione passa, mostra loading e lascia che Netlify gestisca l'invio
             const submitBtn = contactForm.querySelector('.btn-primary');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Invio in corso...';
-            submitBtn.disabled = true;
-            
-            // Il form verrà inviato automaticamente a thanks.html
+            if (submitBtn) {
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Invio in corso...';
+                submitBtn.disabled = true;
+            }
         });
     }
     
@@ -803,16 +819,15 @@ serviceCards.forEach(card => {
     initHero();
     setInterval(crossfadeHero, 4000);
     
- // ========== BOTTONI HERO ==========
+    // ========== BOTTONI HERO ==========
     const appointmentBtn = document.querySelector('.btn-primary');
     const servicesBtn = document.querySelector('.btn-secondary');
     
     if (appointmentBtn) {
         appointmentBtn.addEventListener('click', function() {
-            // Scroll alla sezione contatti
             const contattiSection = document.getElementById('contatti');
             if (contattiSection) {
-                const headerHeight = siteHeader.offsetHeight;
+                const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
                 const targetPosition = contattiSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
@@ -825,10 +840,9 @@ serviceCards.forEach(card => {
     
     if (servicesBtn) {
         servicesBtn.addEventListener('click', function() {
-            // Scroll alla sezione servizi
             const serviziSection = document.getElementById('servizi');
             if (serviziSection) {
-                const headerHeight = siteHeader.offsetHeight;
+                const headerHeight = siteHeader ? siteHeader.offsetHeight : 100;
                 const targetPosition = serviziSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
@@ -839,13 +853,15 @@ serviceCards.forEach(card => {
         });
     }
     
-    // Click hero per cambio imagine manuale
-     const heroSection = document.querySelector('.hero');
-    heroSection.addEventListener('click', function(e) {
-        if (!e.target.classList.contains('btn') && !e.target.closest('.mobile-language-switcher')) {
-            crossfadeHero();
-        }
-    });
+    // Click hero per cambio immagine manuale
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroSection.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('btn') && !e.target.closest('.mobile-language-switcher')) {
+                crossfadeHero();
+            }
+        });
+    }
 });
 
 // ========== GALLERIA SLIDER ==========
@@ -863,8 +879,9 @@ function updateGalleria() {
     const isMobile = window.innerWidth <= 768;
     const slideWidth = isMobile ? 100 : 33.333;
     
-    // Assicura che la trasformazione sia precisa
-    galleriaTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    if (galleriaTrack) {
+        galleriaTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    }
     
     // Aggiorna dots desktop
     dotsDesktop.forEach((dot, index) => {
@@ -917,7 +934,7 @@ dotsMobile.forEach((dot, index) => {
     dot.addEventListener('click', () => goToSlide(index));
 });
 
-// Auto-play (opzionale)
+// Auto-play
 let autoPlayInterval;
 function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 5000);
@@ -944,16 +961,6 @@ window.addEventListener('resize', () => {
 });
 
 // ========== FADE UP ON SCROLL ==========
-function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
 function isElementPartiallyInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -1004,8 +1011,10 @@ window.addEventListener('scroll', handleScrollAnimation);
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(handleScrollAnimation, 100);
 });
+
+// ========== HIGHLIGHT ACTIVE SECTION ==========
 function highlightActiveSection() {
-    const sections = document.querySelectorAll('.section, .hero');
+    const sections = document.querySelectorAll('.section, .hero, .section-break-gray');
     const navLinks = document.querySelectorAll('.nav-list a');
     
     let currentSection = '';
@@ -1025,17 +1034,27 @@ function highlightActiveSection() {
     });
     
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === '#' + currentSection) {
+        const href = link.getAttribute('href');
+        
+        // Se sei nella sezione galleria (ownership), evidenzia anche "chi siamo"
+        if (currentSection === 'galleria' && href === '#chi-siamo') {
+            link.classList.add('active');
+        }
+        // Se sei nella sezione break grigia, evidenzia anche "metodologia"
+        else if (currentSection === 'metodologia' && href === '#metodologia') {
+            link.classList.add('active');
+        }
+        // Altrimenti evidenzia normalmente
+        else if (href === '#' + currentSection) {
             link.classList.add('active');
         }
     });
 }
 
 window.addEventListener('scroll', highlightActiveSection);
-
 document.addEventListener('DOMContentLoaded', highlightActiveSection);
 
-// Animazione lista break al scroll
+// ========== ANIMAZIONE LISTA BREAK ==========
 function animateBreakList() {
     const breakSection = document.querySelector('.section-break-gray');
     const breakItems = document.querySelectorAll('.break-item');
@@ -1067,7 +1086,7 @@ function animateBreakList() {
 // Inizializza l'animazione quando il DOM è caricato
 document.addEventListener('DOMContentLoaded', animateBreakList);
 
-// ========== BOTTONI "SCOPRI DI PIÙ" - COLLEGAMENTI SPECIFICI ==========
+// ========== BOTTONI "SCOPRI DI PIÙ" ==========
 document.addEventListener('DOMContentLoaded', function() {
     const discoverBtns = document.querySelectorAll('.discover-btn');
     
@@ -1099,7 +1118,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ========== BOTTONE IIC UAE CONNECTOR ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleziona il bottone giallo dell'hero
     const uaeBtn = document.querySelector('.btn-accent');
     
     if (uaeBtn) {
@@ -1107,13 +1125,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.getElementById('iic-uae-connector');
             
             if (targetElement) {
-                // Calcola la posizione considerando l'header fisso
                 const headerHeight = document.querySelector('.site-header') ? 
                     document.querySelector('.site-header').offsetHeight + 42 : 100;
                 
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
-                // Scroll smooth alla sezione
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -1121,6 +1137,104 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 console.error('Sezione IIC UAE CONNECTOR non trovata');
             }
+        });
+    }
+});
+// ========== CAROUSEL PRINCIPI ==========
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselDots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    let currentSlide = 0;
+    const totalSlides = carouselSlides.length;
+    
+    function updateCarousel() {
+        const translateX = -currentSlide * 25; // 25% per slide
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Aggiorna dots
+        carouselDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Aggiorna slides
+        carouselSlides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    // Dots navigation
+    carouselDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
+    
+    // Auto-play (opzionale)
+    setInterval(nextSlide, 8000); // Cambia slide ogni 8 secondi
+});
+// Funzionalità dei puntini del carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const dots = document.querySelectorAll('.carousel-dot');
+    const track = document.querySelector('.carousel-track');
+    let currentSlide = 0;
+    const totalSlides = 4; // Numero totale di slide
+
+    // Funzione per aggiornare i puntini
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Funzione per andare a una slide specifica
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        const translateX = -slideIndex * 25; // 25% per ogni slide
+        track.style.transform = `translateX(${translateX}%)`;
+        updateDots();
+    }
+
+    // Event listener per i puntini
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+
+    // Funzionalità delle frecce (se le hai)
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlide);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
         });
     }
 });
