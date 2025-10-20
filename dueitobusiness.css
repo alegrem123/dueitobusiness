@@ -3272,20 +3272,25 @@ img {
     border-color: white;
     
 }
-
-.hero-logo-bottom-right {
-    position: absolute;
-    bottom: 0px;
-    right: 40px;
-    z-index: 3;
-    opacity: 0.9;
-    transition: all 0.3s ease;
+/* Layout per i bottoni e il logo */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
 }
 
-.hero-secondary-logo {
-    height: 300px; /* Più grande come richiesto */
+.btn-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-with-logo .hero-secondary-logo {
+    height: 50px; /* 26mm convertiti in pixel */
     width: auto;
-    max-width: 500x; /* Larghezza massima */
+    max-width: 150px;
     object-fit: contain;
     background: transparent;
     mix-blend-mode: multiply;
@@ -3294,7 +3299,40 @@ img {
     box-shadow: none;
     transition: all 0.3s ease;
     filter: brightness(1.1) contrast(1.1) drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    border-radius: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-with-logo:hover .hero-secondary-logo {
+    transform: scale(1.05);
+    filter: brightness(1.2) contrast(1.2) drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .btn-with-logo {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .btn-with-logo .hero-secondary-logo {
+        height: 40px;
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-with-logo .hero-secondary-logo {
+        height: 35px;
+        max-width: 100px;
+    }
 }
 
 .hero-logo-bottom-right:hover {
