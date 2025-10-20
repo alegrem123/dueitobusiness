@@ -2088,28 +2088,44 @@ img {
 .detail-image:hover::before {
     opacity: 1;
 }
-
-/* Stili per il testo degli approfondimenti - VERSIONE FRIENDLY */
-.service-detail-text p {
-    font-size: 1.15rem;
-    line-height: 1.9;
+/* Stile per il testo IIC UAE ADVISOR - uguale ai principi */
+#iic-uae-connector .service-detail-text p {
     color: #4a5568;
-    margin-bottom: 1.8rem;
-    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     font-weight: 400;
-    letter-spacing: 0.3px;
 }
 
-.service-detail-text p:first-of-type {
-    margin-top: 0;
-    font-size: 1.2rem;
-    color: #2d3748;
-    font-weight: 500;
+#iic-uae-connector .service-detail-text p:first-of-type {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
 }
 
-.service-detail-text p:last-of-type {
+#iic-uae-connector .service-detail-text p:last-of-type {
     margin-bottom: 0;
 }
+/* Lettere specifiche in maiuscolo */
+.dropdown-menu a span {
+    text-transform: uppercase !important;
+}
+
+/* Responsive per mobile */
+@media (max-width: 768px) {
+    #iic-uae-connector .service-detail-text p {
+        font-size: 1.05rem;
+        text-align: left;
+        line-height: 1.8;
+    }
+    
+    #iic-uae-connector .service-detail-text p:first-of-type {
+        font-size: 1.1rem;
+    }
+}
+
 
 /* Rimuovi completamente l'effetto della prima lettera */
 .service-detail-text p:first-of-type::first-letter {
@@ -2129,15 +2145,6 @@ img {
         border-radius: 12px;
     }
     
-    .service-detail-text p {
-        font-size: 1.05rem;
-        text-align: left;
-        line-height: 1.8;
-    }
-    
-    .service-detail-text p:first-of-type {
-        font-size: 1.1rem;
-    }
     
 }
 
