@@ -3350,7 +3350,6 @@ img {
 
 .btn-with-logo:hover .hero-secondary-logo {
     transform: translateX(-50%) scale(1.05); /* Mantieni entrambi i transform */
-    filter: brightness(1.2) contrast(1.2) drop-shadow(0 6px 12px rgba(0,0,0,0.4));
 }
 
 /* Responsive per mobile */
