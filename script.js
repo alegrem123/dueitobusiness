@@ -1376,7 +1376,7 @@ function openGantt() {
 function closeGantt() {
     const popup = document.getElementById('gantPopup');
     if (popup) {
-        popup.classList.remåove('show');
+        popup.classList.remove('show');
         document.body.style.overflow = 'auto'; // Ripristina lo scroll
     }
 }
