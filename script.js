@@ -976,12 +976,12 @@ function updateGalleria() {
         galleriaTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
     }
     
-    // Aggiorna dots desktop
+    // Aggiorna dots desktop - ora gestisce 6 slide
     dotsDesktop.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
     
-    // Aggiorna dots mobile
+    // Aggiorna dots mobile - ora gestisce 6 slide
     dotsMobile.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
@@ -989,7 +989,7 @@ function updateGalleria() {
 
 function nextSlide() {
     const isMobile = window.innerWidth <= 768;
-    const maxSlide = isMobile ? totalSlides - 1 : 3;
+    const maxSlide = isMobile ? totalSlides - 1 : 5; // Cambia da 3 a 5 per desktop
     
     currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
     updateGalleria();
@@ -997,7 +997,7 @@ function nextSlide() {
 
 function prevSlide() {
     const isMobile = window.innerWidth <= 768;
-    const maxSlide = isMobile ? totalSlides - 1 : 3;
+    const maxSlide = isMobile ? totalSlides - 1 : 5; // Cambia da 3 a 5 per desktop
     
     currentSlide = currentSlide <= 0 ? maxSlide : currentSlide - 1;
     updateGalleria();
@@ -1364,3 +1364,34 @@ function goToCarouselSlide(slideIndex) {
         }
     }
 }
+// Funzioni per il popup Gantt
+function openGantt() {
+    const popup = document.getElementById('gantPopup');
+    if (popup) {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Previene lo scroll
+    }
+}
+
+function closeGantt() {
+    const popup = document.getElementById('gantPopup');
+    if (popup) {
+        popup.classList.remåove('show');
+        document.body.style.overflow = 'auto'; // Ripristina lo scroll
+    }
+}
+
+// Chiudi il popup cliccando fuori
+document.addEventListener('click', function(event) {
+    const popup = document.getElementById('gantPopup');
+    if (popup && event.target === popup) {
+        closeGantt();
+    }
+});
+
+// Chiudi con il tasto ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeGantt();
+    }
+});

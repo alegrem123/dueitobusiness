@@ -196,23 +196,32 @@ eccellenza e forte commitment al cambiamento. <br>Importanza dell'utilizzo di li
             <div class="galleria-wrapper">
                 <div class="galleria-track">
                     <div class="galleria-slide">
-                        <img src="https://images.unsplash.com/photo-1560221328-12fe60f83ab8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z3JhZmljaXxlbnwwfHwwfHx8MA%3D%3D" alt="Business Graphs">
+                        <img src="assets/galleria1.webp" alt="Business Graphs">
+                    </div>
+
+                    <div class="galleria-slide">
+                        <img src="assets/galleria2.webp" alt="Data Analysis">
                     </div>
                     <div class="galleria-slide">
-                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRhdGFiYXNlfGVufDB8fDB8fHww" alt="Data Analysis">
+    <img src="assets/galleria3dubai.webp" alt="Dubai Skyscraper">
+</div>
+                    <div class="galleria-slide">
+                        <img src="assets/galleria4.webp" alt="Industry Machinery">
                     </div>
                     <div class="galleria-slide">
-                        <img src="https://images.unsplash.com/photo-1720036237182-5e0adada1873?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzd8fHNldHRvcmklMjBtZXJjZW9vbG9naWNpfGVufDB8fDB8fHww" alt="Industry Machinery">
+                        <img src="assets/galleria5.webp" alt="Food Industry">
                     </div>
                     <div class="galleria-slide">
-                        <img src="assets/diagramma.jpg" alt="Food Industry">
+                        <img src="assets/galleria6.webp" alt="Office Strategy">
                     </div>
                     <div class="galleria-slide">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" alt="Office Strategy">
+                        <img src="assets/galleria7.webp" alt="Strategic Review">
                     </div>
+                    <!-- Aggiungi queste due nuove slide dopo le esistenti -->
+
                     <div class="galleria-slide">
-                        <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strategic Review">
-                    </div>
+    <img src="assets/galleria8motivazione.webp" alt="You got this">
+</div>
                 </div>
             </div>
             <button class="galleria-btn galleria-next" aria-label="Immagine successiva">
@@ -226,6 +235,9 @@ eccellenza e forte commitment al cambiamento. <br>Importanza dell'utilizzo di li
             <span class="dot" data-slide="1"></span>
             <span class="dot" data-slide="2"></span>
             <span class="dot" data-slide="3"></span>
+            <!-- Aggiungi questi due dots nella sezione .galleria-dots-desktop -->
+<div class="dot" data-slide="4"></div>
+<div class="dot" data-slide="5"></div>
         </div>
         
         <!-- Dots per mobile (6 dots per 1 immagine alla volta) -->
@@ -236,6 +248,9 @@ eccellenza e forte commitment al cambiamento. <br>Importanza dell'utilizzo di li
             <span class="dot" data-slide="3"></span>
             <span class="dot" data-slide="4"></span>
             <span class="dot" data-slide="5"></span>
+            <!-- Aggiungi questi due dots nella sezione .galleria-dots-desktop -->
+<div class="dot" data-slide="4"></div>
+<div class="dot" data-slide="5"></div>
         </div>
     </div>
 </section>
@@ -526,13 +541,15 @@ Lo studio è onorato di partecipare all'iniziativa che valorizza l'eccellenza it
             <p class="principles-subtitle" data-translate="principles-subtitle">I valori fondamentali che guidano il nostro approccio alla consulenza strategica e allo sviluppo aziendale.</p>
             
             <div class="principles-grid">
-                <div class="principle-card" onclick="goToCarouselSlide(0)">
+<!-- Nella card "SCOUTING BIUNIVOCO" -->
+<div class="principle-card" onclick="goToCarouselSlide(0)">
     <div class="principle-icon">
         <i class="fas fa-search"></i>
     </div>
     <h5 data-translate="principle-1-title">SCOUTING BIUNIVOCO</h5>
     <p data-translate="principle-1-desc">FROM PORTALE CAMERA<br>FROM DUEITO WEB<br>FROM UAE OPPORTUNITA</p>
-</div>
+    <a href="#" class="card-link" onclick="event.stopPropagation(); openGantt(); return false;">Visualizza calendario 📅</a>
+</div> 
 
 <div class="principle-card" onclick="goToCarouselSlide(1)">
     <div class="principle-icon">
@@ -577,23 +594,32 @@ Lo studio è onorato di partecipare all'iniziativa che valorizza l'eccellenza it
         <div class="carousel-wrapper">
             <div class="carousel-track">
                 <!-- Card 1: Scouting Biunivoco -->
-                <div class="carousel-slide active">
-                    <div class="carousel-card">
-                        <div class="carousel-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h5 data-translate="deep-principle-1-title">SCOUTING BIUNIVOCO</h5>
-                        <div class="carousel-content">
-                            <p data-translate="deep-principle-1-desc">Il nostro approccio di scouting bidirezionale garantisce una ricerca mirata e personalizzata delle opportunità di business.</p>
-                            <ul class="carousel-list">
-                                <li data-translate="deep-principle-1-1">Analisi approfondita del portale Camera di Commercio</li>
-                                <li data-translate="deep-principle-1-2">Ricerca attiva attraverso il nostro network web</li>
-                                <li data-translate="deep-principle-1-3">Identificazione di opportunità specifiche negli UAE</li>
-                                <li data-translate="deep-principle-1-4">Matching automatico tra domanda e offerta</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!-- Card 1: Scouting Biunivoco - AGGIUNGI IL LINK -->
+<div class="carousel-slide active">
+    <div class="carousel-card">
+        <div class="carousel-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <h5 data-translate="deep-principle-1-title">SCOUTING BIUNIVOCO</h5>
+        <div class="carousel-content">
+            <p data-translate="deep-principle-1-desc">Il nostro approccio di scouting bidirezionale garantisce una ricerca mirata e personalizzata delle opportunità di business.</p>
+            <ul class="carousel-list">
+                <li data-translate="deep-principle-1-1">Analisi approfondita del portale Camera di Commercio</li>
+                <li data-translate="deep-principle-1-2">Ricerca attiva attraverso il nostro network web</li>
+                <li data-translate="deep-principle-1-3">Identificazione di opportunità specifiche negli UAE</li>
+                <li data-translate="deep-principle-1-4">Matching automatico tra domanda e offerta</li>
+            </ul>
+            
+            <!-- 👈 AGGIUNGI QUESTO LINK -->
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="#" class="calendar-link" onclick="event.stopPropagation(); openGantt(); return false;">
+                    Visualizza calendario progetti 📅
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
                 
                 <!-- Card 2: Info -->
                 <div class="carousel-slide">
@@ -868,6 +894,19 @@ Lo studio è onorato di partecipare all'iniziativa che valorizza l'eccellenza it
     </div>
 </footer>
     <script src="script.js"></script>
-
+<!-- Sposta questo popup alla fine del body, prima della chiusura </body> -->
+<div id="gantPopup" class="gant-popup">
+    <div class="gant-content">
+        <span class="close" onclick="closeGantt()">&times;</span>
+        
+        <!-- 👈 AGGIUNGI QUESTA DICITURA -->
+        <div class="calendar-header">
+            <h3>Calendario Progetti IIC UAE</h3>
+            <p class="update-date">Aggiornato al: <strong>15 Gennaio 2025</strong></p>
+        </div>
+        
+        <img src="assets/ganttDueito.jpg" alt="Gantt aziendale">
+    </div>
+</div>
 </body>
 </html>
