@@ -2022,9 +2022,9 @@ img {
     background: #2c5aa0;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 25px;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -3648,5 +3648,136 @@ img {
   .section-badge.iic-badge {
     gap: 10px;
     margin-bottom: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px !important; /* Riduci i margini laterali */
+  }
+
+  .nav {
+    padding: 0 !important; /* Togli padding interno */
+  }
+
+  .brand {
+    left: 5px !important; /* Avvicina il logo al bordo */
+  }
+
+  .nav-toggle {
+    right: 5px !important; /* Avvicina il menu hamburger al bordo */
+  }
+}
+/* ✅ FIX overflow senza tagliare contenuti */
+html, body {
+  overflow-x: clip; /* blocca lo scroll ma non taglia i figli */
+}
+
+
+@media (min-width: 757px) and (max-width: 1000px) {
+  .container {
+    padding: 0 15px !important; /* Riduce il padding laterale */
+  }
+
+  .nav, .hero, .site-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1000px) {
+  /* Forza visibilità della sezione settori */
+  #settori {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 15px !important; /* Assicurati padding ragionevole */
+  }
+
+  #settori .container {
+    padding: 0 15px !important;
+  }
+
+  #settori .sectors-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Sezione Strategic Review - card in colonna */
+  .strategic-sections {
+    display: flex;
+    flex-direction: column !important; /* le mette in colonna */
+    gap: 2rem; /* spazio tra le card */
+    align-items: center; /* centra le card orizzontalmente */
+  }
+
+  .strategic-section {
+    width: 100% !important; /* fa occupare tutta la larghezza disponibile */
+    max-width: 700px; /* opzionale: limita la larghezza su tablet */
+    text-align: center; /* centra i testi */
+  }
+}
+/* --- STRATEGIC REVIEW: allineamento bottoni (versione forzata) --- */
+.strategic-sections {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+.strategic-section {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  background: #fff !important;
+  padding: 2rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  flex: 1 !important;
+  min-width: 280px !important;
+}
+
+.strategic-section ul {
+  flex-grow: 1 !important;
+}
+
+.strategic-section .discover-btn {
+  align-self: center !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding: 20px 50px !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  background-color: #2c5aa0 !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+
+}
+
+.strategic-section .discover-btn:hover {
+  background-color: #1e3a5f !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Layout in colonna su schermi <1000px */
+@media (max-width: 1000px) {
+  .strategic-sections {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .strategic-section {
+    width: 100% !important;
+    max-width: 700px !important;
   }
 }
