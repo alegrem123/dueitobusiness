@@ -1365,22 +1365,25 @@ function goToCarouselSlide(slideIndex) {
     }
 }
 
-// Funzioni per il popup Gantt
 function openGantt() {
-    const popup = document.getElementById('gantPopup');
-    if (popup) {
-        popup.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Previene lo scroll
-    }
+  const popup = document.getElementById('gantPopup');
+  popup.style.display = 'flex';
+
+  // Blocca lo scroll della pagina dietro
+  document.body.style.overflow = 'hidden';
 }
 
 function closeGantt() {
-    const popup = document.getElementById('gantPopup');
-    if (popup) {
-        popup.classList.remove('show');
-        document.body.style.overflow = 'auto'; // Ripristina lo scroll
-    }
+  const popup = document.getElementById('gantPopup');
+  popup.style.display = 'none';
+
+  // Riabilita lo scroll
+  document.body.style.overflow = '';
+
+  // 🔧 Correzione: forza un ricalcolo della navbar
+  window.dispatchEvent(new Event('scroll'));
 }
+
 
 // Chiudi il popup cliccando fuori
 document.addEventListener('click', function(event) {

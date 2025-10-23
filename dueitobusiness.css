@@ -2882,8 +2882,8 @@ img {
 
 .principles-section h4 {
     color: #1e3a5f;
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -3780,4 +3780,13 @@ html, body {
     width: 100% !important;
     max-width: 700px !important;
   }
+}
+/* --- FIX: rimuove il corsivo solo per la sezione Partnership Logistica --- */
+/* --- UNIFICA gli h4 di tutte le sezioni dei servizi --- */
+.service-detail-content h4 {
+  color: #2c5aa0 !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 2rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
 }
