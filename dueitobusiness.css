@@ -3350,7 +3350,7 @@ img {
   bottom: 120px; /* distanza verticale dal bottone */
   left: 50%;
   transform: translateX(-50%);
-  height: 86px;
+  height: 105px;
   width: auto;
   border-radius: 12px;
 }
@@ -3789,4 +3789,17 @@ html, body {
     margin-bottom: 2rem !important;
     font-weight: 400 !important;
     font-style: normal !important;
+}
+/* === HERO: larghezza fissa dei bottoni principali === */
+.hero .btn-primary,
+.hero .btn-accent {
+  width: 240px;       /* scegli la larghezza fissa (es. 240px o 260px) */
+  text-align: center; /* centra il testo */
+  padding: 15px 0;    /* padding verticale uniforme */
+}
+
+/* sblocca il limite del contenitore del bottone IIC */
+.hero .btn-with-logo {
+  max-width: none;    /* rimuove limite precedente */
+  width: auto;
 }
