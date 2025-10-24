@@ -2699,7 +2699,7 @@ img {
 .dropdown-menu a {
     display: block;
     padding: 15px 25px;
-    color: #4a5568;
+    color: rgba(255, 255, 255, 0.95) !important; /* quasi bianco */
     text-decoration: none;
     font-size: 15px;
     font-weight: 400;
@@ -2713,11 +2713,12 @@ img {
 }
 
 .dropdown-menu a:hover {
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.08) 0%, rgba(44, 90, 160, 0.08) 100%);
-    color: #1e3a5f;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
     padding-left: 30px;
     transform: translateX(5px);
 }
+
 
 
 /* Stili per navbar trasparente */
@@ -2880,13 +2881,7 @@ img {
     border-top: 3px solid rgba(49, 29, 4, 0.2);
 }
 
-.principles-section h4 {
-    color: #1e3a5f;
-    font-size: 1.8rem !important;
-    font-weight: 600 !important;
-    text-align: center;
-    margin-bottom: 1rem;
-}
+
 
 .principles-subtitle {
     text-align: center;
@@ -3013,13 +3008,7 @@ img {
     border-top: 3px solid rgba(49, 29, 4, 0.2);
 }
 
-.principles-carousel-section h4 {
-    color: #1e3a5f;
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1rem;
-}
+
 
 .principles-deep-subtitle {
     text-align: center;
@@ -3841,4 +3830,43 @@ html, body {
   left: 0;                    /* torna a sinistra */
   top: 0.8rem;
   transform: none;            /* rimuove eventuali centraggi */
+}
+
+/* Uniforma il titolo dei cluster (caroselli IIC UAE) con quello degli approfondimenti */
+#iic-uae-connector h4 {
+    color: #1e3a5f !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+/* Dropdown visibile e leggibile in entrambi gli stati */
+.site-header:not(.scrolled) .dropdown-menu {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-header:not(.scrolled) .dropdown-menu a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.site-header:not(.scrolled) .dropdown-menu a:hover {
+  color: white !important; /* bianco in hover */
+}
+
+/* Navbar opaca dopo scroll */
+.site-header.scrolled .dropdown-menu {
+  background: rgba(0, 0, 0, 0.85); /* fondo scuro */
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.site-header.scrolled .dropdown-menu a {
+  color: rgba(255, 255, 255, 0.9) !important; /* testo chiaro */
+}
+
+.site-header.scrolled .dropdown-menu a:hover {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1);
 }
