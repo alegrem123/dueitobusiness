@@ -2802,25 +2802,25 @@ img {
         padding-left: 30px;
     }
 }
-/* ========== FIX PER RANGE 756px-956px ========== */
+/*
 @media (min-width: 757px) and (max-width: 956px) {
-    /* Aggiungi position relative al contenitore nav */
+    
     .nav {
         position: relative;
     }
     
-    /* Nascondi menu desktop in questo range */
+   
     .desktop-menu {
         display: none !important;
     }
     
-    /* Mostra menu mobile in questo range */
+   
     .mobile-menu {
         display: none;
-        position: absolute; /* Cambia da fixed a absolute */
-        top: 100%; /* Si apre sotto la navbar */
+        position: absolute; 
+        top: 100%; 
         right: 0;
-        width: 280px; /* Larghezza fissa */
+        width: 280px; 
         max-height: 400px;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
@@ -2857,7 +2857,7 @@ img {
         padding-left: 30px;
     }
     
-    /* Forza navbar opaca in questo range */
+    
     .site-header {
         background: rgba(255, 255, 255, 0.95) !important;
         backdrop-filter: blur(10px) !important;
@@ -2873,7 +2873,7 @@ img {
     .site-header .brand {
         color: #1e3a5f !important;
     }
-}
+}*/
 /* ========== PRINCIPI DENTRO IIC UAE ========== */
 .principles-section {
     margin-top: 3rem;
@@ -3670,7 +3670,7 @@ html, body {
   .nav, .hero, .site-header {
     width: 100% !important;
     max-width: 100% !important;
-    overflow: hidden !important;
+   
   }
 
   img, video {
@@ -3976,3 +3976,5 @@ html, body {
   color: #1e3a5f;
   padding-left: 40px;
 }
+/* ✅ FIX DEFINITIVO: hamburger attivo fino a 956px */
+
