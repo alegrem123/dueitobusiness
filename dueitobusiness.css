@@ -3803,3 +3803,42 @@ html, body {
   max-width: none;    /* rimuove limite precedente */
   width: auto;
 }
+/* Centra verticalmente e orizzontalmente il contenuto dei caroselli IIC UAE */
+#iic-uae-connector .carousel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* centra orizzontalmente */
+  justify-content: center; /* centra verticalmente */
+  text-align: center;     /* allinea il testo al centro */
+}
+
+#iic-uae-connector .carousel-content,
+#iic-uae-connector .carousel-list {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#iic-uae-connector .carousel-list li {
+  text-align: center;
+  padding-left: 0; /* rimuove il rientro */
+}
+/* Correzione per l'allineamento delle spunte nei caroselli IIC UAE */
+#iic-uae-connector .carousel-list {
+  text-align: left;           /* testo allineato a sinistra */
+  margin: 0 auto;
+  display: inline-block;      /* mantiene centrato l’intero blocco */
+}
+
+#iic-uae-connector .carousel-list li {
+  padding-left: 2rem;         /* spazio per la spunta */
+  position: relative;
+}
+
+#iic-uae-connector .carousel-list li:before {
+  display: block;             /* riattiva la spunta */
+  position: absolute;
+  left: 0;                    /* torna a sinistra */
+  top: 0.8rem;
+  transform: none;            /* rimuove eventuali centraggi */
+}
