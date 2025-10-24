@@ -1398,3 +1398,28 @@ document.addEventListener('keydown', function(event) {
         closeGantt();
     }
 });
+// Dropdown per il menu mobile
+document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const parent = trigger.parentElement;
+    parent.classList.toggle('open');
+  });
+});
+// Dropdown per mobile
+document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const menu = trigger.nextElementSibling;
+    const isOpen = menu.classList.contains('show');
+
+    // Chiudi tutti gli altri menu
+    document.querySelectorAll('.mobile-dropdown-menu').forEach(m => m.classList.remove('show'));
+    document.querySelectorAll('.mobile-dropdown-trigger i').forEach(i => i.style.transform = '');
+
+    // Apri o chiudi quello cliccato
+    if (!isOpen) {
+      menu.classList.add('show');
+      trigger.querySelector('i').style.transform = 'rotate(180deg)';
+    }
+  });
+});
+
