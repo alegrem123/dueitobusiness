@@ -3840,6 +3840,22 @@ html, body {
     text-align: center !important;
     margin-bottom: 1rem !important;
 }
+@media (max-width: 768px) {
+    #iic-uae-connector h4 {
+        font-size: 1.4rem !important;
+        padding: 0 10px !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #iic-uae-connector h4 {
+        font-size: 1.2rem !important;
+        padding: 0 5px !important;
+        line-height: 1.4 !important;
+    }
+}
 /* Dropdown visibile e leggibile in entrambi gli stati */
 .site-header:not(.scrolled) .dropdown-menu {
   background: rgba(255, 255, 255, 0.95);
