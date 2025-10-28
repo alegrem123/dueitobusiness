@@ -1,3 +1,3 @@
-/*  /404.html  404
-/*  / [R=301,L]
-/*  /robots.txt  200
+
+User-agent: *
+Disallow: /
