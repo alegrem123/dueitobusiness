@@ -386,7 +386,7 @@ body {
     line-height: 1.2;
     text-align: left;
     color: #ffffff;
-    margin-top: 6rem;
+    margin-top: 7rem;
 }
 
 .hero-description {
@@ -3992,5 +3992,32 @@ html, body {
   color: #1e3a5f;
   padding-left: 40px;
 }
-/* ✅ FIX DEFINITIVO: hamburger attivo fino a 956px */
 
+.pedine-img {
+  width: 100%;
+  max-width: 700px; /* aumenta o riduci a piacere */
+  height: auto; /* mantiene le proporzioni corrette */
+  display: block;
+  margin: 0 auto; /* la centra */
+}
+
+.postit-img {
+    width: 100%;
+    max-width: 700px; /* aumenta o riduci a piacere */
+    height: 500px; /* mantiene le proporzioni corrette */
+    display: block;
+    margin: 0 auto; /* la centra */
+}
+/* ✅ Rimuove il rosso dalla privacy */
+.privacy-checkbox input[type="checkbox"]:invalid + .checkmark {
+    border-color: #a8c8e8 !important; /* colore coerente con il tema */
+}
+
+.privacy-checkbox input[type="checkbox"]:invalid ~ .privacy-text {
+    color: inherit !important; /* torna al colore normale del sito */
+}
+
+/* ✅ Colore di base coerente */
+.privacy-text {
+    color: inherit !important;
+}
