@@ -3617,16 +3617,11 @@ img {
   width: auto;
   border-radius: 8px;
   object-fit: contain;
-  mix-blend-mode: multiply;
   filter: brightness(1.05) contrast(1.05);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Leggera interattività moderna */
-.section-badge.iic-badge img:hover {
-  transform: scale(1.06);
-  filter: brightness(1.25);
-}
+
 
 
 /* Responsive: centrato più compatto su mobile */
