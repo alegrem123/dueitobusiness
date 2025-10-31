@@ -211,11 +211,10 @@
             <span class="separator">•</span>
             <a href="#contatti" data-translate="nav-contacts">contattaci</a>
           </nav>
-
           <nav class="mobile-menu">
             <div class="mobile-dropdown">
               <button class="mobile-dropdown-trigger">
-                Chi Siamo <i class="fas fa-chevron-down"></i>
+                Chi Siamo ciao <i class="fas fa-chevron-down"></i>
               </button>
               <div class="mobile-dropdown-menu">
                 <a href="#galleria"
@@ -1681,5 +1680,15 @@
         <img src="assets/ganttOctober.webp" alt="Gantt aziendale" />
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("img").forEach(function (img) {
+          if (!img.closest(".hero")) {
+            img.setAttribute("loading", "lazy");
+            img.setAttribute("decoding", "async");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
