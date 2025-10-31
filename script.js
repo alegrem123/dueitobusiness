@@ -50,12 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Solo su desktop (larghezza > 768px)
         if (window.innerWidth > 768) {
-            // Calcola l'altezza dell'hero (escludendo la navbar)
             const heroHeight = heroSection1 ? heroSection1.offsetHeight - siteHeader.offsetHeight : 0;
             
-            // Gestione del banner superiore
             if (scrollTop > 50) {
                 if (topBanner) topBanner.style.transform = 'translateY(-100%)';
                 if (siteHeader) siteHeader.classList.add('fixed');
@@ -64,39 +61,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (siteHeader) siteHeader.classList.remove('fixed');
             }
             
-            // Gestione trasparenza navbar: trasparente solo dentro l'hero
             if (scrollTop > heroHeight) {
                 if (siteHeader) siteHeader.classList.add('scrolled');
             } else {
                 if (siteHeader) siteHeader.classList.remove('scrolled');
             }
             
-            // Gestione sfocatura progressiva dell'hero
             const heroSection = document.querySelector('.hero');
             const heroContent = document.querySelector('.hero-content');
 
             if (heroBg && scrollTop <= heroHeight) {
-                // Calcola quanto siamo scesi nell'hero (0 = inizio, 1 = fine)
                 const scrollProgress = Math.min(scrollTop / heroHeight, 1);
-                
-                // Applica sfocatura progressiva (da 0px a 8px di blur)
                 const blurAmount = scrollProgress * 8;
-                // Applica oscuramento progressivo per migliorare la leggibilità
                 const brightnessAmount = 1 - (scrollProgress * 0.2);
                 
                 heroBg.style.filter = `blur(${blurAmount}px) brightness(${brightnessAmount})`;
                 
-                // Sfocatura progressiva del contenuto
-                if (scrollProgress > 0.01) { // Inizia a sfocare dopo l'1% dello scroll
-                    const contentBlur = (scrollProgress - 0.1) * 5; // Da 0 a 4.5px di blur
-                    const contentOpacity = 1 - (scrollProgress - 0.1) * 0.6; // Da 1 a 0.46 di opacità
+                if (scrollProgress > 0.01) {
+                    const contentBlur = (scrollProgress - 0.1) * 5;
+                    const contentOpacity = 1 - (scrollProgress - 0.1) * 0.6;
                     
                     if (heroContent) {
                         heroContent.style.filter = `blur(${contentBlur}px)`;
                         heroContent.style.opacity = contentOpacity;
                     }
                 } else {
-                    // Rimuovi la sfocatura del contenuto
                     if (heroContent) {
                         heroContent.style.filter = 'none';
                         heroContent.style.opacity = '1';
@@ -104,16 +93,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 
             } else if (heroBg && scrollTop > heroHeight) {
-                // Massimo sfocatura quando si esce completamente dall'hero
                 heroBg.style.filter = 'blur(8px) brightness(0.8)';
-                
-                // Sfocatura massima del contenuto
+                const heroContent = document.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.filter = 'blur(4px)';
                     heroContent.style.opacity = '0.6';
                 }
             } else {
-                // Reset quando si torna in cima
+                const heroContent = document.querySelector('.hero-content');
                 if (heroContent) {
                     heroContent.style.filter = 'none';
                     heroContent.style.opacity = '1';
@@ -121,9 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
         } else {
-            // Su mobile, navbar sempre opaca
             if (siteHeader) siteHeader.classList.add('scrolled');
-            // Su mobile, rimuovi la sfocatura per performance
             if (heroBg) {
                 heroBg.style.filter = 'none';
             }
@@ -151,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         behavior: 'smooth'
                     });
                     
-                    // Chiudi menu mobile se aperto
                     if (mobileMenu && mobileMenu.classList.contains('show')) {
                         mobileMenu.classList.remove('show');
                         document.body.classList.remove('menu-open');
@@ -169,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const serviceType = this.getAttribute('data-service');
             let targetId;
             
-            // Determina quale sezione di approfondimento aprire
             switch(serviceType) {
                 case 'Check Up Operativo':
                     targetId = 'checkup-operativo';
@@ -187,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     targetId = 'iic-uae-connector';
                     break;  
                 default:
-                    targetId = 'contatti'; // Fallback al form se non trova il servizio
+                    targetId = 'contatti';
             }
             
             const targetSection = document.getElementById(targetId);
@@ -213,7 +196,8 @@ document.addEventListener("DOMContentLoaded", function() {
             'hero-title': 'LA BASE STRATEGICA PER LA CRESCITA AZIENDALE',
             'hero-organic': 'LA CRESCITA ORGANICA',
             'hero-merger': 'MERGER & ACQUISITIONS',
-            'hero-description': 'Leadership per il cambiamento<br>Quick-wins operativi che diventano competenze permanenti nelle PMI di eccellenza',
+            'hero-description': 'Leadership per il cambiamento<br>Quick-wins che diventano competenze <br>permanenti nelle PMI di eccellenza',
+            'hero-description1': 'LA CRESCITA ORGANICA <br> MERGER & ACQUISITIONS',
             'btn-appointment': 'Contattaci',
             'btn-services': 'I Nostri Servizi',
             'btn-portfolio': 'IIC UAE ADVISOR',
@@ -228,12 +212,12 @@ document.addEventListener("DOMContentLoaded", function() {
             'nav-approach': 'Approccio metodologico consolidato',
             'nav-indicators': 'Indicatori e misurazione',
             'gallery-title': 'Ownership di un modello progettuale',
-            'gallery-subtitle': 'Progetti in diversi mercati ed aree merceologiche che sviluppano competenze e creano valore duraturo per i nostri clienti. Interim Management specializzato nel ruolo di COO per aziende di eccellenza e forte commitment al cambiamento. Importanza dell\'utilizzo di librerie e tools di monitoraggio standards.',
+            'gallery-subtitle': 'Progetti in diversi mercati ed aree merceologiche che sviluppano competenze e creano valore<br>duraturo per i nostri clienti. <br>Interim Management specializzato nel ruolo di COO per aziende di<br>eccellenza e forte commitment al cambiamento. <br>Importanza dell\'utilizzo di librerie e tools di monitoraggio standards.',
             'about-title': 'L\'esperienza del FARE - La partnership come risorsa',
             'about-quote': 'È il progresso a trasformare l\'azienda in un processo straordinario, ma sono la sua storia e le sue radici a sancirne l\'unicità.',
-            'about-text': 'La leadership operativa di «due i to business», nasce come perno di coordinamento fra le Aziende Host del servizio e diversi <b>partners</b> di business presenti in un vasto <b>network</b> industriale del panorama nazionale ed internazionale. Lo studio mette a disposizione dei servizi mirati a potenziare le organizzazioni ed i <b>meccanismi decisionali</b> aziendali, inoltre forniscono una panoramica precisa e sfidante sulle opportunità da cogliere nei settori Sales & Operations & Marketing. La logica di integrazione di questi servizi è garantita dall\'origine in quanto si sviluppano conformemente a un\'architettura di dati comuni a disposizione nel ERP gestionale di riferimento aziendale. Indipendentemente della modalità e dal tipo di servizio scelto è sempre previsto un percorso metodologico che include un format manageriale intrinseco e un follow up sistematico dell\'avanzamento del progetto nel day by day operativo.',
+            'about-text': 'La leadership operativa di «due i to business», nasce come perno di coordinamento fra le Aziende Host del servizio e diversi <b>partners</b> di business presenti in un vasto <b>network</b> industriale del panorama nazionale ed internazionale. <br><br>Lo studio mette a disposizione dei servizi mirati a potenziare le organizzazioni ed i <b>meccanismi decisionali</b> aziendali, inoltre forniscono una panoramica precisa e sfidante sulle opportunità da cogliere nei settori Sales & Operations & Marketing. <br><br>La logica di integrazione di questi servizi è garantita dall\'origine in quanto si sviluppano conformemente a un\'architettura di dati comuni a disposizione nel ERP gestionale di riferimento aziendale.<br><br>Indipendentemente della modalità e dal tipo di servizio scelto è sempre previsto un percorso metodologico che include un <b>format manageriale</b> intrinseco e un follow up sistematico dell\'avanzamento del progetto nel day by day operativo.',
             'break-title-1': 'Mission',
-            'break-subtitle-1': 'Sostenere le attività di business di aziende di eccellenza con utilizzo di adeguata metodologia di mantenimento e sviluppo del processo di crescita organica.',
+            'break-subtitle-1': ' Sostenere le attività di business di aziende di eccellenza con utilizzo di<br>adeguata metodologia di mantenimento e sviluppo del processo di crescita organica e per linee esterne.',
             'break-btn-1': 'Richiedi una Consulenza',
             'break-title-2': 'Trasforma le teorie in risultati concreti attraverso un approccio scientifico e condiviso con le key people aziendali<br>Efficienza nell\'utilizzo degli indicatori',
             'break-item-1': 'AS IS IT',
@@ -246,17 +230,16 @@ document.addEventListener("DOMContentLoaded", function() {
             'methodology-values': 'Metodologia distintiva personalizzata per le PMI (CODp)',
             'methodology-body1': 'Introduzione | efficientamento degli incontri dei gruppi di lavoro<br>Definizione | adozioni di criteri e indicatori comuni<br>Promozione e sviluppo delle competenze manageriali del personale<br>Focus sulla concretezza vs il rischio delle opinioni<br>Programmazione strategica con permanenti review dell\'avanzamento del progetto',
             'methodology-values1': 'Importanza della gestione integrata dei dati (ADR)',
-            'methodology-body2': 'Il KNOW HOW del Costo del Prodotto e della Marginalità come patrimonio del team di lavoro<br>Linearità delle comunicazioni | Modularità e sinergia dei progetti in corso nelle varie funzioni<br>Criteri per la creazione dell\'interfaccia evitando doppio handling<br>Autonomia dei sistemi periferici vs attività del ERP<br>Importanza e valorizzazione dell\'integrazione dei sistemi',
+            'methodology-body2': 'Il KNOW HOW della Struttura dei costi e della Marginalità come patrimonio del team di lavoro<br>Linearità delle comunicazioni | Modularità e sinergia dei progetti in corso nelle varie funzioni<br>Criteri per la creazione dell\'interfaccia evitando doppio handling<br>Autonomia dei sistemi periferici vs attività del ERP<br>Importanza e valorizzazione dell\'integrazione dei sistemi',
             'services-title': 'I nostri servizi',
             'services-subtitle': 'Soluzioni strategiche personalizzate per ottimizzare processi e sviluppare competenze manageriali.',
             'service-1-title': 'CHECK UP OPERATIVO',
             'service-1-subtitle': 'INTERIM CHIEF OPERATING OFFICER MANAGEMENT',
             'service-1-desc': 'CHIEF OPERATING OFFICER  EXECUTIVE INTERIM MANAGEMENT<br><br>Sviluppo del ruolo di COO e ottimizzazione dei processi operativi.',
             'service-2-title': 'SVILUPPO ORGANIZZATIVO',
-            'service-2-subtitle': 'Supporto alle risorse umane ed sviluppo delle basi per il cambiamento della cultura aziendale',
-            'service-2-desc': '<br>Supporto alle risorse umane e sviluppo delle basi per il cambiamento della cultura aziendale',
+            'service-2-desc': '<br>Supporto alle risorse umane ed allo sviluppo delle basi per il cambiamento della cultura aziendale',
             'service-3-title': 'STRATEGIC REVIEW',
-            'service-3-subtitle': 'A seconda dell\'esigenza questa tipologia di servizio oneshot, dà la possibilità di inserire una risorsa operativa nel vostro progetto.',
+            'service-3-subtitle': 'A seconda dell\'esigenza questa tipologia di intervento dà la possibilità alla direzione aziendale di avere un supporto veloce nel processo decisionale.',
             'service-3-desc': '||ANALISI E REVISIONE DI PIANI STRATEGICI E DI CRESCITA||<br>||SUPPORTO ED EFFICIENTAMENTO STRATEGIE COMMERCIALI||<br>||INTERNAZIONALIZZAZIONE e GUIDA PROGETTI SPECIALI||',
             'service-4-title': 'PARTNERSHIP LOGISTICA',
             'service-4-subtitle': 'Introduzione della governance del ciclo dell\'ordine nelle offerte di servizio di logistica integrata',
@@ -287,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-3-1': '<br>PIANI INDUSTRIALI REVIEW',
             'service-detail-3-2': 'BUSINESS PLAN',
             'service-detail-3-3': 'PIANO STRATEGICO PLURIENNALE',
-            'service-detail-3-5': 'FOCUS SULLA CRESCITA<br> ORGANICA ED EFFICIENZA DEGLI INVESTIMENTI',
+            'service-detail-3-5': 'FOCUS SULLA CRESCITA ORGANICA',
             'service-detail-3-7': '<br><br><br>CONTRACT REVIEW',
             'service-detail-3-8': 'SUPPORTO AL SALES DEPT.',
             'service-detail-3-9': 'IL PUNTO DI VISTA DEL CLIENTE <br>A 360° AL MOMENTO DELLA CHIUSURA<br>DI UN CONTRATTO ',
@@ -310,10 +293,10 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-4-10': 'Gestione integrata della supply chain',
             'service-detail-4-11': 'Ottimizzazione dei tempi di consegna',
             'iic-uae-title': 'Italian Certified Advisor IIC UAE',
-            'iic-uae-services': 'All\'interno del progetto Italian Certified Advisor IIC UAE 2025 – 2026; lo studio è stato selezionato come partner certificato della Camera di Commercio Italiana negli Emirati Arabi Uniti ( UAE ). Specificatamente l\'ing Daniel Marchisio è stato certificato ICA 547 per la provincia di Milano.<br><br>«In un momento storico segnato da una crescente cooperazione tra Italia ed EAU, rafforzata da importanti accordi bilaterali, le prospettive per le aziende e professionisti in questo territorio sono ampie, concrete e in forte espansione»<br><br>«Gli Emirati rappresentano oggi una delle economie più dinamiche e interconnesse a livello globale, con una domanda crescente di competenze qualificate nei settori legale, fiscale, societario e della consulenza strategica»<br><br>Lo studio è onorato di partecipare all\'iniziativa che valorizza l\'eccellenza italiana nel settore professionale e consulenziale.',
+            'iic-uae-services': 'All\'interno del progetto Italian Certified Advisor IIC UAE 2025 – 2026; lo studio è stato selezionato come partner certificato della Camera di Commercio Italiana negli Emirati Arabi Uniti ( UAE ). Specificatamente Daniel Marchisio, Operations Business Partner della due i to business è stato certificato ICA 547 per la provincia di Milano.<br><br>«In un momento storico segnato da una crescente cooperazione tra Italia ed EAU, rafforzata da importanti accordi bilaterali, le prospettive per le aziende e professionisti in questo territorio sono ampie, concrete e in forte espansione»<br><br>«Gli Emirati rappresentano oggi una delle economie più dinamiche e interconnesse a livello globale, con una domanda crescente di competenze qualificate nei settori legale, fiscale, societario e della consulenza strategica»<br><br>Lo studio è onorato di partecipare all\'iniziativa che valorizza l\'eccellenza italiana nel settore professionale e consulenziale.',
             'agenda-title': 'Agenda 2025-2026',
             'principles-title': 'I CLUSTER DEL PERCORSO DI INTERNAZIONALIZZAZIONE UAE',
-            'principles-subtitle': 'Da determinare ancora...',
+            'principles-subtitle': 'Agenda 2025-2026',
             'principle-1-title': 'SCOUTING BIUNIVOCO',
             'principle-1-desc': 'PROMOZIONE DELL\'INIZIATIVA<br>IL TEAM A DUBAI',
             'principle-2-title': 'MODULO INFO',
@@ -321,9 +304,10 @@ document.addEventListener("DOMContentLoaded", function() {
             'principle-3-title': 'FORMAZIONE | MATCHING',
             'principle-3-desc': 'FORMAZIONE SPECIFICA<br>IL PROGETTO AZIENDALE DEL CLIENTE',
             'principle-4-title': 'FOLLOW UP | MATCHING',
+            'service-4-subtitle': 'Introduzione della governance del ciclo dell\'ordine nelle offerte di servizio di logistica integrata',
             'principle-4-desc': 'SUPPORTO SPECIFICO<br>AVANZAMENTO PROGETTO DEL CLIENTE',
             'principles-deep-title': 'Approfondimenti sui cluster del programma',
-            'principles-deep-subtitle': 'Scopri nel dettaglio come applichiamo la nostra metodologia nella pratica quotidiana e nel percorso di internazionalizzazione del MADE IN ITALY in Emirati Arabi Uniti',
+            'principles-deep-subtitle': 'Scopri i vantaggi dell\'applicazione della nostra metodologia nella pratica quotidiana e nel percorso di internazionalizzazione del MADE IN ITALY in Emirati Arabi Uniti',
             'deep-principle-1-title': 'SCOUTING BIUNIVOCO',
             'deep-principle-1-desc': 'Il nostro approccio di scouting bidirezionale garantisce una ricerca mirata e personalizzata delle opportunità di business.',
             'deep-principle-1-1': 'Promozione dell\'iniziativa presso associazioni di Categoria | Camera',
@@ -332,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'deep-principle-1-4': 'Profilo delle aziende e settori merceologici',
             'deep-principle-1-5': 'Preparazione del team a Dubai | due i to business',
             'deep-principle-2-title': 'MODULO INFO',
-            'deep-principle-2-desc': 'In questo modulo si fornisce informazione dettagliata e continuamente aggiornata sul mercato emiratino e si comincia a preparare un progetto cliente | Importanza di avere una contra parte UAE certificata',
+            'deep-principle-2-desc': 'In questo modulo si fornisce informazione dettagliata e continuamente aggiornata sul<br>mercato emiratino e si comincia a preparare un progetto cliente | Importanza di avere una<br>contra parte UAE certificata',
             'deep-principle-2-1': 'Pack informativo specifico [commerciale | legale | finanziario] / supporto Team Dubai',
             'deep-principle-2-2': 'Informazioni generali sui mercati di riferimento',
             'deep-principle-2-3': 'Panoramica sui competitor nel nuovo mercato',
@@ -366,6 +350,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'sector-wine-2': 'GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>',
             'sector-wine-3': '<b>TOP MARKET LEADER</b> BRAND COMPANY',
             'sector-wine-4': 'LOGISTICA INTEGRATA',
+            'sector-wine-5': 'MODELLI DI CAMBIAMENTO ORGANIZZATIVO',
             'sector-data-1': 'PROGETTI DI ADR | ERP INTEGRATION &nbsp; &nbsp;<b>4+</b>',
             'sector-data-2': '<b>ADR PORTSUNLIGHT SPECIFICATIONS</b>',
             'sector-data-3': 'NEW DELTA "V" OLIVE OIL COMPANY',
@@ -373,11 +358,12 @@ document.addEventListener("DOMContentLoaded", function() {
             'sector-data-5': 'EU FOOD COMPANIES SUPPLY CHAIN REVIEW &nbsp; &nbsp;<b>5+</b>',
             'sector-machinery-1': 'SALES PARTNERSHIP &nbsp; &nbsp;<b>3+</b>',
             'sector-machinery-2': 'COMMERCIAL SUPPORT PROJECTS &nbsp; &nbsp;<b>2 MIO +</b>',
-            'sector-machinery-3': 'HEAD PILLAR EARLY EQUIPMENT MGMT &nbsp; &nbsp;<b>70 MIO +</b>',
+            'sector-machinery-3': 'MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIO +</b>',
+            'sector-machinery-4': 'TRIGENERAZIONE &nbsp; &nbsp;<b>2+ PLANTS</b>',
             'sector-export-1': 'BERTOLLI USA | <b>CLUB WAREHOUSE</b>',
             'sector-export-2': 'SUPPLY CHAIN <b>AREA MENA</b> &nbsp; &nbsp;<b> 12 KT +</b>',
             'sector-export-3': 'GROWTH ENVIRONMENT SPARKLING WINES &nbsp; &nbsp;<b>50% +</b>',
-            'sector-export-4': 'TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>',
+            'sector-export-4': 'REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>',
             'sector-dubai-1': 'Punto di riferimento per aziende italiane',
             'sector-dubai-2': 'Interfaccia Camera Commercio UAE',
             'sector-dubai-3': 'Connector con partner emiratini',
@@ -423,15 +409,17 @@ document.addEventListener("DOMContentLoaded", function() {
             'error-email-invalid': 'Inserisci un indirizzo email valido',
             'error-sector-required': 'Seleziona un settore',
             'error-privacy-required': 'È necessario accettare la Privacy Policy per inviare il form',
+            'error-message-too-long': 'Il messaggio non può superare i 1000 caratteri',
             'calendar-link': 'Visualizza calendario progetti 🗓️',
             'calendar-header': 'Calendario Progetto IC Advisor IIC UAE',
-            'update-date': "Aggiornato al <strong>22 Ottobre 2025</strong>"
+            'update-date': 'Aggiornato al: <strong>22 Ottobre 2025</strong>'
         },
         en: {
             'hero-title': 'THE STRATEGIC BASIS FOR BUSINESS GROWTH',
             'hero-organic': 'ORGANIC GROWTH',
             'hero-merger': 'MERGER & ACQUISITIONS',
-            'hero-description': 'Leadership for change<br>Operational quick-wins that become permanent skills in excellence SMEs',
+            'hero-description': 'Leadership for change<br>Quick wins that turn into lasting <br> capabilities within excellence SMEs',
+            'hero-description1': 'ORGANIC GROWTH <br> MERGER & ACQUISITIONS',
             'btn-appointment': 'Contact Us',
             'btn-services': 'Our Services',
             'btn-portfolio': 'IIC UAE ADVISOR',
@@ -441,40 +429,39 @@ document.addEventListener("DOMContentLoaded", function() {
             'nav-methodology': 'methodology',
             'nav-sectors': 'sectors',
             'nav-contacts': 'contact us',
-            'nav-ownership': 'Ownership with a project model',
+            'nav-ownership': 'Ownership of a project model',
             'nav-experience': 'The experience of DOING',
             'nav-approach': 'Consolidated methodological approach',
             'nav-indicators': 'Indicators and measurement',
             'gallery-title': 'Ownership with a project model',
-            'gallery-subtitle': 'Projects in different markets and product areas that develop skills and create lasting value for our clients. Interim Management specialized in the COO role for excellence companies with strong commitment to change. Importance of using standard libraries.',
+            'gallery-subtitle': 'Projects in different markets and product areas that develop skills and create value<br>that lasts over time for our clients. <br>Interim Management specialized in the COO role for excellence companies with strong commitment to change. <br>Importance of using standard libraries and monitoring tools.',
             'about-title': 'The experience of DOING - Partnership as a resource',
             'about-quote': 'It is progress that transforms the company into an extraordinary process, but it is its history and roots that establish its uniqueness.',
-            'about-text': 'The operational consulting of «due i to business», was born as a coordination hub between the Host Companies of the service and various business <strong>partners</strong> present in a very wide industrial <strong>network</strong> of the national and international landscape. The studio basically provides four services aimed at enhancing organizations and corporate decision-making mechanisms. The services provide a precise and challenging overview of the opportunities to be seized in Sales & Operations and Marketing sectors. The integration logic of these services is guaranteed from the origin as they develop in accordance with a common data architecture available in the company\'s reference management ERP. Regardless of the service mode chosen, a methodological path is always planned that includes an intrinsic reference managerial format and a systematic follow-up of the project advancement in the day by day operational.',
+            'about-text': 'The operational leadership of «due i to business» was born as a coordination hub between the Host Companies of the service and various business <b>partners</b> within a wide industrial <b>network</b> at national and international level. <br><br>The studio provides services aimed at strengthening organizations and <b>decision-making mechanisms</b>, and offers a precise and challenging overview of opportunities to seize in Sales & Operations & Marketing. <br><br>The integration logic is guaranteed from the origin as these services are developed according to a shared data architecture available in the company\'s reference ERP. <br><br>Regardless of the mode and service chosen, a methodological path is always provided, including an intrinsic <b>managerial format</b> and a systematic follow-up of project progress in day-by-day operations.',
             'break-title-1': 'Mission',
-            'break-subtitle-1': 'Support business activities of excellence companies with the use of adequate methodology for maintaining and developing organic growth.',
+            'break-subtitle-1': ' Support business activities of excellence companies with an<br>adequate methodology to maintain and develop organic growth and M&A.',
             'break-btn-1': 'Request a Consultation',
-            'break-title-2': 'Transform theories into concrete results through a scientific and measurable approach | use of indicators',
+            'break-title-2': 'Transform theories into concrete results through a scientific approach shared with company key people<br>Efficiency in the use of indicators',
             'break-item-1': 'AS IS IT',
             'break-item-2': 'OBJECTIVE DEFINITION',
             'break-item-3': 'PERIODIC MONITORING',
             'break-item-4': 'AS IS IT vs TARGET',
             'break-btn-2': 'Discover Sectors and Projects',
             'methodology-title': 'Consolidated methodological approach at the base of services',
-            'methodology-quote': 'Clinical Organisation Development (CODp) and Automation Design Review (ADR).',
+            'methodology-quote': 'Clinical Organisation Development (CODp)<br>Automation Design Review (ADR).',
             'methodology-values': 'Distinctive methodology customized for SMEs (CODp)',
-            'methodology-body1': 'Introduction | streamlining of team meetings<br>Definition | adoption of shared measurable criteria and indicators<br>Promotion and development of managerial skills of the team present in the company<br>Focus on concreteness vs the risk of opinions<br>Strategic programming with permanent review of project advancement',
+            'methodology-body1': 'Introduction | streamlining of team meetings<br>Definition | adoption of shared measurable criteria and indicators<br>Promotion and development of managerial skills<br>Focus on concreteness vs opinion risk<br>Strategic programming with permanent project reviews',
             'methodology-values1': 'Importance of integrated data management (ADR)',
-            'methodology-body2': 'The KNOW HOW of Product Cost and Margin as team heritage<br>Communication linearity | Modularity and synergy of projects<br>Criteria for creating interfaces avoiding double data handling<br>Autonomy of peripheral systems vs ERP<br>Importance and enhancement of system integration',
+            'methodology-body2': 'The KNOW HOW of Cost structure and Margin as team heritage<br>Communication linearity | Modularity and synergy of ongoing projects<br>Criteria to create interfaces avoiding double handling<br>Autonomy of peripheral systems vs ERP<br>Importance and enhancement of system integration',
             'services-title': 'Our services',
             'services-subtitle': 'Personalized strategic solutions to optimize processes and develop managerial skills.',
             'service-1-title': 'OPERATIONAL CHECK UP',
             'service-1-subtitle': 'INTERIM CHIEF OPERATING OFFICER MANAGEMENT',
-            'service-1-desc': 'CHIEF OPERATING OFFICER – EXECUTIVE INTERIM MANAGEMENT<br><br>Development of the COO role and optimization of operational processes.',
+            'service-1-desc': 'CHIEF OPERATING OFFICER  – EXECUTIVE INTERIM MANAGEMENT<br><br>Development of the COO role and optimization of operational processes.',
             'service-2-title': 'ORGANIZATIONAL DEVELOPMENT',
-            'service-2-subtitle': 'Support for human resources and development of the foundations for changing corporate culture',
-            'service-2-desc': '<br>Support for human resources and development of the foundations for changing corporate culture',
+            'service-2-subtitle': 'Support for human resources and development of the foundations for corporate culture change',
             'service-3-title': 'STRATEGIC REVIEW',
-            'service-3-subtitle': 'Depending on the need, this type of oneshot service gives the possibility to insert an operational resource into your project.',
+            'service-3-subtitle': 'Depending on the need, this type of intervention gives management quick support in the decision-making process.',
             'service-3-desc': '||ANALYSIS AND REVISION OF STRATEGIC AND GROWTH PLANS||<br>||SUPPORT AND STREAMLINING OF COMMERCIAL STRATEGIES||<br>||INTERNATIONALIZATION – GUIDE SPECIAL PROJECTS||',
             'service-4-title': 'LOGISTICS PARTNERSHIP',
             'service-4-subtitle': 'Introduction of order cycle governance in integrated logistics service offerings',
@@ -488,13 +475,13 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-1-4': 'Continuous monitoring of adherence to operational plans',
             'service-detail-1-5': 'Maximize Team potential',
             'service-detail-1-6': 'Implementation of new work methodology | indicators | group dynamics',
-            'service-detail-1-7': 'Risks vs Business opportunities | continuity vs quick win',
+            'service-detail-1-7': 'Risks vs  Opportunities | continuity vs quick win',
             'service-detail-1-8': 'Synergies and integration of functions | flow architecture and data integration',
             'service-detail-1-9': 'Accelerate the execution of strategic projects',
             'service-detail-2-1': 'Organizational design | creation of new directions',
             'service-detail-2-2': 'Business Debottlenecking | Importance of Organizational Charts',
             'service-detail-2-3': 'HR support in personnel selection process',
-            'service-detail-2-4': 'JD | verification of organizational correspondences with reference models',
+            'service-detail-2-4': 'JD | verification of organizational correspondence with reference models',
             'service-detail-2-5': 'HR support in personnel evaluation | parameterization',
             'service-detail-2-6': 'Identification of conflict areas | debottlenecking',
             'service-detail-2-7': 'HR support in defining Training plans and skills development plans',
@@ -505,7 +492,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-3-1': '<br>INDUSTRIAL PLANS REVIEW',
             'service-detail-3-2': 'BUSINESS PLAN',
             'service-detail-3-3': 'MULTI-YEAR STRATEGIC PLAN',
-            'service-detail-3-5': 'FOCUS ON ORGANIC GROWTH<br> AND INVESTMENT EFFICIENCY',
+            'service-detail-3-5': 'FOCUS ON ORGANIC GROWTH',
             'service-detail-3-7': '<br><br><br>CONTRACT REVIEW',
             'service-detail-3-8': 'SALES DEPT. SUPPORT',
             'service-detail-3-9': 'THE CUSTOMER\'S 360° VIEW<br> AT THE MOMENT OF CLOSING<br> A CONTRACT',
@@ -514,7 +501,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-3-13': 'SPECIAL PROJECTS',
             'service-detail-3-14': 'INTERNATIONALIZATION',
             'service-detail-3-15': 'TESTIMONY',
-            'service-detail-3-16': 'THE PROJECT MANAGEMENT THAT<br> «SELLS» PROJECTS',
+            'service-detail-3-16': 'THE PROJECT MANAGEMENT THAT <br> «SELLS» PROJECTS',
             'discover-more': 'Discover more',
             'service-detail-4-1': 'Partnership service | dedicated logistics integration for FMCG OPL',
             'service-detail-4-2': 'Order cycle management that guarantees service excellence',
@@ -528,10 +515,10 @@ document.addEventListener("DOMContentLoaded", function() {
             'service-detail-4-10': 'Integrated supply chain management',
             'service-detail-4-11': 'Delivery time optimization',
             'iic-uae-title': 'Italian Certified Advisor IIC UAE',
-            'iic-uae-services': 'Within the Italian Certified Advisor IIC UAE 2025 – 2026 project; the studio has been selected as a certified partner of the Italian Chamber of Commerce in the United Arab Emirates (UAE). Specifically, Eng. Daniel Marchisio has been certified ICA 547 for the province of Milan.<br><br>«In a historical moment marked by growing cooperation between Italy and UAE, strengthened by important bilateral agreements, the prospects for companies and professionals in this territory are broad, concrete and in strong expansion»<br><br>«The Emirates today represent one of the most dynamic and interconnected economies globally, with growing demand for qualified skills in legal, fiscal, corporate and strategic consulting sectors»<br><br>The studio is honored to participate in the initiative that values Italian excellence in the professional and consulting sector.',
+            'iic-uae-services': 'Within the Italian Certified Advisor IIC UAE 2025 – 2026 project, the studio has been selected as a certified partner of the Italian Chamber of Commerce in the United Arab Emirates (UAE). Specifically, Daniel Marchisio, Operations Business Partner of due i to business, has been certified ICA 547 for the province of Milan.<br><br>«In a historical moment marked by growing cooperation between Italy and the UAE, strengthened by important bilateral agreements, the prospects for companies and professionals in this territory are broad, concrete and rapidly expanding»<br><br>«The Emirates today represent one of the most dynamic and interconnected economies globally, with a growing demand for qualified skills in legal, fiscal, corporate and strategic consulting sectors»<br><br>The studio is honored to participate in the initiative that enhances Italian excellence in the professional and consulting sector.',
             'agenda-title': 'Agenda 2025-2026',
             'principles-title': 'UAE INTERNATIONALIZATION PATH CLUSTERS',
-            'principles-subtitle': 'To be determined yet...',
+            'principles-subtitle': 'Agenda 2025-2026',
             'principle-1-title': 'BIDIRECTIONAL SCOUTING',
             'principle-1-desc': 'INITIATIVE PROMOTION<br>THE TEAM IN DUBAI',
             'principle-2-title': 'INFO MODULE',
@@ -539,9 +526,9 @@ document.addEventListener("DOMContentLoaded", function() {
             'principle-3-title': 'TRAINING | MATCHING',
             'principle-3-desc': 'SPECIFIC TRAINING<br>CLIENT COMPANY PROJECT',
             'principle-4-title': 'FOLLOW UP | MATCHING',
-            'principle-4-desc': 'SPECIFIC SUPPORT<br>CLIENT PROJECT ADVANCEMENT',
+            'principle-4-desc': 'SPECIFIC SUPPORT<br>CLIENT PROJECT PROGRESS',
             'principles-deep-title': 'Insights into program clusters',
-            'principles-deep-subtitle': 'Discover in detail how we apply our methodology in daily practice and in the internationalization path of MADE IN ITALY in the United Arab Emirates',
+            'principles-deep-subtitle': 'Discover the advantages of applying our methodology in daily practice and in the internationalization journey of MADE IN ITALY in the United Arab Emirates',
             'deep-principle-1-title': 'BIDIRECTIONAL SCOUTING',
             'deep-principle-1-desc': 'Our bidirectional scouting approach ensures targeted and personalized research of business opportunities.',
             'deep-principle-1-1': 'Initiative promotion at Category associations | Chamber',
@@ -550,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'deep-principle-1-4': 'Company profiles and product sectors',
             'deep-principle-1-5': 'Team preparation in Dubai | due i to business',
             'deep-principle-2-title': 'INFO MODULE',
-            'deep-principle-2-desc': 'This module provides detailed and continuously updated information on the Emirati market and begins to prepare a client project | Importance of having a certified UAE counterpart',
+            'deep-principle-2-desc': 'This module provides detailed and continuously updated information on the<br>Emirati market and begins to prepare a client project | Importance of having a<br>certified UAE counterpart',
             'deep-principle-2-1': 'Specific information pack [commercial | legal | financial] / Dubai Team support',
             'deep-principle-2-2': 'General information on reference markets',
             'deep-principle-2-3': 'Overview of competitors in the new market',
@@ -584,6 +571,7 @@ document.addEventListener("DOMContentLoaded", function() {
             'sector-wine-2': 'GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>',
             'sector-wine-3': '<b>TOP MARKET LEADER</b> BRAND COMPANY',
             'sector-wine-4': 'INTEGRATED LOGISTICS',
+            'sector-wine-5': 'ORGANIZATIONAL CHANGE MODELS',
             'sector-data-1': 'ADR | ERP INTEGRATION PROJECTS &nbsp; &nbsp;<b>4+</b>',
             'sector-data-2': '<b>ADR PORTSUNLIGHT SPECIFICATIONS</b>',
             'sector-data-3': 'NEW DELTA "V" OLIVE OIL COMPANY',
@@ -591,11 +579,12 @@ document.addEventListener("DOMContentLoaded", function() {
             'sector-data-5': 'EU FOOD COMPANIES SUPPLY CHAIN REVIEW &nbsp; &nbsp;<b>5+</b>',
             'sector-machinery-1': 'SALES PARTNERSHIP &nbsp; &nbsp;<b>3+</b>',
             'sector-machinery-2': 'COMMERCIAL SUPPORT PROJECTS &nbsp; &nbsp;<b>2 MIL +</b>',
-            'sector-machinery-3': 'HEAD PILLAR EARLY EQUIPMENT MGMT &nbsp; &nbsp;<b>70 MIL +</b>',
+            'sector-machinery-3': 'MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIL +</b>',
+            'sector-machinery-4': 'TRIGENERATION &nbsp; &nbsp;<b>2+ PLANTS</b>',
             'sector-export-1': 'BERTOLLI USA | <b>CLUB WAREHOUSE</b>',
-            'sector-export-2': 'SUPPLY CHAIN AREA &nbsp; &nbsp;<b>MENA 12 KT +</b>',
+            'sector-export-2': 'SUPPLY CHAIN <b>MENA AREA</b> &nbsp; &nbsp;<b>12 KT +</b>',
             'sector-export-3': 'GROWTH ENVIRONMENT SPARKLING WINES &nbsp; &nbsp;<b>50% +</b>',
-            'sector-export-4': 'TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>',
+            'sector-export-4': 'REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>',
             'sector-dubai-1': 'Reference point for Italian companies',
             'sector-dubai-2': 'UAE Chamber of Commerce interface',
             'sector-dubai-3': 'Connector with Emirati partners',
@@ -613,9 +602,9 @@ document.addEventListener("DOMContentLoaded", function() {
             'form-message-placeholder': 'Describe your needs...',
             'form-submit': 'Send Request',
             'footer-title': 'DUE I TO BUSINESS S.R.L.S.',
-            'footer-desc': 'Strategic consulting for organic growth of SMEs.',
-            'footer-sede': 'Registered address',
-            'footer-viale': 'Viale Papa Giovanni Paolo II, 29, Arconate (Milano), Lombardy',
+            'footer-desc': 'Strategic consulting for the organic growth of SMEs.',
+            'footer-sede': ' Registered office',
+            'footer-viale': 'Viale Papa Giovanni Paolo II, 29, Arconate (Milan), 20020, Lombardy',
             'footer-services': 'Services',
             'footer-contacts': 'Contacts',
             'footer-consultation': 'Consultation by appointment',
@@ -641,9 +630,10 @@ document.addEventListener("DOMContentLoaded", function() {
             'error-email-invalid': 'Please enter a valid email address',
             'error-sector-required': 'Please select a sector',
             'error-privacy-required': 'You must accept the Privacy Policy to submit the form',
+            'error-message-too-long': 'The message cannot exceed 1000 characters',
             'calendar-link': 'View project calendar 🗓️',
             'calendar-header': 'IC Advisor IIC UAE Project Calendar',
-            'update-date': "Updated to <strong>22 October 2025</strong>"
+            'update-date': 'Updated on: <strong>22 October 2025</strong>'
         }
     };
     
@@ -660,7 +650,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.documentElement.lang = lang;
         
-        // Aggiorna bottoni desktop
         document.querySelectorAll('.language-btn').forEach(btn => {
             btn.classList.remove('active');
         });
@@ -669,15 +658,14 @@ document.addEventListener("DOMContentLoaded", function() {
             activeDesktopBtn.classList.add('active');
         }
         
-        // Aggiorna selettore mobile
-        const mobileTrigger = document.querySelector('.language-trigger');
-        const mobileFlag = mobileTrigger ? mobileTrigger.querySelector('.flag-icon') : null;
+        const mobileTriggerEl = document.querySelector('.language-trigger');
+        const mobileFlag = mobileTriggerEl ? mobileTriggerEl.querySelector('.flag-icon') : null;
         const mobileOptions = document.querySelectorAll('.language-option');
         
         if (mobileFlag) {
             const flagSrc = lang === 'it' ? 'https://flagcdn.com/w20/it.png' : 'https://flagcdn.com/w20/gb.png';
             mobileFlag.src = flagSrc;
-            mobileTrigger.setAttribute('data-lang', lang);
+            mobileTriggerEl.setAttribute('data-lang', lang);
         }
         
         mobileOptions.forEach(option => {
@@ -698,11 +686,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Event listeners lingua mobile
     const mobileDropdown = document.querySelector('.language-dropdown');
-    const mobileTrigger = document.querySelector('.language-trigger');
+    const mobileTriggerEl = document.querySelector('.language-trigger');
     const mobileOptions = document.querySelectorAll('.language-option');
     
-    if (mobileTrigger) {
-        mobileTrigger.addEventListener('click', function() {
+    if (mobileTriggerEl) {
+        mobileTriggerEl.addEventListener('click', function() {
             if (mobileDropdown) mobileDropdown.classList.toggle('active');
         });
     }
@@ -729,7 +717,8 @@ document.addEventListener("DOMContentLoaded", function() {
         telefono: document.getElementById('telefono'),
         email: document.getElementById('email'),
         settore: document.getElementById('settore'),
-        messaggio: document.getElementById('messaggio')
+        messaggio: document.getElementById('messaggio'),
+        privacy: document.getElementById('privacy-consent')
     };
 
     function showFieldError(field, message) {
@@ -768,13 +757,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const field = formFields[fieldName];
         if (!field) return true;
         
-        const value = sanitizeInput(field.value);
+        const value = field.type === 'checkbox' ? field.checked : sanitizeInput(field.value);
         let isValid = true;
         let errorMessage = '';
         
         switch(fieldName) {
             case 'nome':
-            case 'cognome':
                 if (!value) {
                     errorMessage = translations[currentLanguage]['error-name-required'];
                     isValid = false;
@@ -783,7 +771,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     isValid = false;
                 }
                 break;
-                
+            case 'cognome':
+                if (!value) {
+                    errorMessage = translations[currentLanguage]['error-surname-required'];
+                    isValid = false;
+                } else if (!/^[a-zA-Zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ\s]{2,30}$/.test(value)) {
+                    errorMessage = translations[currentLanguage]['error-surname-invalid'];
+                    isValid = false;
+                }
+                break;
             case 'telefono':
                 if (!value) {
                     errorMessage = translations[currentLanguage]['error-phone-required'];
@@ -793,7 +789,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     isValid = false;
                 }
                 break;
-                
             case 'email':
                 if (!value) {
                     errorMessage = translations[currentLanguage]['error-email-required'];
@@ -803,25 +798,44 @@ document.addEventListener("DOMContentLoaded", function() {
                     isValid = false;
                 }
                 break;
-                
             case 'settore':
                 if (!value) {
                     errorMessage = translations[currentLanguage]['error-sector-required'];
                     isValid = false;
                 }
                 break;
-                
             case 'messaggio':
                 if (value.length > 1000) {
-                    errorMessage = 'Il messaggio non può superare i 1000 caratteri';
+                    errorMessage = translations[currentLanguage]['error-message-too-long'];
                     isValid = false;
+                }
+                break;
+            case 'privacy':
+                if (!value) {
+                    errorMessage = translations[currentLanguage]['error-privacy-required'];
+                    isValid = false;
+                    const wrapper = field.closest('.privacy-checkbox') || field.parentNode;
+                    const existing = wrapper.querySelector('.field-error');
+                    if (existing) existing.remove();
+                    const div = document.createElement('div');
+                    div.className = 'field-error';
+                    div.textContent = errorMessage;
+                    div.style.color = '#e53e3e';
+                    div.style.fontSize = '14px';
+                    div.style.marginTop = '8px';
+                    wrapper.appendChild(div);
+                    return false;
+                } else {
+                    const wrapper = field.closest('.privacy-checkbox') || field.parentNode;
+                    const existing = wrapper.querySelector('.field-error');
+                    if (existing) existing.remove();
                 }
                 break;
         }
         
-        if (!isValid) {
+        if (!isValid && fieldName !== 'privacy') {
             showFieldError(field, errorMessage);
-        } else {
+        } else if (fieldName !== 'privacy') {
             clearFieldError(field);
         }
         
@@ -840,7 +854,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return isFormValid;
     }
 
-    // Event listeners per validazione in tempo reale
     Object.keys(formFields).forEach(fieldName => {
         const field = formFields[fieldName];
         if (!field) return;
@@ -850,11 +863,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         
         field.addEventListener('input', () => {
-            clearFieldError(field);
+            if (fieldName === 'privacy') {
+                const wrapper = field.closest('.privacy-checkbox') || field.parentNode;
+                const existing = wrapper.querySelector('.field-error');
+                if (existing) existing.remove();
+            } else {
+                clearFieldError(field);
+            }
         });
     });
 
-    // Invio form
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             if (!validateForm()) {
@@ -868,8 +886,8 @@ document.addEventListener("DOMContentLoaded", function() {
             
             const submitBtn = contactForm.querySelector('.btn-primary');
             if (submitBtn) {
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Invio in corso...';
+                submitBtn.dataset.originalText = submitBtn.textContent;
+                submitBtn.textContent = currentLanguage === 'it' ? 'Invio in corso...' : 'Sending...';
                 submitBtn.disabled = true;
             }
         });
@@ -887,7 +905,6 @@ document.addEventListener("DOMContentLoaded", function() {
         'https://images.unsplash.com/photo-1600466888907-013366be7093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ];
     
-    // Preload immagini
     heroSlides.forEach(src => { 
         const img = new Image(); 
         img.src = src; 
@@ -922,7 +939,6 @@ document.addEventListener("DOMContentLoaded", function() {
         idx = nextIdx;
     }
     
-    // Inizializza e avvia slider
     initHero();
     setInterval(crossfadeHero, 4000);
     
@@ -960,7 +976,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
-    // Click hero per cambio immagine manuale
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('click', function(e) {
@@ -990,12 +1005,10 @@ function updateGalleria() {
         galleriaTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
     }
     
-    // Aggiorna dots desktop - ora gestisce 6 slide
     dotsDesktop.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
     
-    // Aggiorna dots mobile - ora gestisce 6 slide
     dotsMobile.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
     });
@@ -1003,7 +1016,7 @@ function updateGalleria() {
 
 function nextSlide() {
     const isMobile = window.innerWidth <= 768;
-    const maxSlide = isMobile ? totalSlides - 1 : 5; // Cambia da 3 a 5 per desktop
+    const maxSlide = isMobile ? totalSlides - 1 : 5;
     
     currentSlide = currentSlide >= maxSlide ? 0 : currentSlide + 1;
     updateGalleria();
@@ -1011,7 +1024,7 @@ function nextSlide() {
 
 function prevSlide() {
     const isMobile = window.innerWidth <= 768;
-    const maxSlide = isMobile ? totalSlides - 1 : 5; // Cambia da 3 a 5 per desktop
+    const maxSlide = isMobile ? totalSlides - 1 : 5;
     
     currentSlide = currentSlide <= 0 ? maxSlide : currentSlide - 1;
     updateGalleria();
@@ -1022,7 +1035,6 @@ function goToSlide(slideIndex) {
     updateGalleria();
 }
 
-// Event listeners
 if (galleriaNext) {
     galleriaNext.addEventListener('click', nextSlide);
 }
@@ -1031,17 +1043,14 @@ if (galleriaPrev) {
     galleriaPrev.addEventListener('click', prevSlide);
 }
 
-// Dots navigation desktop
 dotsDesktop.forEach((dot, index) => {
     dot.addEventListener('click', () => goToSlide(index));
 });
 
-// Dots navigation mobile
 dotsMobile.forEach((dot, index) => {
     dot.addEventListener('click', () => goToSlide(index));
 });
 
-// Auto-play
 let autoPlayInterval;
 function startAutoPlay() {
     autoPlayInterval = setInterval(nextSlide, 5000);
@@ -1051,18 +1060,15 @@ function stopAutoPlay() {
     clearInterval(autoPlayInterval);
 }
 
-// Pausa auto-play al hover
 const galleriaContainer = document.querySelector('.galleria-container');
 if (galleriaContainer) {
     galleriaContainer.addEventListener('mouseenter', stopAutoPlay);
     galleriaContainer.addEventListener('mouseleave', startAutoPlay);
 }
 
-// Inizializza
 updateGalleria();
 startAutoPlay();
 
-// Responsive update
 window.addEventListener('resize', () => {
     updateGalleria();
 });
@@ -1077,7 +1083,6 @@ function isElementPartiallyInViewport(el) {
 }
 
 function handleScrollAnimation() {
-    // Elementi da animare
     const elementsToAnimate = document.querySelectorAll('.section h2, .section-intro, .section .two-col, .section .cards, .section .sectors-grid, .section .galleria-container, .section .contact-form-centered');
     
     elementsToAnimate.forEach(element => {
@@ -1086,7 +1091,6 @@ function handleScrollAnimation() {
         }
     });
     
-    // Anima le singole card
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         if (isElementPartiallyInViewport(card)) {
@@ -1094,7 +1098,6 @@ function handleScrollAnimation() {
         }
     });
     
-    // Anima le sector cards
     const sectorCards = document.querySelectorAll('.sector-card');
     sectorCards.forEach(card => {
         if (isElementPartiallyInViewport(card)) {
@@ -1102,7 +1105,6 @@ function handleScrollAnimation() {
         }
     });
     
-    // Anima le immagini della galleria
     const gallerySlides = document.querySelectorAll('.galleria-slide');
     gallerySlides.forEach(slide => {
         if (isElementPartiallyInViewport(slide)) {
@@ -1111,10 +1113,8 @@ function handleScrollAnimation() {
     });
 }
 
-// Event listener per lo scroll
 window.addEventListener('scroll', handleScrollAnimation);
 
-// Esegui una volta al caricamento per gli elementi già visibili
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(handleScrollAnimation, 100);
 });
@@ -1142,17 +1142,11 @@ function highlightActiveSection() {
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        
-        // Se sei nella sezione galleria (ownership), evidenzia anche "chi siamo"
         if (currentSection === 'galleria' && href === '#chi-siamo') {
             link.classList.add('active');
-        }
-        // Se sei nella sezione break grigia, evidenzia anche "metodologia"
-        else if (currentSection === 'metodologia' && href === '#metodologia') {
+        } else if (currentSection === 'metodologia' && href === '#metodologia') {
             link.classList.add('active');
-        }
-        // Altrimenti evidenzia normalmente
-        else if (href === '#' + currentSection) {
+        } else if (href === '#' + currentSection) {
             link.classList.add('active');
         }
     });
@@ -1171,26 +1165,22 @@ function animateBreakList() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Aggiungi la classe animate a tutti gli elementi
                 breakItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('animate');
-                    }, index * 200); // Delay di 200ms tra ogni elemento
+                    }, index * 200);
                 });
-                
-                // Disconnetti l'observer dopo la prima animazione
                 observer.disconnect();
             }
         });
     }, {
-        threshold: 0.3, // Trigger quando il 30% della sezione è visibile
+        threshold: 0.3,
         rootMargin: '0px 0px -100px 0px'
     });
     
     observer.observe(breakSection);
 }
 
-// Inizializza l'animazione quando il DOM è caricato
 document.addEventListener('DOMContentLoaded', animateBreakList);
 
 // ========== BOTTONI "SCOPRI DI PIÙ" ==========
@@ -1198,9 +1188,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const discoverBtns = document.querySelectorAll('.discover-btn');
     
     const targetSections = [
-        'strategic-review-a',  // Sezione A -> Approfondimento A
-        'strategic-review-b',  // Sezione B -> Approfondimento B  
-        'strategic-review-c'   // Sezione C -> Approfondimento C
+        'strategic-review-a',
+        'strategic-review-b',
+        'strategic-review-c'
     ];
     
     discoverBtns.forEach((btn, index) => {
@@ -1260,15 +1250,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const totalSlides = carouselSlides.length;
     
     function updateCarousel() {
-        const translateX = -currentSlide * 25; // 25% per slide
+        const translateX = -currentSlide * 25;
         carouselTrack.style.transform = `translateX(${translateX}%)`;
         
-        // Aggiorna dots
         carouselDots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
         
-        // Aggiorna slides
         carouselSlides.forEach((slide, index) => {
             slide.classList.toggle('active', index === currentSlide);
         });
@@ -1284,11 +1272,9 @@ document.addEventListener("DOMContentLoaded", function() {
         updateCarousel();
     }
     
-    // Event listeners
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     
-    // Dots navigation
     carouselDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlide = index;
@@ -1296,8 +1282,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
-    // Auto-play (opzionale)
-    setInterval(nextSlide, 8000); // Cambia slide ogni 8 secondi
+    setInterval(nextSlide, 8000);
 });
 
 // Funzionalità dei puntini del carousel
@@ -1305,31 +1290,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.carousel-dot');
     const track = document.querySelector('.carousel-track');
     let currentSlide = 0;
-    const totalSlides = 4; // Numero totale di slide
+    const totalSlides = 4;
 
-    // Funzione per aggiornare i puntini
     function updateDots() {
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
 
-    // Funzione per andare a una slide specifica
     function goToSlide(slideIndex) {
         currentSlide = slideIndex;
-        const translateX = -slideIndex * 25; // 25% per ogni slide
+        const translateX = -slideIndex * 25;
         track.style.transform = `translateX(${translateX}%)`;
         updateDots();
     }
 
-    // Event listener per i puntini
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             goToSlide(index);
         });
     });
 
-    // Funzionalità delle frecce (se le hai)
     const prevBtn = document.querySelector('.carousel-prev');
     const nextBtn = document.querySelector('.carousel-next');
 
@@ -1348,22 +1329,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Funzione per andare a una slide specifica del carousel
 function goToCarouselSlide(slideIndex) {
     const carouselTrack = document.querySelector('.carousel-track');
     const carouselDots = document.querySelectorAll('.carousel-dot');
     
     if (carouselTrack && carouselDots.length > 0) {
-        // Aggiorna la posizione del carousel
-        const translateX = -slideIndex * 25; // 25% per ogni slide
+        const translateX = -slideIndex * 25;
         carouselTrack.style.transform = `translateX(${translateX}%)`;
         
-        // Aggiorna i dots
         carouselDots.forEach((dot, index) => {
             dot.classList.toggle('active', index === slideIndex);
         });
         
-        // Scroll alla sezione del carousel
         const carouselSection = document.querySelector('.principles-carousel-section');
         if (carouselSection) {
             const headerHeight = document.querySelector('.site-header') ? 
@@ -1382,23 +1359,16 @@ function goToCarouselSlide(slideIndex) {
 function openGantt() {
   const popup = document.getElementById('gantPopup');
   popup.style.display = 'flex';
-
-  // Blocca lo scroll della pagina dietro
   document.body.style.overflow = 'hidden';
 }
 
 function closeGantt() {
   const popup = document.getElementById('gantPopup');
   popup.style.display = 'none';
-
-  // Riabilita lo scroll
   document.body.style.overflow = '';
-
-  // 🔧 Correzione: forza un ricalcolo della navbar
   window.dispatchEvent(new Event('scroll'));
 }
 
-// Chiudi il popup cliccando fuori
 document.addEventListener('click', function(event) {
     const popup = document.getElementById('gantPopup');
     if (popup && event.target === popup) {
@@ -1406,14 +1376,12 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Chiudi con il tasto ESC
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeGantt();
     }
 });
 
-// Dropdown per il menu mobile
 document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
   trigger.addEventListener('click', () => {
     const parent = trigger.parentElement;
