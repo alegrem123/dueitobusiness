@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<br>Supporto alle risorse umane ed allo sviluppo delle basi per il cambiamento della cultura aziendale",
       "service-3-title": "STRATEGIC REVIEW",
       "service-3-subtitle":
-        "A seconda dell'esigenza questa tipologia di intervento dà la possibilità alla direzione aziendale di avere un supporto veloce nel processo decisionale.",
+        "A seconda dell'esigenza questa tipologia di intervento dà la possibilità alle direzioni aziendali di avere un supporto veloce nel processo decisionale.",
       "service-3-desc":
         "||ANALISI E REVISIONE DI PIANI STRATEGICI E DI CRESCITA||<br>||SUPPORTO ED EFFICIENTAMENTO STRATEGIE COMMERCIALI||<br>||INTERNAZIONALIZZAZIONE e GUIDA PROGETTI SPECIALI||",
       "service-4-title": "PARTNERSHIP LOGISTICA",
