@@ -217,12 +217,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav-indicators": "Indicatori e misurazione",
       "gallery-title": "Ownership di un modello progettuale",
       "gallery-subtitle":
-        "Progetti in diversi mercati ed aree merceologiche che sviluppano competenze e creano valore<br>duraturo per i nostri clienti. <br>Interim Management specializzato nel ruolo di COO per aziende di<br>eccellenza e forte commitment al cambiamento. <br>Importanza dell'utilizzo di librerie e tools di monitoraggio standards.",
+        "Progetti realizzati in diversi mercati ed aree merceologiche che sviluppano e creano valore duraturo per i nostri clienti.<br /><br />Interim Management specializzato nel ruolo di Chief Operating Officer dedicato ad aziende di eccellenza e con forte commitment al cambiamento.<br /><br />Importanza dell'utilizzo di librerie standards e tools di monitoraggio consolidati.",
       "about-title": "L'esperienza del FARE - La partnership come risorsa",
       "about-quote":
         "È il progresso a trasformare l'azienda in un processo straordinario, ma sono la sua storia e le sue radici a sancirne l'unicità.",
       "about-text":
-        "La leadership operativa di «due i to business», nasce come perno di coordinamento fra le Aziende Host del servizio e diversi <b>partners</b> di business presenti in un vasto <b>network</b> industriale del panorama nazionale ed internazionale. <br><br>Lo studio mette a disposizione dei servizi mirati a potenziare le organizzazioni ed i <b>meccanismi decisionali</b> aziendali, inoltre forniscono una panoramica precisa e sfidante sulle opportunità da cogliere nei settori Sales & Operations & Marketing. <br><br>La logica di integrazione di questi servizi è garantita dall'origine in quanto si sviluppano conformemente a un'architettura di dati comuni a disposizione nel ERP gestionale di riferimento aziendale.<br><br>Indipendentemente della modalità e dal tipo di servizio scelto è sempre previsto un percorso metodologico che include un <b>format manageriale</b> intrinseco e un follow up sistematico dell'avanzamento del progetto nel day by day operativo.",
+        "La leadership operativa di «due i to business», nasce come perno di coordinamento fra le Aziende Host del servizio e diversi <b>partners</b> di business presenti in un vasto <b>network</b> industriale del panorama nazionale ed internazionale. <br><br><br>Lo studio mette a disposizione dei servizi mirati a potenziare le organizzazioni ed i <b>meccanismi decisionali</b> aziendali, inoltre forniscono una panoramica precisa e sfidante sulle opportunità da cogliere nei settori Sales & Operations & Marketing. <br><br><br>La logica di integrazione di questi servizi è garantita dall'origine in quanto si sviluppano conformemente a un'architettura di dati comuni a disposizione nel ERP gestionale di riferimento aziendale. Indipendentemente della modalità e dal tipo di servizio scelto è sempre previsto un percorso metodologico che include un <b>format manageriale</b> intrinseco e un follow up sistematico dell'avanzamento del progetto nel day by day operativo.",
       "break-title-1": "Mission",
       "break-subtitle-1":
         " Sostenere le attività di business di aziende di eccellenza con utilizzo di<br>adeguata metodologia di mantenimento e sviluppo del processo di crescita organica e per linee esterne.",
@@ -254,37 +254,69 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-1-desc":
         "CHIEF OPERATING OFFICER  EXECUTIVE INTERIM MANAGEMENT<br><br>Sviluppo del ruolo di COO e ottimizzazione dei processi operativi.",
       "service-2-title": "SVILUPPO ORGANIZZATIVO",
+      "service-2-subtitle":
+        "Supporto alle risorse umane ed sviluppo delle basi per il cambiamento della cultura aziendale",
       "service-2-desc":
         "<br>Supporto alle risorse umane ed allo sviluppo delle basi per il cambiamento della cultura aziendale",
       "service-3-title": "STRATEGIC REVIEW",
       "service-3-subtitle":
-        "A seconda dell'esigenza questa tipologia di intervento dà la possibilità alle direzioni aziendali di avere un supporto veloce nel processo decisionale.",
+        "INTERVENTO SPOT ON FRACTIONAL TIME BASIS<br />A seconda dell'esigenza questa tipologia di intervento mette a disposizione della direzione aziendale un supporto in «outsourcing» veloce ed autorevole al processo decisionale",
       "service-3-desc":
         "||ANALISI E REVISIONE DI PIANI STRATEGICI E DI CRESCITA||<br>||SUPPORTO ED EFFICIENTAMENTO STRATEGIE COMMERCIALI||<br>||INTERNAZIONALIZZAZIONE e GUIDA PROGETTI SPECIALI||",
       "service-4-title": "PARTNERSHIP LOGISTICA",
       "service-4-subtitle":
-        "Introduzione della governance del ciclo dell'ordine nelle offerte di servizio di logistica integrata",
+        "SERVIZIO DI PARTNERSHIP PER OPERATORI LOGISTICI DEL SETTORE FMCG<br />Introduzione della governance del ciclo dell'ordine nelle offerte di servizio di logistica integrata",
       "service-4-desc":
         "<br>GUIDA E SUPPORTO AD OPERAZIONI DI LOGISTICA INTEGRATA<br><br>La governance del ciclo dell'ordine",
       "service-5-title": "IIC UAE ADVISOR",
       "service-5-desc":
         "Punto di riferimento per le aziende italiane di eccellenza. Leadership per il progetto di internazionalizzazione. Interfaccia certificata della camera di commercio in UAE<br>",
       "service-detail-content":
-        "Il servizio prevede lo sviluppo del ruolo del COO. Con i seguenti principali obbiettivi:",
-      "service-detail-1-1":
-        "Ottimizzazione e snellimento dei processi aziendali",
-      "service-detail-1-2": "Miglioramento dell'efficienza operativa",
-      "service-detail-1-3":
+        "Il servizio prevede lo sviluppo del ruolo del COO | piano a 3 anni | Introduzione e utilizzo dei seguenti meccanismi",
+      "checkup-1": "LEADERSHIP SU OPERATIONAL TEAM",
+      "checkup-1-people":
+        "Key people: MARKETING | SALES | TEAM EXPORT | OPERATIONS | ACQUISTI | CONTROLLO GESTIONE | PLANNING",
+      "checkup-2": "SET UP PIANO OPERATIVO PLURIENNALE NEI PRIMI 4 MESI",
+      "checkup-3": "MONITORAGGIO CONTINUO STOCK VS VENDITE",
+      "checkup-4": "COORDINAMENTO | SINERGIA DEI PROGETTI",
+      "checkup-5": "INTRODUZIONE DEL FORMAT MANAGERIALE",
+      "checkup-6": "<b>FOCUS SULLA EVOLUZIONE DEL MARGINE OPERATIVO:</b>",
+      "checkup-6-1":
+        "QUICK WINS operativi di business debottlenecking: 10% MIN",
+      "checkup-6-2": "Riduzione costi primo e secondo anno: 15% MIN",
+      "checkup-6-3": "QUICK WINS acquisti secondo e terzo anno: 20% MIN",
+      "checkup-6-4": "Marginalità del portafoglio prodotti | Rules",
+      "checkup-6-5": "Business case per progetti Export | Marginalità Target",
+      "checkup-7": "Ottimizzazione e snellimento dei processi aziendali",
+      "checkup-8":
+        "Focus sul miglioramento dei costi operativi nei vari reparti",
+      "checkup-9":
         "Cascade down degli obiettivi strategici nelle varie funzioni aziendali",
-      "service-detail-1-4": "Monitoraggio continuo aderenza ai piani operativi",
-      "service-detail-1-5": "Massimizzare il potenziale dei Team",
-      "service-detail-1-6":
-        "Implementazione nuova metodologia di lavoro | indicatori | dinamiche di gruppo",
-      "service-detail-1-7":
-        "Rischi vs Opportunità di business | continuity vs quick win",
-      "service-detail-1-8":
-        "Sinergie e integrazione delle funzioni | architettura dei flussi e integrazione dati",
-      "service-detail-1-9": "Accelerare l'esecuzione dei progetti strategici",
+      "checkup-10": "Monitoraggio continuo aderenza ai piani operativi",
+      "checkup-11": "Massimizzare il potenziale dei Team",
+      "checkup-12":
+        "Implementazione nuovo way of working | indicatori | dinamiche di gruppo",
+      "checkup-13":
+        "Rischi vs Opportunità di business | continuity vs quick wins",
+      "checkup-14":
+        "Sinergie e integrazione delle funzioni | architettura dei flussi e dati",
+      "checkup-15": "Accelerare l'esecuzione dei progetti strategici",
+      "svil-org-left-1": "<b>RISORSE | MAPPATURA DEI PROFILI</b>",
+      "svil-org-left-2":
+        "<b>BILANCIAMENTO DELLE COMPETENZE AS IS IT vs TARGET</b>",
+      "svil-org-left-2-1": "Modello di leadership",
+      "svil-org-left-2-2": "Aspettative relazionali",
+      "svil-org-left-2-3": "Competenze formative",
+      "svil-org-left-2-4": "Capacità di problem solving",
+      "svil-org-left-2-5": "Utilizzo delle capabilities organizzative",
+      "svil-org-left-3": "<b>CONDIVISIONE DI UN MODELLO DI CAMBIAMENTO</b>",
+      "svil-org-left-3-1":
+        "Responsabilità delle funzioni | Organigramma come strumento",
+      "svil-org-left-3-2": "Definizione dei processi aziendali | RACI Tool",
+      "svil-org-left-3-3":
+        "New way of working | Importanza della comunicazione",
+      "svil-org-left-3-4": "Tecniche di Down Drill",
+      "svil-org-left-3-5": "Formazione nel day by day aziendale",
       "service-detail-2-1": "Disegno organizzativo | creazione nuove direzioni",
       "service-detail-2-2":
         "Business Debottlenecking | Importanza degli Organigrammi",
@@ -301,42 +333,58 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-2-8": "Proposta di un MODELLO DI CAMBIAMENTO",
       "strategic-section-1": "Analisi piani operativi",
       "strategic-section-2": "Sales support",
-      "strategic-section-3": "MKT & sales support",
-      "service-detail-3-1": "<br>PIANI INDUSTRIALI REVIEW",
-      "service-detail-3-2": "BUSINESS PLAN",
-      "service-detail-3-3": "PIANO STRATEGICO PLURIENNALE",
+      "strategic-section-3": "MKT & Sales Support",
+      "service-detail-3-1": "<br />REVIEW PIANI INDUSTRIALI",
+      "service-detail-3-2": "REVIEW BUSINESS PLAN",
+      "service-detail-3-3": "ADERENZA AL PIANO STRATEGICO PLURIENNALE",
+      "service-detail-3-4": "ECCELLENZA OPERATIVA",
       "service-detail-3-5": "FOCUS SULLA CRESCITA ORGANICA",
-      "service-detail-3-7": "<br><br><br>CONTRACT REVIEW",
-      "service-detail-3-8": "SUPPORTO AL SALES DEPT.",
+      "service-detail-3-6": "BENCHMARKING",
+      "service-detail-3-7": "<br /><br /><br />CONTRACT REVIEW",
       "service-detail-3-9":
-        "IL PUNTO DI VISTA DEL CLIENTE <br>A 360° AL MOMENTO DELLA CHIUSURA<br>DI UN CONTRATTO ",
-      "service-detail-3-11": "TECHNICAL AMBASSADOR",
-      "service-detail-3-12": "SUPPORTO AL MKT & SALES",
+        "IL PUNTO DI VISTA DEL CLIENTE <br />A 360° AL MOMENTO DELLA CHIUSURA<br />DI UN CONTRATTO",
+      "service-detail-3-10": "NET WORK PLURIENNALE",
+      "service-detail-3-11": "PROGETTI CON IL TEAM EXPORT",
+      "service-detail-3-12": "TECHNICAL AMBASSADOR",
       "service-detail-3-13": "PROGETTI SPECIALI",
-      "service-detail-3-14": "INTERNAZIONALIZZAZIONE",
-      "service-detail-3-15": "TESTIMONIANZA",
-      "service-detail-3-16":
-        "IL PROJECT MANAGEMENT CHE <br> «VENDE» I PROGETTI",
+      "service-detail-3-14": "TESTIMONIANZA",
+      "service-detail-3-15": "IL PROJECT MANAGEMENT CHE <br /> «VENDE»",
+      "service-detail-3-16": "LE TECNICHE DI DOWN DRILL",
+      "service-detail-3-17": "CONOSCENZA DEL PRODOTTO",
+      "service-detail-3-18": "COMUNICAZIONE.",
       "discover-more": "Scopri di più",
-      "service-detail-4-1":
-        "Servizio di partnership | integrazione logistica dedicato a OPL del settore FMCG",
-      "service-detail-4-2":
-        "Gestione del ciclo dell'ordine che garantisce l'eccellenza del servizio",
-      "service-detail-4-3":
+      "service-detail-4-left-1":
+        "<b>GUIDA ALLA INTEGRAZIONE DEL SERVIZIO LOGISTICO</b>",
+      "service-detail-4-left-2": "<b>IMPORTANZA DEL FATTORE MANAGERIALE</b>",
+      "service-detail-4-left-3":
+        "<b>UNA RISORSA DEL OPL INTEGRATA IN HOUSE DEL CLIENTE COMMITTENTE INTERFACCIATA PERMANENTEMENTE CON UN KEY PEOPLE LOGISTICO DEL COMMITTENTE</b>",
+      "service-detail-4-left-4":
+        "<b>BACK OFFICE | FRONT OFFICE LOGISTICO INTEGRATO</b>",
+      "service-detail-4-left-5":
+        "Customizzazione dell'offerta logistica tenendo conto delle opportunità offerte dalla gestione del ciclo dell'ordine del cliente",
+      "service-detail-4-left-6":
+        "Il valore aggiunto della governance del processo | costi | servizio",
+      "service-detail-4-left-7":
+        "Introduzione dei concetti di program solving nella offerta logistica",
+      "service-detail-4-left-8": "Pack di rules da condividere con il cliente",
+      "service-detail-4-left-9":
+        "Offerta per canale distributivo | size | opportunità",
+      "service-detail-4-right-1":
+        "Gestione del ciclo dell'ordine che garantisce la eccellenza del servizio",
+      "service-detail-4-right-2":
         "Completa integrazione del ciclo dell'ordine fino alla logistica distributiva dell'ultimo miglio",
-      "service-detail-4-4":
-        "Ottimizzazione dei flussi decisionali nelle varie fasi",
-      "service-detail-4-5":
+      "service-detail-4-right-3":
+        "Ottimizzazione dei flussi decisionali nelle varie fasi dell'ordine per diminuire tempi morti e blocchi amministrativi e commerciali",
+      "service-detail-4-right-4":
         "Importanza delle rules logistiche e commerciali nella gestione contrattuale",
-      "service-detail-4-6":
-        "Indicatore di servizio cronologico della consegna diviso nei vari momenti del ciclo dell'ordine",
-      "service-detail-4-7": "Partnership strategiche con OPL del settore FMCG",
-      "service-detail-4-8":
+      "service-detail-4-right-5":
+        "Indicatori di servizio al cliente customizzati coerentemente alla struttura del ciclo dell'ordine",
+      "service-detail-4-right-6":
         "Monitoraggio costante delle performance logistiche",
-      "service-detail-4-9": "Implementazione di sistemi di controllo qualità",
-      "service-detail-4-10": "Gestione integrata della supply chain",
-      "service-detail-4-11": "Ottimizzazione dei tempi di consegna",
-      "iic-uae-title": "Italian Certified Advisor IIC UAE",
+      "service-detail-4-right-7":
+        "Vantaggi ed opportunità per il cliente tramite servizi specializzati che solo un OPL può fornire (vedere elenco servizi)",
+      "iic-uae-title":
+        "<b>I</b>talian <b>C</b>ertified <b>A</b>dvisor <b>IIC UAE</b>",
       "iic-uae-services":
         "All'interno del progetto Italian Certified Advisor IIC UAE 2025 – 2026; lo studio è stato selezionato come partner certificato della Camera di Commercio Italiana negli Emirati Arabi Uniti ( UAE ). Specificatamente Daniel Marchisio, Operations Business Partner della due i to business è stato certificato ICA 547 per la provincia di Milano.<br><br>«In un momento storico segnato da una crescente cooperazione tra Italia ed EAU, rafforzata da importanti accordi bilaterali, le prospettive per le aziende e professionisti in questo territorio sono ampie, concrete e in forte espansione»<br><br>«Gli Emirati rappresentano oggi una delle economie più dinamiche e interconnesse a livello globale, con una domanda crescente di competenze qualificate nei settori legale, fiscale, societario e della consulenza strategica»<br><br>Lo studio è onorato di partecipare all'iniziativa che valorizza l'eccellenza italiana nel settore professionale e consulenziale.",
       "agenda-title": "Agenda 2025-2026",
@@ -351,8 +399,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "principle-3-desc":
         "FORMAZIONE SPECIFICA<br>IL PROGETTO AZIENDALE DEL CLIENTE",
       "principle-4-title": "FOLLOW UP | MATCHING",
-      "service-4-subtitle":
-        "Introduzione della governance del ciclo dell'ordine nelle offerte di servizio di logistica integrata",
       "principle-4-desc":
         "SUPPORTO SPECIFICO<br>AVANZAMENTO PROGETTO DEL CLIENTE",
       "principles-deep-title": "Approfondimenti sui cluster del programma",
@@ -368,9 +414,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "Identificazione di opportunità specifiche negli UAE",
       "deep-principle-1-4": "Profilo delle aziende e settori merceologici",
       "deep-principle-1-5": "Preparazione del team a Dubai | due i to business",
+      "deep-principle-1-6":
+        "Competenze manageriali nel coordinamento del Sales & Operations & MKT | Esperienze in vari settori di business",
+      "deep-principle-1-7":
+        "Know how specifico sui meccanismi che sviluppano marginalità | Evitare cause di rallentamento dei progetti export",
       "deep-principle-2-title": "MODULO INFO",
       "deep-principle-2-desc":
-        "In questo modulo si fornisce informazione dettagliata e continuamente aggiornata sul<br>mercato emiratino e si comincia a preparare un progetto cliente | Importanza di avere una<br>contra parte UAE certificata",
+        "In questo modulo si fornisce informazione dettagliata e continuamente aggiornata sul mercato emiratino e si comincia a preparare un progetto cliente | Importanza di avere una contra parte UAE certificata",
       "deep-principle-2-1":
         "Pack informativo specifico [commerciale | legale | finanziario] / supporto Team Dubai",
       "deep-principle-2-2": "Informazioni generali sui mercati di riferimento",
@@ -379,6 +429,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Prima valutazione del progetto cliente/valutazione della crescita",
       "deep-principle-2-5":
         "Conoscenza del cliente e del suo progetto in UAE / definizione di un progetto",
+      "deep-principle-2-6":
+        "Preparazione di un business case | Le minacce interne al progetto | Le attese del mercato",
       "deep-principle-3-title": "FORMAZIONE | MATCHING",
       "deep-principle-3-desc":
         "Formazione specifica e basi per lo sviluppo le competenze necessarie al successo.",
@@ -388,16 +440,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "Preparazione del progetto aziendale del cliente | focus nel business | il prodotto che si vende",
       "deep-principle-3-3":
         "Matching Italia / Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
-      "deep-principle-3-4": "Sviluppo competenze interculturali",
+      "deep-principle-3-5":
+        "Business Case Review | Intervento di testimonianza tecnico – merceologico | Incontro del «cliente»",
       "deep-principle-4-title": "FOLLOW UP | MATCHING",
+
       "deep-principle-4-desc": "Supporto e monitoraggio del progetto cliente",
+
       "deep-principle-4-1":
         "Assistenza e monitoraggio nella fase di lancio e implementazione",
       "deep-principle-4-2":
-        "Monitoraggio dei risultati | Sviluppo di un eventuale 2° round",
+        "Monitoraggio dei risultati | Sviluppo di un eventuale secondo round",
       "deep-principle-4-3":
-        "Matching Italia / Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Matching Italia / Dubai [Ufficio Camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-4-4": "Supporto post-lancio e ottimizzazione",
+      "deep-principle-4-5":
+        "Modularità e scalabilità del progetto | Supporto allo sviluppo della rete commerciale",
+
       "sectors-title": "Esperienza e Progetti nei vari settori",
       "sectors-subtitle":
         "La nostra esperienza si estende attraverso diversi settori industriali, offrendo soluzioni personalizzate e competenze specializzate per ogni ambito di business. Dal settore alimentare alla logistica avanzata, supportiamo le aziende nella crescita, nell'ottimizzazione dei processi e nell'implementazione di strategie innovative che generano risultati concreti e misurabili.",
@@ -410,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "sector-food-1": "ANNI ESPERTISE NEL SETTORE &nbsp; &nbsp;<b>20+</b>",
       "sector-food-2": "DUE DILIGENZE &nbsp; &nbsp;<b>1+ </b>/ 3",
       "sector-food-3": "<b>MARKET LEADER</b> BRANDS COMPANIES",
-      "sector-food-4": "<b>A & M</b> EUROPEAN RESTRUCTURING ",
+      "sector-food-4": "<b>A & M</b> EUROPEAN RESTRUCTURING",
       "sector-wine-1": "ANNI ESPERTISE NEL SETTORE &nbsp; &nbsp;<b>6+</b>",
       "sector-wine-2": "GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>",
       "sector-wine-3": "<b>TOP MARKET LEADER</b> BRAND COMPANY",
@@ -430,12 +488,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIO +</b>",
       "sector-machinery-4": "TRIGENERAZIONE &nbsp; &nbsp;<b>2+ PLANTS</b>",
       "sector-export-1": "BERTOLLI USA | <b>CLUB WAREHOUSE</b>",
+      "sector-export-4":
+        "REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>",
       "sector-export-2":
         "SUPPLY CHAIN <b>AREA MENA</b> &nbsp; &nbsp;<b> 12 KT +</b>",
       "sector-export-3":
         "GROWTH ENVIRONMENT SPARKLING WINES &nbsp; &nbsp;<b>50% +</b>",
-      "sector-export-4":
-        "REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>",
       "sector-dubai-1": "Punto di riferimento per aziende italiane",
       "sector-dubai-2": "Interfaccia Camera Commercio UAE",
       "sector-dubai-3": "Connector con partner emiratini",
@@ -457,7 +515,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Consulenza strategica per la crescita organica delle PMI.",
       "footer-sede": " Sede legale",
       "footer-viale":
-        "Viale Papa Giovanni Paolo II, 29. Arconate (MI), 20020, Lombardia",
+        "Viale Papa Giovanni Paolo II, 29, Arconate (MI), 20020, Lombardia",
       "footer-services": "Servizi",
       "footer-contacts": "Contatti",
       "footer-consultation": "Consulenza su appuntamento",
@@ -516,12 +574,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav-indicators": "Indicators and measurement",
       "gallery-title": "Ownership with a project model",
       "gallery-subtitle":
-        "Projects in different markets and product areas that develop skills and create value<br>that lasts over time for our clients. <br>Interim Management specialized in the COO role for excellence companies with strong commitment to change. <br>Importance of using standard libraries and monitoring tools.",
+        "Projects carried out in different markets and product areas that develop and create lasting value for our clients.<br /><br />Interim Management specialized in the Chief Operating Officer role dedicated to excellence companies with strong commitment to change.<br /><br />Importance of using standard libraries and consolidated monitoring tools.",
       "about-title": "The experience of DOING - Partnership as a resource",
       "about-quote":
         "It is progress that transforms the company into an extraordinary process, but it is its history and roots that establish its uniqueness.",
       "about-text":
-        "The operational leadership of «due i to business» was born as a coordination hub between the Host Companies of the service and various business <b>partners</b> within a wide industrial <b>network</b> at national and international level. <br><br>The studio provides services aimed at strengthening organizations and <b>decision-making mechanisms</b>, and offers a precise and challenging overview of opportunities to seize in Sales & Operations & Marketing. <br><br>The integration logic is guaranteed from the origin as these services are developed according to a shared data architecture available in the company's reference ERP. <br><br>Regardless of the mode and service chosen, a methodological path is always provided, including an intrinsic <b>managerial format</b> and a systematic follow-up of project progress in day-by-day operations.",
+        "The operational leadership of «due i to business» was born as a coordination hub between the Host Companies of the service and various business <b>partners</b> within a wide industrial <b>network</b> at national and international level. <br><br><br>The studio provides services aimed at strengthening organizations and <b>decision-making mechanisms</b>, and offers a precise and challenging overview of opportunities to seize in Sales & Operations & Marketing. <br><br><br>The integration logic is guaranteed from the origin as these services are developed according to a shared data architecture available in the company's reference ERP. Regardless of the mode and service chosen, a methodological path is always provided, including an intrinsic <b>managerial format</b> and a systematic follow-up of project progress in day-by-day operations.",
       "break-title-1": "Mission",
       "break-subtitle-1":
         " Support business activities of excellence companies with an<br>adequate methodology to maintain and develop organic growth and M&A.",
@@ -554,35 +612,64 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-2-title": "ORGANIZATIONAL DEVELOPMENT",
       "service-2-subtitle":
         "Support for human resources and development of the foundations for corporate culture change",
+      "service-2-desc":
+        "<br>Support for human resources and development of the foundations for corporate culture change",
       "service-3-title": "STRATEGIC REVIEW",
       "service-3-subtitle":
-        "Depending on the need, this type of intervention gives management quick support in the decision-making process.",
+        "SPOT ON FRACTIONAL TIME BASIS INTERVENTION<br />Depending on the need, this type of intervention provides company management with fast and authoritative «outsourcing» support in the decision-making process",
       "service-3-desc":
         "||ANALYSIS AND REVISION OF STRATEGIC AND GROWTH PLANS||<br>||SUPPORT AND STREAMLINING OF COMMERCIAL STRATEGIES||<br>||INTERNATIONALIZATION – GUIDE SPECIAL PROJECTS||",
       "service-4-title": "LOGISTICS PARTNERSHIP",
       "service-4-subtitle":
-        "Introduction of order cycle governance in integrated logistics service offerings",
+        "PARTNERSHIP SERVICE FOR LOGISTICS OPERATORS IN THE FMCG SECTOR<br />Introduction of order cycle governance in integrated logistics service offerings",
       "service-4-desc":
         "<br>GUIDE AND SUPPORT FOR INTEGRATED LOGISTICS OPERATIONS<br><br>Order cycle governance",
       "service-5-title": "IIC UAE ADVISOR",
       "service-5-desc":
         "Reference point for Italian excellence companies. Leadership for the internationalization project. Certified interface of the chamber of commerce in UAE<br>",
       "service-detail-content":
-        "The service involves the development of the COO role. With the following main objectives:",
-      "service-detail-1-1":
-        "Optimization and streamlining of business processes",
-      "service-detail-1-2": "Improvement of operational efficiency",
-      "service-detail-1-3":
+        "The service involves the development of the COO role | 3-year plan | Introduction and use of the following mechanisms",
+      "checkup-1": "LEADERSHIP ON OPERATIONAL TEAM",
+      "checkup-1-people":
+        "Key people: MARKETING | SALES | EXPORT TEAM | OPERATIONS | PURCHASING | MANAGEMENT CONTROL | PLANNING",
+      "checkup-2": "SET UP MULTI-YEAR OPERATIONAL PLAN IN THE FIRST 4 MONTHS",
+      "checkup-3": "CONTINUOUS MONITORING STOCK VS SALES",
+      "checkup-4": "COORDINATION | PROJECT SYNERGY",
+      "checkup-5": "INTRODUCTION OF MANAGERIAL FORMAT",
+      "checkup-6": "<b>FOCUS ON OPERATING MARGIN EVOLUTION:</b>",
+      "checkup-6-1":
+        "Operational quick wins for business debottlenecking: 10% MIN",
+      "checkup-6-2": "Cost reduction first and second year: 15% MIN",
+      "checkup-6-3": "Purchasing quick wins second and third year: 20% MIN",
+      "checkup-6-4": "Product portfolio margin | Rules",
+      "checkup-6-5": "Business case for Export projects | Target Margin",
+      "checkup-7": "Optimization and streamlining of business processes",
+      "checkup-8": "Focus on improving operating costs in various departments",
+      "checkup-9":
         "Cascade down of strategic objectives in various corporate functions",
-      "service-detail-1-4":
-        "Continuous monitoring of adherence to operational plans",
-      "service-detail-1-5": "Maximize Team potential",
-      "service-detail-1-6":
-        "Implementation of new work methodology | indicators | group dynamics",
-      "service-detail-1-7": "Risks vs  Opportunities | continuity vs quick win",
-      "service-detail-1-8":
-        "Synergies and integration of functions | flow architecture and data integration",
-      "service-detail-1-9": "Accelerate the execution of strategic projects",
+      "checkup-10": "Continuous monitoring of adherence to operational plans",
+      "checkup-11": "Maximize Team potential",
+      "checkup-12":
+        "Implementation of new way of working | indicators | group dynamics",
+      "checkup-13":
+        "Risks vs Business opportunities | continuity vs quick wins",
+      "checkup-14":
+        "Synergies and integration of functions | flow and data architecture",
+      "checkup-15": "Accelerate the execution of strategic projects",
+      "svil-org-left-1": "<b>RESOURCES | PROFILE MAPPING</b>",
+      "svil-org-left-2": "<b>BALANCING COMPETENCIES AS IS IT vs TARGET</b>",
+      "svil-org-left-2-1": "Leadership model",
+      "svil-org-left-2-2": "Relational expectations",
+      "svil-org-left-2-3": "Training skills",
+      "svil-org-left-2-4": "Problem solving skills",
+      "svil-org-left-2-5": "Use of organizational capabilities",
+      "svil-org-left-3": "<b>SHARING A CHANGE MODEL</b>",
+      "svil-org-left-3-1":
+        "Function responsibilities | Organizational chart as a tool",
+      "svil-org-left-3-2": "Definition of business processes | RACI Tool",
+      "svil-org-left-3-3": "New way of working | Importance of communication",
+      "svil-org-left-3-4": "Down Drill techniques",
+      "svil-org-left-3-5": "Training in day-by-day business",
       "service-detail-2-1":
         "Organizational design | creation of new directions",
       "service-detail-2-2":
@@ -599,40 +686,58 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-2-8": "Proposal of a CHANGE MODEL",
       "strategic-section-1": "Operational plans analysis",
       "strategic-section-2": "Sales support",
-      "strategic-section-3": "MKT & sales support",
-      "service-detail-3-1": "<br>INDUSTRIAL PLANS REVIEW",
-      "service-detail-3-2": "BUSINESS PLAN",
-      "service-detail-3-3": "MULTI-YEAR STRATEGIC PLAN",
+      "strategic-section-3": "MKT & Sales Support",
+      "service-detail-3-1": "<br />INDUSTRIAL PLANS REVIEW",
+      "service-detail-3-2": "BUSINESS PLAN REVIEW",
+      "service-detail-3-3": "ADHERENCE TO MULTI-YEAR STRATEGIC PLAN",
+      "service-detail-3-4": "OPERATIONAL EXCELLENCE",
       "service-detail-3-5": "FOCUS ON ORGANIC GROWTH",
-      "service-detail-3-7": "<br><br><br>CONTRACT REVIEW",
-      "service-detail-3-8": "SALES DEPT. SUPPORT",
+      "service-detail-3-6": "BENCHMARKING",
+      "service-detail-3-7": "<br /><br /><br />CONTRACT REVIEW",
       "service-detail-3-9":
-        "THE CUSTOMER'S 360° VIEW<br> AT THE MOMENT OF CLOSING<br> A CONTRACT",
-      "service-detail-3-11": "TECHNICAL AMBASSADOR",
-      "service-detail-3-12": "MKT & SALES SUPPORT",
+        "THE CUSTOMER'S 360° VIEW<br /> AT THE MOMENT OF CLOSING<br /> A CONTRACT",
+      "service-detail-3-10": "MULTI-YEAR NETWORK",
+      "service-detail-3-11": "PROJECTS WITH EXPORT TEAM",
+      "service-detail-3-12": "TECHNICAL AMBASSADOR",
       "service-detail-3-13": "SPECIAL PROJECTS",
-      "service-detail-3-14": "INTERNATIONALIZATION",
-      "service-detail-3-15": "TESTIMONY",
-      "service-detail-3-16":
-        "THE PROJECT MANAGEMENT THAT <br> «SELLS» PROJECTS",
+      "service-detail-3-14": "TESTIMONY",
+      "service-detail-3-15": "THE PROJECT MANAGEMENT THAT <br /> «SELLS»",
+      "service-detail-3-16": "DOWN DRILL TECHNIQUES",
+      "service-detail-3-17": "PRODUCT KNOWLEDGE",
+      "service-detail-3-18": "COMMUNICATION.",
       "discover-more": "Discover more",
-      "service-detail-4-1":
-        "Partnership service | dedicated logistics integration for FMCG OPL",
-      "service-detail-4-2":
+      "service-detail-4-left-1":
+        "<b>GUIDE TO LOGISTICS SERVICE INTEGRATION</b>",
+      "service-detail-4-left-2": "<b>IMPORTANCE OF THE MANAGERIAL FACTOR</b>",
+      "service-detail-4-left-3":
+        "<b>A RESOURCE OF THE OPL INTEGRATED IN-HOUSE OF THE CLIENT COMMITTENT PERMANENTLY INTERFACED WITH A LOGISTICS KEY PEOPLE OF THE COMMITTENT</b>",
+      "service-detail-4-left-4":
+        "<b>BACK OFFICE | INTEGRATED LOGISTICS FRONT OFFICE</b>",
+      "service-detail-4-left-5":
+        "Customization of the logistics offer taking into account the opportunities offered by the client's order cycle management",
+      "service-detail-4-left-6":
+        "The added value of process governance | costs | service",
+      "service-detail-4-left-7":
+        "Introduction of program solving concepts in the logistics offer",
+      "service-detail-4-left-8": "Pack of rules to share with the client",
+      "service-detail-4-left-9":
+        "Offer for distribution channel | size | opportunities",
+      "service-detail-4-right-1":
         "Order cycle management that guarantees service excellence",
-      "service-detail-4-3":
+      "service-detail-4-right-2":
         "Complete integration of the order cycle up to last mile distribution logistics",
-      "service-detail-4-4": "Optimization of decision flows in various phases",
-      "service-detail-4-5":
+      "service-detail-4-right-3":
+        "Optimization of decision flows in the various phases of the order to reduce dead times and administrative and commercial blocks",
+      "service-detail-4-right-4":
         "Importance of logistics and commercial rules in contractual management",
-      "service-detail-4-6":
-        "Chronological service indicator of delivery divided into various moments of the order cycle",
-      "service-detail-4-7": "Strategic partnerships with FMCG OPL",
-      "service-detail-4-8": "Constant monitoring of logistics performance",
-      "service-detail-4-9": "Implementation of quality control systems",
-      "service-detail-4-10": "Integrated supply chain management",
-      "service-detail-4-11": "Delivery time optimization",
-      "iic-uae-title": "Italian Certified Advisor IIC UAE",
+      "service-detail-4-right-5":
+        "Customized customer service indicators consistent with the order cycle structure",
+      "service-detail-4-right-6":
+        "Constant monitoring of logistics performance",
+      "service-detail-4-right-7":
+        "Advantages and opportunities for the client through specialized services that only an OPL can provide (see services list)",
+      "iic-uae-title":
+        "<b>I</b>talian <b>C</b>ertified <b>A</b>dvisor <b>IIC UAE</b>",
       "iic-uae-services":
         "Within the Italian Certified Advisor IIC UAE 2025 – 2026 project, the studio has been selected as a certified partner of the Italian Chamber of Commerce in the United Arab Emirates (UAE). Specifically, Daniel Marchisio, Operations Business Partner of due i to business, has been certified ICA 547 for the province of Milan.<br><br>«In a historical moment marked by growing cooperation between Italy and the UAE, strengthened by important bilateral agreements, the prospects for companies and professionals in this territory are broad, concrete and rapidly expanding»<br><br>«The Emirates today represent one of the most dynamic and interconnected economies globally, with a growing demand for qualified skills in legal, fiscal, corporate and strategic consulting sectors»<br><br>The studio is honored to participate in the initiative that enhances Italian excellence in the professional and consulting sector.",
       "agenda-title": "Agenda 2025-2026",
@@ -659,9 +764,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "Identification of specific opportunities in the UAE",
       "deep-principle-1-4": "Company profiles and product sectors",
       "deep-principle-1-5": "Team preparation in Dubai | due i to business",
+      "deep-principle-1-6":
+        "Managerial skills in coordinating Sales & Operations & MKT | Experience in various business sectors",
+      "deep-principle-1-7":
+        "Specific know-how on mechanisms that develop margins | Avoid causes of export project slowdown",
       "deep-principle-2-title": "INFO MODULE",
       "deep-principle-2-desc":
-        "This module provides detailed and continuously updated information on the<br>Emirati market and begins to prepare a client project | Importance of having a<br>certified UAE counterpart",
+        "This module provides detailed and continuously updated information on the Emirati market and begins to prepare a client project | Importance of having a certified UAE counterpart",
       "deep-principle-2-1":
         "Specific information pack [commercial | legal | financial] / Dubai Team support",
       "deep-principle-2-2": "General information on reference markets",
@@ -670,6 +779,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Initial client project evaluation/growth assessment",
       "deep-principle-2-5":
         "Knowledge of the client and their project in UAE / project definition",
+      "deep-principle-2-6":
+        "Preparation of a business case | Internal threats to the project | Market expectations",
       "deep-principle-3-title": "TRAINING | MATCHING",
       "deep-principle-3-desc":
         "Specific training and foundations for developing the skills necessary for success.",
@@ -679,16 +790,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "Preparation of the client's company project | business focus | the product being sold",
       "deep-principle-3-3":
         "Italy / Dubai matching [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
-      "deep-principle-3-4": "Development of intercultural skills",
+      "deep-principle-3-5":
+        "Business Case Review | Technical-merchandise testimony intervention | Meeting with the «client»",
       "deep-principle-4-title": "FOLLOW UP | MATCHING",
+
       "deep-principle-4-desc": "Support and monitoring of the client project",
+
       "deep-principle-4-1":
-        "Assistance and monitoring in the launch and implementation phase",
+        "Assistance and monitoring during launch and implementation",
       "deep-principle-4-2":
-        "Results monitoring | Development of a possible 2nd round",
+        "Monitoring of results | Development of a potential second round",
       "deep-principle-4-3":
-        "Italy / Dubai matching [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Matching Italy / Dubai [AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-4-4": "Post-launch support and optimization",
+      "deep-principle-4-5":
+        "Modularity and scalability of the project | Support for commercial network development",
+
       "sectors-title": "Experience and Projects in various sectors",
       "sectors-subtitle":
         "Our experience extends across different industrial sectors, offering personalized solutions and specialized skills for every business area. From food production to advanced logistics, we support companies in growth, process optimization and implementation of innovative strategies that generate concrete and measurable results.",
@@ -702,7 +819,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "YEARS OF EXPERTISE IN THE SECTOR &nbsp; &nbsp;<b>20+</b>",
       "sector-food-2": "DUE DILIGENCES &nbsp; &nbsp;<b>1+</b>/3",
       "sector-food-3": "<b>MARKET LEADER</b> BRANDS COMPANIES",
-      "sector-food-4": "<b>A & M</b> EUROPEAN RESTRUCTURING ",
+      "sector-food-4": "<b>A & M</b> EUROPEAN RESTRUCTURING",
       "sector-wine-1":
         "YEARS OF EXPERTISE IN THE SECTOR &nbsp; &nbsp;<b>6+</b>",
       "sector-wine-2": "GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>",
@@ -722,12 +839,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIL +</b>",
       "sector-machinery-4": "TRIGENERATION &nbsp; &nbsp;<b>2+ PLANTS</b>",
       "sector-export-1": "BERTOLLI USA | <b>CLUB WAREHOUSE</b>",
+      "sector-export-4":
+        "REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>",
       "sector-export-2":
         "SUPPLY CHAIN <b>MENA AREA</b> &nbsp; &nbsp;<b>12 KT +</b>",
       "sector-export-3":
         "GROWTH ENVIRONMENT SPARKLING WINES &nbsp; &nbsp;<b>50% +</b>",
-      "sector-export-4":
-        "REVIEW TOTAL CONSUMER <b>FOOTFALL</b> &nbsp; &nbsp;<b>1 MM+</b>",
       "sector-dubai-1": "Reference point for Italian companies",
       "sector-dubai-2": "UAE Chamber of Commerce interface",
       "sector-dubai-3": "Connector with Emirati partners",
