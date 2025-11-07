@@ -200,8 +200,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "hero-organic": "LA CRESCITA ORGANICA",
       "hero-merger": "MERGER & ACQUISITIONS",
       "hero-description":
-        "Leadership per il cambiamento<br>Quick-wins che diventano competenze <br>permanenti nelle PMI di eccellenza",
-      "hero-description1": "LA CRESCITA ORGANICA <br> MERGER & ACQUISITIONS",
+        " Leadership per il cambiamento Quick-wins che diventano competenze permanenti nelle PMI di eccellenza<br/> I servizi a disposizione colgono la flessibilità <br /> del Modello e garantiscono efficacia <br/>operativa in tempi molto brevi",
+      "hero-description1": "LA CRESCITA ORGANICA | MERGER & ACQUISITIONS",
+      "hero-description2": "UN MODELLO DI DIREZIONE OPERATIVA",
+      "hero-description3":
+        "EXECUTIVE INTERIM MANAGEMENT ON FRACTIONAL TIME BASIS<br> INTERFACCIA CEO | CAMBIO GENERAZIONALE | RUOLO DEL COO",
       "btn-appointment": "Contattaci",
       "btn-services": "I Nostri Servizi",
       "btn-portfolio": "IIC UAE ADVISOR",
@@ -557,8 +560,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "hero-organic": "ORGANIC GROWTH",
       "hero-merger": "MERGER & ACQUISITIONS",
       "hero-description":
-        "Leadership for change<br>Quick wins that turn into lasting <br> capabilities within excellence SMEs",
-      "hero-description1": "ORGANIC GROWTH <br> MERGER & ACQUISITIONS",
+        "Leadership for change and quick wins that evolve into lasting capabilities within high-performing SMEs<br /> The services provided leverage the <br /> flexibility of the Model and ensure operational<br /> effectiveness in very short timeframes",
+      "hero-description1": "ORGANIC GROWTH | MERGER & ACQUISITIONS",
+      "hero-description2": "A MODEL OF OPERATIONAL MANAGEMENT",
+      "hero-description3":
+        "EXECUTIVE INTERIM MANAGEMENT ON A FRACTIONAL TIME BASIS<br>CEO INTERFACE | GENERATIONAL TRANSITION | COO ROLE ENABLEMENT",
       "btn-appointment": "Contact Us",
       "btn-services": "Our Services",
       "btn-portfolio": "IIC UAE ADVISOR",
