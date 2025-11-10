@@ -1578,7 +1578,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  setInterval(nextSlide, 30000);
+  setInterval(nextSlide, 45000);
 });
 
 // Funzionalità dei puntini del carousel
