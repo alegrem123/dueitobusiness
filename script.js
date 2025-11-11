@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     it: {
       "hero-title": "LA BASE STRATEGICA PER LA CRESCITA AZIENDALE",
       "hero-description":
-        'Quick wins operativi che diventano competenze permanenti nelle PMI di eccellenza. <br />Leadership per il cambiamento<br />Esperienza manageriale specifica nel ruolo<span class="hide-mobile"><br /></span><span class="hide-mobile">Immediata | Flessibilità del modello</span>',
+        'Quick wins operativi che diventano competenze permanenti nelle PMI di eccellenza. <br />Leadership per il cambiamento<br />Esperienza professionale e manageriale specifica nel ruolo<span class="hide-mobile"><br /></span><span class="hide-mobile">Operatività e flessibilità del modello</span>',
       "hero-description1": "LA CRESCITA ORGANICA | MERGER & ACQUISITIONS",
       "hero-description2": "UN MODELLO DI DIREZIONE OPERATIVA",
       "hero-description3":
@@ -215,11 +215,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav-ownership": "Ownership di un modello progettuale",
       "nav-experience": "Esperienza del FARE",
       "nav-approach": "Approccio metodologico consolidato",
-      "nav-indicators": "Indicatori e misurazione",
+      "nav-indicators": "Indicatori e monitoraggio",
       "gallery-title": "Ownership di un modello progettuale",
       "gallery-subtitle":
         "Progetti realizzati in diversi mercati ed aree merceologiche che sviluppano e creano valore duraturo per i nostri clienti.<br />Interim Management specializzato nel ruolo di Chief Operating Officer dedicato ad aziende di eccellenza e con forte commitment al cambiamento.<br />Importanza dell'utilizzo di librerie standards e tools di monitoraggio consolidati.",
-      "about-title": "Esperienza del FARE - Partnership come risorsa",
+      "about-title": "Esperienza del FARE - La Partnership come risorsa",
       "about-quote":
         "È il progresso a trasformare l'azienda in un processo straordinario, ma sono la sua storia e le sue radici a sancirne l'unicità.",
       "about-text":
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "break-subtitle-1":
         "Sostenere le attività di business di aziende di eccellenza con utilizzo di adeguata metodologia di mantenimento e sviluppo del processo di crescita organica e per linee esterne.",
       "break-title-2":
-        "Trasforma le teorie in risultati concreti attraverso un approccio scientifico e condiviso con le key people aziendali<br />Efficienza nell'utilizzo degli indicatori",
+        "Trasforma le teorie in risultati concreti attraverso un approccio scientifico condiviso con le key people aziendali<br />Efficienza nell'utilizzo degli indicatori",
       "break-item-1": "AS IS IT",
       "break-item-2": "DEFINIZIONE OBBIETTIVI",
       "break-item-3": "MONITORAGGIO PERIODICO",
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "methodology-values1":
         "Importanza della gestione integrata dei dati (ADR)",
       "methodology-body2":
-        "Il KNOW HOW della Struttura dei costi e della Marginalità come patrimonio del team di lavoro<br />Linearità delle comunicazioni | Modularità e sinergia dei progetti in corso nelle varie funzioni<br />Criteri per la creazione dell'interfaccia evitando doppio handling<br />Autonomia dei sistemi periferici vs attività del ERP<br />Importanza e valorizzazione dell'integrazione dei sistemi",
+        "Il KNOW HOW della Struttura dei costi e della Marginalità come patrimonio del team di lavoro<br />Linearità delle comunicazioni | Modularità e sinergia dei progetti in corso nelle varie funzioni<br />Criteri per la creazione delle interfacce dati evitando doppio handling<br />Autonomia dei sistemi periferici vs attività del ERP<br />Importanza e valorizzazione dell'integrazione dei sistemi",
       "services-title": "I nostri servizi",
       "services-subtitle":
         "Soluzioni strategiche personalizzate per ottimizzare processi e sviluppare competenze manageriali.",
@@ -271,15 +271,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "<br />GUIDA E SUPPORTO AD OPERAZIONI DI LOGISTICA INTEGRATA<br /><br />La governance del ciclo dell'ordine",
       "service-5-title": "IIC UAE ADVISOR",
       "service-5-desc":
-        "Punto di riferimento per le aziende italiane di eccellenza. Leadership per il progetto di internazionalizzazione. Interfaccia certificata della camera di commercio in UAE<br />",
+        "Punto di riferimento per le aziende italiane di eccellenza. Leadership per il progetto di internazionalizzazione. Interfaccia certificata della Camera di Commercio in UAE<br />",
       "service-detail-content":
         "Il servizio prevede lo sviluppo del ruolo del COO | piano a 3 anni | Introduzione e utilizzo dei seguenti meccanismi",
       "checkup-left-1": "LEADERSHIP SU OPERATIONAL TEAM",
       "checkup-left-2":
-        "MKT | SALES | TEAM EXPORT | OPERATIONS | ACQUISTI | CONTROLLO GESTIONE",
-      "checkup-left-3": "PLANNING",
+        "MKT | SALES | TEAM EXPORT | OPERATIONS | ACQUISTI | CONTROLLO GESTIONE | PLANNING",
       "checkup-left-4": "Tipo governance:",
-      "checkup-left-5": "Responsabilità:",
+      "checkup-left-5": "Responsabilità funzionale:",
       "checkup-left-6": "SET UP PIANO OPERATIVO PLURIENNALE NEI PRIMI 4 MESI",
       "checkup-left-7": "MONITORAGGIO CONTINUO STOCK VS VENDITE",
       "checkup-left-8": "COORDINAMENTO | SINERGIA DEI PROGETTI",
@@ -294,6 +293,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "checkup-left-14": "MARGINALITÀ DEL PORTAFOGLIO PRODOTTI | RULES",
       "checkup-left-15":
         "BUSINESS CASE PER PROGETTI EXPORT | MARGINALITÀ TARGET",
+      "checkup-left-16": "REVIEW TRADE OFF PROGETTI VS MARGINALITA’ | RULES",
+      "checkup-left-17": "CRESCITA ORGANICA INDOTTA ATTESA:  30 % MIN",
       "checkup-right-title": "SVILUPPO DEL RUOLO:",
       "checkup-right-1": "Ottimizzazione e snellimento dei processi aziendali",
       "checkup-right-2":
@@ -315,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "svil-org-left-2-1": "MODELLO DI LEADERSHIP",
       "svil-org-left-2-2": "ASPETTATIVE RELAZIONALI",
       "svil-org-left-2-3": "COMPETENZE FORMATIVE",
-      "svil-org-left-2-4": "CAPACITÀ DI PROBLEM SOLVING",
+      "svil-org-left-2-4": "CAPACITÀ DI PROGRAM SOLVING",
       "svil-org-left-2-5": "UTILIZZO DELLE CAPABILITIES ORGANIZZATIVE",
       "svil-org-left-3": "CONDIVISIONE DI UN MODELLO DI CAMBIAMENTO",
       "svil-org-left-3-1":
@@ -323,13 +324,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "svil-org-left-3-2": "DEFINIZIONE DEI PROCESSI AZIENDALI | RACI TOOL",
       "svil-org-left-3-3":
         "NEW WAY OF WORKING | IMPORTANZA DELLA COMUNICAZIONE",
-      "svil-org-left-3-4": "TECNICHE DI DOWN DRILL",
+
       "svil-org-left-3-5": "FORMAZIONE NEL DAY BY DAY AZIENDALE",
       "service-detail-2-1": "Disegno organizzativo | creazione nuove direzioni",
       "service-detail-2-2":
         "Business debottlenecking | importanza degli organigrammi",
       "service-detail-2-3":
-        "Supporto HR nel processo di selezione del personale",
+        "Supporto HR | HH nel processo di selezione del personale",
       "service-detail-2-4":
         "JD | verifiche rispondenze organizzative con modelli di riferimento",
       "service-detail-2-5":
@@ -346,9 +347,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-3-2": "REVIEW BUSINESS PLAN",
       "service-detail-3-3": "ADERENZA AL PIANO STRATEGICO PLURIENNALE",
       "service-detail-3-5": "FOCUS SULLA CRESCITA ORGANICA",
+      "service-detail-3-6": "UPGRADE IRP | REQUIREMENTS",
       "service-detail-3-7": "<br /><br /><br />CONTRACT REVIEW",
       "service-detail-3-9":
-        "IL PUNTO DI VISTA DEL CLIENTE <br />«OUTSIDER» A 360° AL MOMENTO <br />DELLA CHIUSURA DI UN CONTRATTO",
+        "IL PUNTO DI VISTA DEL CLIENTE <br />«OUTSIDER» A 360° DURANTE LE <br> TRATTATIVE E FINO AL MOMENTO <br />DELLA CHIUSURA DI UN CONTRATTO",
       "service-detail-3-11": "PROGETTI CON IL TEAM EXPORT",
       "service-detail-3-12": "TECHNICAL AMBASSADOR",
       "service-detail-3-13": "PROGETTI SPECIALI",
@@ -371,20 +373,22 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-4-left-8": "PACK DI RULES DA CONDIVIDERE CON IL CLIENTE",
       "service-detail-4-left-9":
         "OFFERTA PER CANALE DISTRIBUTIVO | SIZE | OPPORTUNITÀ",
+      "service-detail-4-left-10":
+        "LA RESPONSABILITA’ LOGISTICA NON E’ DELEGABILE | LA <br>IMPROVVISAZIONE COME CATALIZZATORE NEGATIVO DEL SERVIZIO",
       "service-detail-4-right-1":
         "&nbsp;&nbsp;Gestione del ciclo dell'ordine che garantisce la eccellenza del servizio",
       "service-detail-4-right-2":
-        "&nbsp;&nbsp;Completa integrazione del ciclo dell'ordine fino alla logistica distributiva dell'ultimo miglio",
+        "&nbsp;&nbsp;Completa integrazione del ciclo dell'ordine fino alla logistica <br>&nbsp;&nbsp;distributiva dell'ultimo miglio",
       "service-detail-4-right-3":
-        "&nbsp;&nbsp;Ottimizzazione dei flussi decisionali nelle varie fasi dell'ordine per diminuire tempi morti e blocchi amministrativi e commerciali",
+        "&nbsp;&nbsp;Ottimizzazione dei flussi decisionali nelle varie fasi dell'ordine per diminuire<br>&nbsp;&nbsp; tempi morti e blocchi amministrativi e commerciali",
       "service-detail-4-right-4":
         "&nbsp;&nbsp;Importanza delle rules logistiche e commerciali nella gestione contrattuale",
       "service-detail-4-right-5":
-        "&nbsp;&nbsp;Indicatori di servizio al cliente customizzati coerentemente alla struttura del ciclo dell'ordine",
+        "&nbsp;&nbsp;Indicatori di servizio al cliente customizzati coerentemente alla struttura del <br>&nbsp;&nbsp;ciclo dell'ordine",
       "service-detail-4-right-6":
         "&nbsp;&nbsp;Monitoraggio costante delle performance logistiche",
       "service-detail-4-right-7":
-        "&nbsp;&nbsp;Vantaggi ed opportunità per il cliente tramite servizi specializzati forniti da un OPL (vedere elenco servizi)",
+        "&nbsp;&nbsp;Vantaggi ed opportunità per il cliente che può completare il suo reparto <br>&nbsp;&nbsp;logistico con una serie di servizi specializzati che solo un OPL è in grado di<br>&nbsp;&nbsp; fornire ( vedere elenco servizi )",
       "iic-uae-title":
         "<b>I</b>talian <b>C</b>ertified <b>A</b>dvisor <b>IIC UAE</b>",
       "iic-uae-services":
@@ -423,24 +427,24 @@ document.addEventListener("DOMContentLoaded", function () {
       "deep-principle-2-desc":
         "In questo modulo si fornisce informazione dettagliata e continuamente aggiornata sul mercato emiratino e si comincia a preparare un progetto cliente | Importanza di avere una contra parte UAE certificata",
       "deep-principle-2-1":
-        "Pack informativo specifico [commerciale | legale | finanziario] / supporto Team Dubai",
+        "Pack informativo specifico [commerciale | legale | finanziario] | supporto Team Dubai",
       "deep-principle-2-2": "Informazioni generali sui mercati di riferimento",
       "deep-principle-2-3": "Panoramica sui competitor nel nuovo mercato",
       "deep-principle-2-4":
-        "Prima valutazione del progetto cliente/valutazione della crescita",
+        "Prima valutazione del progetto cliente | valutazione della crescita",
       "deep-principle-2-5":
-        "Conoscenza del cliente e del suo progetto in UAE / definizione di un progetto",
+        "Conoscenza del cliente e del suo progetto in UAE | definizione di un progetto",
       "deep-principle-2-6":
         "Preparazione di un business case | Le minacce interne al progetto | Le attese del mercato",
       "deep-principle-3-title": "FORMAZIONE | MATCHING",
       "deep-principle-3-desc":
         "Formazione specifica e basi per lo sviluppo le competenze necessarie al successo.",
       "deep-principle-3-1":
-        "Preparazione al matching del cliente con «cliente» emiratino / check del progetto",
+        "Preparazione al matching del cliente con «cliente» emiratino | check del progetto",
       "deep-principle-3-2":
         "Preparazione del progetto aziendale del cliente | focus nel business | il prodotto che si vende",
       "deep-principle-3-3":
-        "Matching Italia / Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Matching Italia | Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-3-5":
         "Business Case Review | Intervento di testimonianza tecnico – merceologico | Incontro del «cliente»",
       "deep-principle-4-title": "FOLLOW UP | MATCHING",
@@ -450,11 +454,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "deep-principle-4-2":
         "Monitoraggio dei risultati | Sviluppo di un eventuale 2° round",
       "deep-principle-4-3":
-        "Matching Italia / Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Matching Italia | Dubai [ufficio camerale AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-4-4": "Supporto post-lancio e ottimizzazione",
       "deep-principle-4-5":
         "Modularità & Scalabilità del progetto | Supporto allo sviluppo della rete commerciale",
-      "sectors-title": "Esperienza e Progetti in corso nei vari settori",
+      "sectors-title": "Expertise e progetti in corso nei vari settori",
       "sectors-subtitle":
         "La nostra esperienza si estende attraverso diversi settori industriali, offrendo soluzioni personalizzate e competenze specializzate per ogni ambito di business. Dal settore alimentare alla logistica avanzata, supportiamo le aziende nella crescita, nell'ottimizzazione dei processi e nell'implementazione di strategie innovative che generano risultati concreti e misurabili.",
       "sector-food": "Food & Beverages",
@@ -463,11 +467,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "sector-machinery": "Machinery & Equipment",
       "sector-export": "Export",
       "sector-dubai": "Export UAE",
-      "sector-food-1": "ANNI ESPERTISE NEL SETTORE &nbsp; &nbsp;<b>20+</b>",
+      "sector-food-1": "ANNI ESPERTISE NEL SETTORE &nbsp; &nbsp;<b>25+</b>",
       "sector-food-2": "DUE DILIGENZE &nbsp; &nbsp;<b>1+ </b>/ 3",
       "sector-food-3": "<b>MARKET LEADER</b> BRANDS COMPANIES",
-      "sector-food-4": "<b>A & M</b> EU RESTRUCTURING &nbsp;&nbsp;<b>5</b>",
-      "sector-food-5": "<b>COMPANIES</b>",
+      "sector-food-4":
+        "<b>A & M</b> EU RESTRUCTURING &nbsp;&nbsp;<b>5 COMPANIES</b>",
       "sector-wine-1": "ANNI ESPERTISE NEL SETTORE &nbsp; &nbsp;<b>6+</b>",
       "sector-wine-2": "GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>",
       "sector-wine-3": "<b>TOP MARKET LEADER</b> BRAND COMPANY",
@@ -478,7 +482,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "sector-data-2": "<b>ADR PORTSUNLIGHT SPECIFICATIONS</b>",
       "sector-data-3": "NEW «DELTA V» OLIVE OIL COMPANY",
       "sector-data-4": "NEW «DELTA V» FOR MERGER BESTFOOD",
-      "sector-data-5": "EU FOOD COMPANIES SC REVIEW &nbsp; &nbsp;<b>5</b>",
+      "sector-data-5":
+        "EU FOOD COMPANIES SC REVIEW &nbsp; &nbsp;<b>5 PLANTS</b>",
       "sector-data-6": "<b>PLANTS</b>",
       "sector-machinery-1": "SALES PARTNERSHIP WITH TOP SUPPLIERS",
       "sector-machinery-2":
@@ -487,7 +492,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIO +</b>",
       "sector-machinery-4": "ENERGY CHT PROJECTS &nbsp; &nbsp;<b>2+</b>",
       "sector-export-1": "BERTOLLI USA | <b>CLUB WAREHOUSE</b>",
-      "sector-export-4": "FORMATS TO ACHIEVE FOOTFALL &nbsp; &nbsp;<b>1MM+</b>",
+      "sector-export-4": "NEW FORMAT TO INCREASE FOOTFALL",
       "sector-export-2":
         "DRY PRODUCTS FOR <b>AREA MENA</b> &nbsp; &nbsp;<b> 12 KT +</b>",
       "sector-export-3": "<b>COORDINAMENTO STRATEGICO</b>",
@@ -553,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function () {
     en: {
       "hero-title": "THE STRATEGIC BASIS FOR BUSINESS GROWTH",
       "hero-description":
-        "Leadership for change and quick wins that evolve into lasting capabilities within high-performing SMEs<br />The services provided leverage the flexibility of the Model and ensure operational effectiveness in very short timeframes",
+        "Quick operational wins that become lasting capabilities within high-performing SMEs.<br />Leadership for change<br />Specific professional and managerial experience in the role<br />Operational effectiveness and flexibility of the model",
       "hero-description1": "ORGANIC GROWTH | MERGER & ACQUISITIONS",
       "hero-description2": "A MODEL OF OPERATIONAL MANAGEMENT",
       "hero-description3":
@@ -570,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "nav-ownership": "Ownership of a project model",
       "nav-experience": "The experience of DOING",
       "nav-approach": "Consolidated methodological approach",
-      "nav-indicators": "Indicators and measurement",
+      "nav-indicators": "Indicators and monitoring",
       "gallery-title": "Ownership with a project model",
       "gallery-subtitle":
         "Projects carried out in different markets and product areas that develop and create lasting value for our clients.<br />Interim Management specialized in the Chief Operating Officer role dedicated to excellence companies with strong commitment to change.<br />Importance of using standard libraries and consolidated monitoring tools.",
@@ -599,7 +604,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Introduction | streamlining of team meetings<br />Definition | adoption of shared measurable criteria and indicators<br />Promotion and development of managerial skills<br />Focus on concreteness vs opinion risk<br />Strategic programming with permanent project reviews",
       "methodology-values1": "Importance of integrated data management (ADR)",
       "methodology-body2":
-        "The KNOW HOW of Cost structure and Margin as team heritage<br />Communication linearity | Modularity and synergy of ongoing projects<br />Criteria to create interfaces avoiding double handling<br />Autonomy of peripheral systems vs ERP<br />Importance and enhancement of system integration",
+        "The KNOW HOW of Cost structure and Margin as team heritage<br />Communication linearity | Modularity and synergy of ongoing projects<br />Criteria for designing data interfaces avoiding double handling<br />Autonomy of peripheral systems vs ERP<br />Importance and enhancement of system integration",
       "services-title": "Our services",
       "services-subtitle":
         "Personalized strategic solutions to optimize processes and develop managerial skills.",
@@ -625,15 +630,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "<br />GUIDE AND SUPPORT FOR INTEGRATED LOGISTICS OPERATIONS<br /><br />Order cycle governance",
       "service-5-title": "IIC UAE ADVISOR",
       "service-5-desc":
-        "Reference point for Italian excellence companies. Leadership for the internationalization project. Certified interface of the chamber of commerce in UAE<br />",
+        "Reference point for Italian excellence companies. Leadership for the internationalization project. Certified interface of the Chamber of Commerce in UAE<br />",
       "service-detail-content":
         "The service involves the development of the COO role | 3-year plan | Introduction and use of the following mechanisms",
       "checkup-left-1": "LEADERSHIP ON OPERATIONAL TEAM",
       "checkup-left-2":
-        "MKT | SALES | EXPORT TEAM | OPERATIONS | PURCHASING | MANAGEMENT CONTROL",
-      "checkup-left-3": "PLANNING",
+        "MKT | SALES | EXPORT TEAM | OPERATIONS | PURCHASING | MANAGEMENT CONTROL | PLANNING",
       "checkup-left-4": "Governance type:",
-      "checkup-left-5": "Responsibilities:",
+      "checkup-left-5": "Functional responsibilities:",
       "checkup-left-6":
         "SET UP MULTI-YEAR OPERATIONAL PLAN IN THE FIRST 4 MONTHS",
       "checkup-left-7": "CONTINUOUS MONITORING STOCK VS SALES",
@@ -648,6 +652,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "QUICK WINS PURCHASING SECOND AND THIRD YEAR: <b>20% MIN</b>",
       "checkup-left-14": "PRODUCT PORTFOLIO MARGIN | RULES",
       "checkup-left-15": "BUSINESS CASE FOR EXPORT PROJECTS | TARGET MARGIN",
+      "checkup-left-16": "REVIEW TRADE OFF PROJECTS VS MARGINALITY | RULES",
+      "checkup-left-17": "EXPECTED INDUCED ORGANIC GROWTH: 30 % MIN",
       "checkup-right-title": "ROLE DEVELOPMENT:",
       "checkup-right-1": "Optimization and streamlining of business processes",
       "checkup-right-2":
@@ -670,20 +676,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "svil-org-left-2-1": "LEADERSHIP MODEL",
       "svil-org-left-2-2": "RELATIONAL EXPECTATIONS",
       "svil-org-left-2-3": "TRAINING SKILLS",
-      "svil-org-left-2-4": "PROBLEM SOLVING CAPABILITIES",
+      "svil-org-left-2-4": "PROGRAM SOLVING CAPABILITIES",
       "svil-org-left-2-5": "USE OF ORGANIZATIONAL CAPABILITIES",
       "svil-org-left-3": "SHARING A CHANGE MODEL",
       "svil-org-left-3-1":
         "FUNCTION RESPONSIBILITIES | ORGANIZATIONAL CHART AS A TOOL",
       "svil-org-left-3-2": "DEFINITION OF BUSINESS PROCESSES | RACI TOOL",
       "svil-org-left-3-3": "NEW WAY OF WORKING | IMPORTANCE OF COMMUNICATION",
-      "svil-org-left-3-4": "DOWN DRILL TECHNIQUES",
       "svil-org-left-3-5": "TRAINING IN DAY-BY-DAY BUSINESS",
       "service-detail-2-1":
         "Organizational design | creation of new directions",
       "service-detail-2-2":
         "Business Debottlenecking | Importance of Organizational Charts",
-      "service-detail-2-3": "HR support in personnel selection process",
+      "service-detail-2-3": "HR | HH support in personnel selection process",
       "service-detail-2-4":
         "JD | verification of organizational correspondence with reference models",
       "service-detail-2-5":
@@ -700,9 +705,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-3-2": "BUSINESS PLAN REVIEW",
       "service-detail-3-3": "ADHERENCE TO MULTI-YEAR STRATEGIC PLAN",
       "service-detail-3-5": "FOCUS ON ORGANIC GROWTH",
+      "service-detail-3-6": "IRP | REQUIREMENTS UPGRADE",
       "service-detail-3-7": "<br /><br /><br />CONTRACT REVIEW",
       "service-detail-3-9":
-        "THE CUSTOMER'S 360° VIEW<br />«OUTSIDER» AT THE MOMENT<br />OF CLOSING A CONTRACT",
+        "THE CLIENT’S PERSPECTIVE<br>A 360° “OUTSIDER” VIEW DURING NEGOTIATIONS<br>AND UP TO THE FINALIZATION OF THE CONTRACT",
       "service-detail-3-11": "PROJECTS WITH EXPORT TEAM",
       "service-detail-3-12": "TECHNICAL AMBASSADOR",
       "service-detail-3-13": "SPECIAL PROJECTS",
@@ -724,12 +730,14 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-4-left-8": "PACK OF RULES TO SHARE WITH THE CLIENT",
       "service-detail-4-left-9":
         "OFFER FOR DISTRIBUTION CHANNEL | SIZE | OPPORTUNITIES",
+      "service-detail-4-left-10":
+        "LOGISTICS RESPONSIBILITY IS NOT DELEGABLE | IMPROVISATION AS A NEGATIVE CATALYST OF THE SERVICE",
       "service-detail-4-right-1":
         "&nbsp;&nbsp;Order cycle management that guarantees service excellence",
       "service-detail-4-right-2":
-        "&nbsp;&nbsp;Complete integration of the order cycle up to last mile distribution logistics",
+        "&nbsp;&nbsp;Complete integration of the order cycle up to last mile <br>&nbsp;&nbsp;distribution logistics",
       "service-detail-4-right-3":
-        "&nbsp;&nbsp;Optimization of decision flows in the various phases of the order to reduce dead times and administrative and commercial blocks",
+        "&nbsp;&nbsp;Optimization of decision flows in the various phases of the order to reduce<br>&nbsp;&nbsp; dead times and administrative and commercial blocks",
       "service-detail-4-right-4":
         "&nbsp;&nbsp;Importance of logistics and commercial rules in contractual management",
       "service-detail-4-right-5":
@@ -737,7 +745,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "service-detail-4-right-6":
         "&nbsp;&nbsp;Constant monitoring of logistics performance",
       "service-detail-4-right-7":
-        "&nbsp;&nbsp;Advantages and opportunities for the client through specialized services provided by an OPL (see services list)",
+        "&nbsp;&nbsp;Advantages and opportunities for the client who can complete his logistics<br>&nbsp;&nbsp; department with a series of specialized services that only an <br>&nbsp;&nbsp;OPL is able to<br>&nbsp;&nbsp; provide (see list of services)",
       "iic-uae-title":
         "<b>I</b>talian <b>C</b>ertified <b>A</b>dvisor <b>IIC UAE</b>",
       "iic-uae-services":
@@ -773,24 +781,24 @@ document.addEventListener("DOMContentLoaded", function () {
       "deep-principle-2-desc":
         "This module provides detailed and continuously updated information on the Emirati market and begins to prepare a client project | Importance of having a certified UAE counterpart",
       "deep-principle-2-1":
-        "Specific information pack [commercial | legal | financial] / Dubai Team support",
+        "Specific information pack [commercial | legal | financial] | Dubai Team support",
       "deep-principle-2-2": "General information on reference markets",
       "deep-principle-2-3": "Overview of competitors in the new market",
       "deep-principle-2-4":
         "Initial client project evaluation/growth assessment",
       "deep-principle-2-5":
-        "Knowledge of the client and their project in UAE / project definition",
+        "Knowledge of the client and their project in UAE | project definition",
       "deep-principle-2-6":
         "Preparation of a business case | Internal threats to the project | Market expectations",
       "deep-principle-3-title": "TRAINING | MATCHING",
       "deep-principle-3-desc":
         "Specific training and foundations for developing the skills necessary for success.",
       "deep-principle-3-1":
-        "Preparation for client matching with Emirati «client» / project check",
+        "Preparation for client matching with Emirati «client» | project check",
       "deep-principle-3-2":
         "Preparation of the client's company project | business focus | the product being sold",
       "deep-principle-3-3":
-        "Italy / Dubai matching [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Italy | Dubai matching [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-3-5":
         "Business Case Review | Technical-merchandise testimony intervention | Meeting with the «client»",
       "deep-principle-4-title": "FOLLOW UP | MATCHING",
@@ -800,11 +808,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "deep-principle-4-2":
         "Monitoring of results | Development of a potential second round",
       "deep-principle-4-3":
-        "Matching Italy / Dubai [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
+        "Matching Italy | Dubai [chamber office AI Moosa Tower 2, Trade Centre, Dubai, UAE]",
       "deep-principle-4-4": "Post-launch support and optimization",
       "deep-principle-4-5":
         "Modularity and scalability of the project | Support for commercial network development",
-      "sectors-title": "Experience and Projects in various sectors",
+      "sectors-title": "Expertise and projects in various sectors",
       "sectors-subtitle":
         "Our experience extends across different industrial sectors, offering personalized solutions and specialized skills for every business area. From food production to advanced logistics, we support companies in growth, process optimization and implementation of innovative strategies that generate concrete and measurable results.",
       "sector-food": "Food & Beverages",
@@ -814,11 +822,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "sector-export": "Export",
       "sector-dubai": "Export UAE",
       "sector-food-1":
-        "YEARS OF EXPERTISE IN THE SECTOR &nbsp; &nbsp;<b>20+</b>",
+        "YEARS OF EXPERTISE IN THE SECTOR &nbsp; &nbsp;<b>25+</b>",
       "sector-food-2": "DUE DILIGENCES &nbsp; &nbsp;<b>1+</b>/3",
       "sector-food-3": "<b>MARKET LEADER</b> BRANDS COMPANIES",
-      "sector-food-4": "<b>A & M</b> EU RESTRUCTURING &nbsp;&nbsp;<b>5</b>",
-      "sector-food-5": "<b>COMPANIES</b>",
+      "sector-food-4":
+        "<b>A & M</b> EU RESTRUCTURING &nbsp;&nbsp;<b>5 COMPANIES</b>",
       "sector-wine-1":
         "YEARS OF EXPERTISE IN THE SECTOR &nbsp; &nbsp;<b>6+</b>",
       "sector-wine-2": "GROWTH ENVIRONMENT &nbsp; &nbsp;<b>40%</b>",
@@ -829,8 +837,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "sector-data-2": "<b>ADR PORTSUNLIGHT SPECIFICATIONS</b>",
       "sector-data-3": "NEW «DELTA V» OLIVE OIL COMPANY",
       "sector-data-4": "NEW «DELTA V» FOR MERGER BESTFOOD",
-      "sector-data-5": "EU FOOD COMPANIES SC REVIEW &nbsp; &nbsp;<b>5</b>",
-      "sector-data-6": "<b>PLANTS</b>",
+      "sector-data-5":
+        "EU FOOD COMPANIES SC REVIEW &nbsp; &nbsp;<b>5 PLANTS</b>",
       "sector-machinery-1": "SALES PARTNERSHIP WITH TOP SUPPLIERS",
       "sector-machinery-2":
         "COMMERCIAL SUPPORT PROJECTS &nbsp; &nbsp;<b>2 MIL +</b>",
@@ -838,8 +846,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "MAJOR INVESTMENT PROJECTS &nbsp; &nbsp;<b>70 MIL +</b>",
       "sector-machinery-4": "ENERGY CHT PROJECTS &nbsp; &nbsp;<b>2+</b>",
       "sector-export-1": "BERTOLLI USA | <b>CLUB WAREHOUSE</b>",
-      "sector-export-4":
-        "FORMATS TO ACHIEVE FOOTFALL &nbsp; &nbsp;<b>1 MM+</b>",
+      "sector-export-4": "NEW FORMAT TO INCREASE FOOTFALL",
       "sector-export-2":
         "DRY PRODUCTS FOR <b>MENA AREA</b> &nbsp; &nbsp;<b>12 KT +</b>",
       "sector-export-3": "<b>STRATEGIC COORDINATION</b>",

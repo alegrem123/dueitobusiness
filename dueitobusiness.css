@@ -4186,17 +4186,6 @@ body {
     display: none;
   }
 }
-/* Sub-livello sotto Margine Operativo */
-.checkup-left [data-translate="checkup-left-11"],
-.checkup-left [data-translate="checkup-left-12"],
-.checkup-left [data-translate="checkup-left-13"],
-.checkup-left [data-translate="checkup-left-14"],
-.checkup-left [data-translate="checkup-left-15"] {
-  margin-left: 20px; /* rientro */
-  position: relative;
-  color: rgba(0, 0, 0, 0.78); /* leggermente più chiaro del titolo */
-  font-weight: 400; /* meno “pensate” */
-}
 
 /* Sub-punti colonna sinistra: solo rientro, no bullet */
 .sub-point {
